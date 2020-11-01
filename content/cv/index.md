@@ -13,7 +13,9 @@ Data Scientist
 **Birthday:** 27th of April 1985
 
 **Contact:** nadiia.novakova at gmail dot com, cell: +49 152 389 932 26
+
 {{ social_links() }}
+
 **Code:** [https://github.com/nnovakova](https://github.com/nnovakova)
 
 **Blog-posts:** [https://nnovakova.github.io](https://nnovakova.github.io)
