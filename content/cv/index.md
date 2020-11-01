@@ -13,18 +13,18 @@ Data Scientist
 **Birthday:** 27th of April 1985
 
 **Contact:** nadiia.novakova at gmail dot com, cell: +49 152 389 932 26
-
+{{ social_links() }}
 **Code:** [https://github.com/nnovakova](https://github.com/nnovakova)
 
 **Blog-posts:** [https://nnovakova.github.io](https://nnovakova.github.io)
 
 **Education:** 
-- Ph.D. in Computer Science 12.2007-02.2014, Donetsk National University, Ukraine
-- Master in Applied Economy 09.2006-01.2009, Donetsk National University, Ukraine
-- Master in Computer Science (Diploma with honors) 09.2006-06.2007, Donetsk National University, Ukraine 
-- Bachelor in Computer Science (Diploma with honors) 09.2002-06.2006, Donetsk National University, Ukraine 
+- Ph.D. in Computer Science 12.2007-02.2014, Donetsk National University (DNU), Ukraine
+- Master in Applied Economy 09.2006-01.2009, DNU, Ukraine
+- Master in Computer Science (Diploma with honors) 09.2006-06.2007, DNU, Ukraine 
+- Bachelor in Computer Science (Diploma with honors) 09.2002-06.2006, DNU, Ukraine 
 
-**Summary:** 13 years of academic and hands-on experience in the field of Software Development with focus on data analysis and machine learning.
+**Summary:** 13 years of academic and hands-on experience in the field of Software Development, Data Sceince and Machine Learning.
 
 _Development practice:_
 
@@ -167,7 +167,7 @@ _2007_
     <tr>
         <td align="left">Software development tools</td>
         <td align="left">
-        IntelliJ, Git, Docker, Swagger
+        IntelliJ, Git, Docker, Swagger, Anaconda
         </td>        
     </tr>
     <tr>
@@ -194,9 +194,7 @@ _2007_
     </tr>
     <tr>
         <td align="left">Libraries / Tool-kits</td>
-        <td align="left">
-        Spring, SpringBoot, Numpy, Pandas, OpenNLP, scikit-learn
-        </td>        
+        <td align="left">Spring, SpringBoot, Numpy, Pandas, OpenNLP, scikit-learn</td>        
     </tr>
 </table>
 &nbsp;

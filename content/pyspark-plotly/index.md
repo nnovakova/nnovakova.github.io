@@ -12,7 +12,8 @@ toc = true
 +++
 
 Apache Spark is an abstract query engine that allows to process data at scale. Spark provides an API in several languages such as Scala, Java and Python.
-Today I would like to show you how to use Python and [PySpark](https://databricks.com/glossary/pyspark) to do data analytics in Spark SQL API. I will also use Plotly library to visualise processed data.
+Today I would like to show you how to use Python and [PySpark](https://databricks.com/glossary/pyspark) to do data analytics in Spark SQL API. 
+I will also use Plotly library to visualise processed data.
 
 ## Datasets
 
@@ -80,8 +81,8 @@ loanDf = spark.sparkContext \
     .map(lambda x: (datetime.strptime(x[0], '%Y%b'), float(x[4]))) \
     .toDF(loanSchema)
 ```
-While reading `data.csv` file we skip first 5 header rows. Then we split each row by comma and we take only 0 and 4 columns. We parse them into DateTime and Float types
-respectively.
+While reading `data.csv` file we skip first 5 header rows. Then we split each row by comma and we take only 0 and 4 columns. 
+We parse them into `Date` and `Float` types respectively.
 
 #### Prices
 
