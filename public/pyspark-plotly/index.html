@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  
+  
+  
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css"
+    rel="stylesheet" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <link href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;site.css' rel="stylesheet" />
+
+  
+  
+
+  <title>
+     Nadiia Novakova | PySpark &amp; Plotly 
+  </title>
+
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/201b8d5e05.js"></script>
+
+  
+</head>
+
+<body class="has-background-white">
+  
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="/">Nadiia Novakova</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;'>
+            Blog
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;cv'>
+            CV
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags'>
+            Tags
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories'>
+            Categories
+          </a>
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+  
+  
+
+  
+<section class="section pb-0">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article>
+          <h1 class="title">PySpark &amp; Plotly</h1>
+          <h2 class="subtitle"></h2>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="fas fa-user"></i>
+    </span>
+    Nadiia Novakova published on
+    <span class="icon">
+      <i class="far fa-calendar-alt"></i>
+    </span>
+    <time datetime='2020-10-31'>October 31, 2020</time>
+  </p>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="far fa-clock"></i>
+    </span>
+    5 min,
+    <span class="icon">
+      <i class="fas fa-pencil-alt"></i>
+    </span>
+    993 words
+  </p>
+
+            </div>
+            <div class="column is-4">
+               
+  <p>
+    <span class="has-text-black has-text-weight-normal">Categories:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;data-engineering&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Data Engineering
+      </a>
+    
+  </p>
+ 
+            </div>
+            <div class="column is-8 has-text-right-desktop">
+               
+  <p>
+    <span class="has-text-black has-text-weight-normal">Tags:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;post&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        post
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;python&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        python
+      </a>
+    
+  </p>
+ 
+            </div>
+          </div>
+          <div class="content has-text-justified">
+            <p>Apache Spark is an abstract query engine that allows to process data at scale. Spark provides an API in several languages such as Scala, Java and Python.
+Today I would like to show you how to use Python and PySpark to do data analytics in Spark SQL API. I will also use Plotly library to visualize processed data.</p>
+<h2 id="datasets">Datasets</h2>
+<p>I am going to use public datasets available at:</p>
+<ul>
+<li><a href="https://fred.stlouisfed.org/series/QDEN628BIS">Residential Property Prices for Germany</a></li>
+<li><a href="https://data.europa.eu/euodp/en/data/dataset/bank-interest-rates-loans-households">Bank interest rates - Loans to euro area households</a></li>
+</ul>
+<p>The first dataset contains calendar quarter column that we will use to join with second dataset that has the same column. However, we will
+need first to do some data preparation to be able to join these two datasets. </p>
+<p>Columns we are interested in:</p>
+<ul>
+<li>Prices: quarter and price index. There are no other columns so we take both.</li>
+<li>Loans: quarter is at index 0 and interest rate percent is at index 4. We skip all other columns.</li>
+</ul>
+<h2 id="implementation">Implementation</h2>
+<p>We will use such libraries:</p>
+<ul>
+<li>pyspark</li>
+<li>plotly</li>
+<li>datetime</li>
+</ul>
+<p>We will need to following imports:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">pyspark
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">datetime
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">plotly.graph_objs </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">go
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">datetime </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">datetime
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">plotly.offline </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">plot
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">pyspark.sql </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">SparkSession, SQLContext
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">pyspark.sql.types </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">FloatType, DateType, StructType, StructField
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">pyspark.sql.functions </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">to_date, col, date_format
+</span></code></pre><h3 id="csv-files-into-spark-dataframes">CSV files into Spark Dataframes</h3>
+<p>At the very begining we need to create few objects for Spark runtime:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">spark = SparkSession.builder.</span><span style="color:#bf616a;">appName</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">LoanVsPrices</span><span style="color:#c0c5ce;">&#39;).</span><span style="color:#bf616a;">getOrCreate</span><span style="color:#c0c5ce;">()
+sc = spark.sparkContext
+sqlContext = </span><span style="color:#bf616a;">SQLContext</span><span style="color:#c0c5ce;">(sc)
+</span></code></pre>
+<p>We will use them later in the program code.</p>
+<h4 id="loans">Loans</h4>
+<p>Now we can can read the first dataset for the loans using manualy defined schema:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">loanSchema = </span><span style="color:#bf616a;">StructType</span><span style="color:#c0c5ce;">([
+    </span><span style="color:#bf616a;">StructField</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">quarterDate</span><span style="color:#c0c5ce;">&quot;, </span><span style="color:#bf616a;">DateType</span><span style="color:#c0c5ce;">(), </span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">),
+    </span><span style="color:#bf616a;">StructField</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">percent</span><span style="color:#c0c5ce;">&quot;, </span><span style="color:#bf616a;">FloatType</span><span style="color:#c0c5ce;">(), </span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">)])
+
+loanDf = spark.sparkContext \
+    .</span><span style="color:#bf616a;">textFile</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">data.csv</span><span style="color:#c0c5ce;">&quot;) \
+    .</span><span style="color:#bf616a;">zipWithIndex</span><span style="color:#c0c5ce;">() \
+    .</span><span style="color:#bf616a;">filter</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">x</span><span style="color:#c0c5ce;">: x[</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">] &gt; </span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">) \
+    .</span><span style="color:#bf616a;">map</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">x</span><span style="color:#c0c5ce;">: x[</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">].</span><span style="color:#bf616a;">split</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">,</span><span style="color:#c0c5ce;">&#39;)) \
+    .</span><span style="color:#bf616a;">map</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">x</span><span style="color:#c0c5ce;">: (datetime.</span><span style="color:#bf616a;">strptime</span><span style="color:#c0c5ce;">(x[</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">], &#39;</span><span style="color:#d08770;">%Y%b</span><span style="color:#c0c5ce;">&#39;), </span><span style="color:#bf616a;">float</span><span style="color:#c0c5ce;">(x[</span><span style="color:#d08770;">4</span><span style="color:#c0c5ce;">]))) \
+    .</span><span style="color:#bf616a;">toDF</span><span style="color:#c0c5ce;">(loanSchema)
+</span></code></pre>
+<p>While reading <code>data.csv</code> file we skip first 5 header rows. Then we split each row by comma and we take only 0 and 4 columns. We parse them into DateTime and Float types
+respectively.</p>
+<h4 id="prices">Prices</h4>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">priceSchema = </span><span style="color:#bf616a;">StructType</span><span style="color:#c0c5ce;">([
+    </span><span style="color:#bf616a;">StructField</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">quarterDate</span><span style="color:#c0c5ce;">&quot;, </span><span style="color:#bf616a;">DateType</span><span style="color:#c0c5ce;">(), </span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">),
+    </span><span style="color:#bf616a;">StructField</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">index2010</span><span style="color:#c0c5ce;">&quot;, </span><span style="color:#bf616a;">FloatType</span><span style="color:#c0c5ce;">(), </span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">)])
+
+priceDf = spark.read.</span><span style="color:#bf616a;">format</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">csv</span><span style="color:#c0c5ce;">&quot;).</span><span style="color:#bf616a;">option</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">header</span><span style="color:#c0c5ce;">&quot;, </span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">) \
+    .</span><span style="color:#bf616a;">schema</span><span style="color:#c0c5ce;">(priceSchema) \
+    .</span><span style="color:#bf616a;">load</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">QDEN628BIS.csv</span><span style="color:#c0c5ce;">&quot;) \
+    .</span><span style="color:#bf616a;">select</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">to_date</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">col</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">quarterDate</span><span style="color:#c0c5ce;">&quot;)).</span><span style="color:#bf616a;">alias</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">quarterDate</span><span style="color:#c0c5ce;">&quot;), </span><span style="color:#bf616a;">col</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">index2010</span><span style="color:#c0c5ce;">&quot;))
+</span></code></pre>
+<p>We use similar schema for reading prices. This time we use standard Spark API to read CVS files, since the prices file is much simpler as it has only one row as header 
+and exactly two column that we need.</p>
+<h3 id="debug">Debug</h3>
+<p>We can also print Spark DataFrame schemas and data samples for both datasets.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">loanDf.</span><span style="color:#bf616a;">show</span><span style="color:#c0c5ce;">()
+loanDf.</span><span style="color:#bf616a;">printSchema</span><span style="color:#c0c5ce;">()
+
+priceDf.</span><span style="color:#bf616a;">show</span><span style="color:#c0c5ce;">()
+priceDf.</span><span style="color:#bf616a;">printSchema</span><span style="color:#c0c5ce;">()
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">+-----------+-------+
+</span><span style="color:#c0c5ce;">|</span><span style="color:#bf616a;">quarterDate</span><span style="color:#c0c5ce;">|</span><span style="color:#bf616a;">percent</span><span style="color:#c0c5ce;">|
+</span><span style="color:#bf616a;">+-----------+-------+
+</span><span style="color:#c0c5ce;">| </span><span style="color:#bf616a;">2020-07-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.24</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2020-06-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.28</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2020-05-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.27</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2020-04-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.22</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2020-03-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.18</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2020-02-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.26</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2020-01-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.35</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2019-12-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.27</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2019-11-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.25</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2019-10-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.22</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2019-09-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.24</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2019-08-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.36</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2019-07-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.49</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2019-06-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.61</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2019-05-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.67</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2019-04-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.72</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2019-03-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.79</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2019-02-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.85</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2019-01-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.95</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">2018-12-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">1.94</span><span style="color:#c0c5ce;">|
+</span><span style="color:#bf616a;">+-----------+-------+
+only</span><span style="color:#c0c5ce;"> showing top 20 rows
+
+</span><span style="color:#bf616a;">root
+ </span><span style="color:#c0c5ce;">|</span><span style="color:#bf616a;">--</span><span style="color:#c0c5ce;"> quarterDate: date (nullable = true)
+ |</span><span style="color:#bf616a;">--</span><span style="color:#c0c5ce;"> percent: float (nullable = true)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">+-----------+---------+
+</span><span style="color:#c0c5ce;">|</span><span style="color:#bf616a;">quarterDate</span><span style="color:#c0c5ce;">|</span><span style="color:#bf616a;">index2010</span><span style="color:#c0c5ce;">|
+</span><span style="color:#bf616a;">+-----------+---------+
+</span><span style="color:#c0c5ce;">| </span><span style="color:#bf616a;">1970-01-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">37.6187</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1970-04-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">39.315</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1970-07-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">39.7142</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1970-10-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">40.2131</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1971-01-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">41.5103</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1971-04-01</span><span style="color:#c0c5ce;">|   </span><span style="color:#bf616a;">43.506</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1971-07-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">44.1047</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1971-10-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">44.2045</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1972-01-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">45.1025</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1972-04-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">46.2002</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1972-07-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">46.6991</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1972-10-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">46.9984</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1973-01-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">47.6969</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1973-04-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">49.8922</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1973-07-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">50.3911</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1973-10-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">50.3911</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1974-01-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">51.4887</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1974-04-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">53.5842</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1974-07-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">54.0831</span><span style="color:#c0c5ce;">|
+| </span><span style="color:#bf616a;">1974-10-01</span><span style="color:#c0c5ce;">|  </span><span style="color:#bf616a;">53.7838</span><span style="color:#c0c5ce;">|
+</span><span style="color:#bf616a;">+-----------+---------+
+only</span><span style="color:#c0c5ce;"> showing top 20 rows
+
+</span><span style="color:#bf616a;">root
+ </span><span style="color:#c0c5ce;">|</span><span style="color:#bf616a;">--</span><span style="color:#c0c5ce;"> quarterDate: date (nullable = true)
+ |</span><span style="color:#bf616a;">--</span><span style="color:#c0c5ce;"> index2010: float (nullable = true)
+</span></code></pre><h3 id="join-via-sql">Join via SQL</h3>
+<p>Now we can use Spar SQL to join both dataframes using <code>quarterDate</code> column:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">priceDf.</span><span style="color:#bf616a;">createOrReplaceTempView</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">price</span><span style="color:#c0c5ce;">&quot;)
+loanDf.</span><span style="color:#bf616a;">createOrReplaceTempView</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">loan</span><span style="color:#c0c5ce;">&quot;)
+
+joined = spark.</span><span style="color:#bf616a;">sql</span><span style="color:#c0c5ce;">(
+    &quot;</span><span style="color:#a3be8c;">select p.quarterDate, l.percent, p.index2010 from price p inner join loan l on p.quarterDate = l.quarterDate order by p.quarterDate</span><span style="color:#c0c5ce;">&quot;) \
+    .</span><span style="color:#bf616a;">toPandas</span><span style="color:#c0c5ce;">()
+</span></code></pre>
+<p>First, we define temporary SQL views to be able to reference our dataframes in SQL expressions.
+Then we use plain SQL to join both dataframes on <code>quarterDate</code> column and return 3 column as a result.
+PySpark is also integrated with Pandas, so that we convert Spark DataFrame to Pandas DataFrame to be able to use it further with Plotly library</p>
+<p>We can also preview the joined data via python code <code>print(joined)</code></p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">   </span><span style="color:#bf616a;">quarterDate</span><span style="color:#c0c5ce;">  percent   index2010
+</span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;">   2000-01-01     6.71  101.183899
+</span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;">   2000-04-01     6.56  101.403297
+</span><span style="color:#bf616a;">2</span><span style="color:#c0c5ce;">   2000-07-01     6.72  101.462097
+</span><span style="color:#bf616a;">3</span><span style="color:#c0c5ce;">   2000-10-01     6.70  101.441597
+</span><span style="color:#bf616a;">4</span><span style="color:#c0c5ce;">   2001-01-01     6.24  101.421303
+</span><span style="color:#bf616a;">..</span><span style="color:#c0c5ce;">         ...      ...         ...
+</span><span style="color:#bf616a;">76</span><span style="color:#c0c5ce;">  2019-01-01     1.95  146.000000
+</span><span style="color:#bf616a;">77</span><span style="color:#c0c5ce;">  2019-04-01     1.72  149.699997
+</span><span style="color:#bf616a;">78</span><span style="color:#c0c5ce;">  2019-07-01     1.49  151.800003
+</span><span style="color:#bf616a;">79</span><span style="color:#c0c5ce;">  2019-10-01     1.22  155.500000
+</span><span style="color:#bf616a;">80</span><span style="color:#c0c5ce;">  2020-01-01     1.35  155.899994
+
+</span><span style="color:#bf616a;">[81</span><span style="color:#c0c5ce;"> rows x 3 columns]
+</span></code></pre><h3 id="visualize-via-plotly">Visualize via Plotly</h3>
+<p>Before we use these joined data in the plot, we need to normalize the numbers, so that will look nicer on the plot. Normalization also gives ability 
+to compare both datasets on the same plot. If we do not normalize than Y axis will be too high and it will be hard to compare both scatter plots visually.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">normalize</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">df</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">feature_name</span><span style="color:#c0c5ce;">):
+    result = df.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+    max_value = df[feature_name].</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">()
+    min_value = df[feature_name].</span><span style="color:#bf616a;">min</span><span style="color:#c0c5ce;">()
+    result[feature_name] = (
+        df[feature_name] - min_value) / (max_value - min_value)
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">result[feature_name]
+
+percentValues = </span><span style="color:#bf616a;">normalize</span><span style="color:#c0c5ce;">(joined, &quot;</span><span style="color:#a3be8c;">percent</span><span style="color:#c0c5ce;">&quot;)
+indexValues = </span><span style="color:#bf616a;">normalize</span><span style="color:#c0c5ce;">(joined, &quot;</span><span style="color:#a3be8c;">index2010</span><span style="color:#c0c5ce;">&quot;)
+</span></code></pre>
+<p>After normalization we can use Plotly API to make a plot and save it into HTML file:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">data = [go.</span><span style="color:#bf616a;">Scatter</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">x</span><span style="color:#c0c5ce;">=joined.quarterDate, </span><span style="color:#bf616a;">y</span><span style="color:#c0c5ce;">=percentValues, </span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#d08770;">% Lo</span><span style="color:#a3be8c;">an for House Purchase</span><span style="color:#c0c5ce;">&quot;, </span><span style="color:#bf616a;">text</span><span style="color:#c0c5ce;">=joined.percent),
+        go.</span><span style="color:#bf616a;">Scatter</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">x</span><span style="color:#c0c5ce;">=joined.quarterDate, </span><span style="color:#bf616a;">y</span><span style="color:#c0c5ce;">=indexValues, </span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">Residential Property Price (quarterly)</span><span style="color:#c0c5ce;">&quot;, </span><span style="color:#bf616a;">text</span><span style="color:#c0c5ce;">=joined.index2010)]
+fig = go.</span><span style="color:#bf616a;">Figure</span><span style="color:#c0c5ce;">(data, </span><span style="color:#bf616a;">layout_title_text</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">Loan vs. Property Price</span><span style="color:#c0c5ce;">&quot;)
+</span><span style="color:#bf616a;">plot</span><span style="color:#c0c5ce;">(fig, </span><span style="color:#bf616a;">filename</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">plot.html</span><span style="color:#c0c5ce;">&#39;)
+</span></code></pre>
+<p>If we open <code>plot.html</code> file in the internet browser, then it will look like the following:</p>
+<img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;34f7ece84a5e14a500.png" />
+          </div>
+          <div class="container has-text-centered">
+            
+  <p class="is-size-5">
+    Share:
+    <a class="link" data-sharer="facebook" data-url='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;pyspark-plotly&#x2F;' href="javascript:void(0);" title="Share on facebook">
+      <span class="icon">
+        <i class="fab fa-facebook-square"></i>
+      </span>
+    </a>
+    <a class="link" data-sharer="twitter" data-title='PySpark &amp; Plotly' data-url='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;pyspark-plotly&#x2F;' href="javascript:void(0);" title="Share on twitter">
+      <span class="icon">
+        <i class="fab fa-twitter"></i>
+      </span>
+    </a>
+    <a class="link" data-sharer="linkedin" data-url='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;pyspark-plotly&#x2F;' href="javascript:void(0);" title="Share on linkedin">
+      <span class="icon">
+        <i class="fab fa-linkedin"></i>
+      </span>
+    </a>
+    <a class="link" data-sharer="reddit" data-url='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;pyspark-plotly&#x2F;' href="javascript:void(0);" title="Share on reddit">
+      <span class="icon">
+        <i class="fab fa-reddit"></i>
+      </span>
+    </a>
+    <a class="link" data-sharer="hackernews" data-title="PySpark &amp; Plotly" data-url='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;pyspark-plotly&#x2F;' href="javascript:void(0);" title="Share on hackernews">
+      <span class="icon">
+        <i class="fab fa-hacker-news"></i>
+      </span>
+    </a>
+    <a class="link" data-sharer="whatsapp" data-title="PySpark &amp; Plotly" data-url='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;pyspark-plotly&#x2F;' href="javascript:void(0);" title="Share on whatsapp">
+      <span class="icon">
+        <i class="fab fa-whatsapp-square"></i>
+      </span>
+    </a>
+  </p>
+
+          </div>
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="field">
+        <p class="control has-icons-right">
+          <input class="input" id="search" placeholder="Search this website." type="search" />
+          <span class="icon is-small is-right">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+      <div class="search-results">
+        <div class="search-results__items"></div>
+      </div>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+   
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+           
+          <div class="level-item has-text-centered">
+            <a
+              class="button is-black is-outlined"
+              href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;cv&#x2F;"
+            >
+              CV<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+            
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+
+    
+
+  
+  <footer class="py-4 has-background-light">
+    <p class="has-text-centered">
+      Built with
+      <span class="icon is-small">
+        <i class="fas fa-code fa-xs"></i>
+      </span>
+      code and
+      <span class="icon is-small">
+        <i class="fas fa-heart fa-xs"></i>
+      </span>
+      love <br /> Powered By
+      <span class="icon is-small">
+        <i class="fas fa-power-off fa-xs"></i>
+      </span>
+      Zola
+    </p>
+  </footer>
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;search_index.en.js'></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;js&#x2F;site.js'></script>
+
+    
+</body>
+
+</html>

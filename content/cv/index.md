@@ -19,10 +19,10 @@ Data Scientist
 **Blog-posts:** [https://nnovakova.github.io](https://nnovakova.github.io)
 
 **Education:** 
-- Ph.D. in Computer Science 12/2007-02/2014, Donetsk National University, Ukraine
-- Master in Applied Economy 09/2006-01/2009, Donetsk National University, Ukraine
-- Master in Computer Science (Diploma with honors) 09/2006-06/2007, Donetsk National University, Ukraine 
-- Bachelor in Computer Science (Diploma with honors) 09/2002-06/2006, Donetsk National University, Ukraine 
+- Ph.D. in Computer Science 12.2007-02.2014, Donetsk National University, Ukraine
+- Master in Applied Economy 09.2006-01.2009, Donetsk National University, Ukraine
+- Master in Computer Science (Diploma with honors) 09.2006-06.2007, Donetsk National University, Ukraine 
+- Bachelor in Computer Science (Diploma with honors) 09.2002-06.2006, Donetsk National University, Ukraine 
 
 **Summary:** 13 years of academic and hands-on experience in the field of Software Development with focus on data analysis and machine learning.
 
@@ -41,7 +41,7 @@ _Technical expertise:_
 
 ## Work Experience
 
-**Data Scientist, Data Engineer, Java Developer in Minds-Medical GmbH, Germany**
+**Data Scientist, Data Engineer, Java Developer in Minds-Medical GmbH, Frankfurt, Germany**
 
 _2018 – present_
 
@@ -115,7 +115,7 @@ _2011 – 2013_
 </table>  
 &nbsp;      
 
-**Scientific Officer/Lecturer in Donetsk National University, Ukraine**
+**Scientific Officer, Lecturer in Donetsk National University, Ukraine**
 
 _2007 – 2014_
 
@@ -213,7 +213,7 @@ _2007_
 - Supervised Learning with scikit-learn
 - Statistical Thinking in Python
 - Introduction to Python
-- Into to SQL for Data Science
+- Intro to SQL for Data Science
 - Intermediate Python for Data Science
 - Python Data Science Toolbox
 - Importing Data in Python
