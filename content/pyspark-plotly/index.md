@@ -4,15 +4,15 @@ date=2020-10-31
 
 [taxonomies]
 categories = ["Data Engineering"]
-tags = ["post", "python"]
+tags = ["python", "spark", "sql", "plotly"]
 
 [extra]
-category="blog"
+toc = true
 
 +++
 
 Apache Spark is an abstract query engine that allows to process data at scale. Spark provides an API in several languages such as Scala, Java and Python.
-Today I would like to show you how to use Python and PySpark to do data analytics in Spark SQL API. I will also use Plotly library to visualize processed data.
+Today I would like to show you how to use Python and [PySpark](https://databricks.com/glossary/pyspark) to do data analytics in Spark SQL API. I will also use Plotly library to visualise processed data.
 
 ## Datasets
 
@@ -53,7 +53,7 @@ from pyspark.sql.functions import to_date, col, date_format
 
 ### CSV files into Spark Dataframes
 
-At the very begining we need to create few objects for Spark runtime:
+At the very beginning we need to create few objects for Spark runtime:
 
 ```python
 spark = SparkSession.builder.appName('LoanVsPrices').getOrCreate()
@@ -65,7 +65,7 @@ We will use them later in the program code.
 
 #### Loans
 
-Now we can can read the first dataset for the loans using manualy defined schema:
+Now we can can read the first dataset for the loans using manually defined schema:
 
 ```python
 loanSchema = StructType([
@@ -213,8 +213,8 @@ We can also preview the joined data via python code `print(joined)`
 
 ### Visualize via Plotly
 
-Before we use these joined data in the plot, we need to normalize the numbers, so that will look nicer on the plot. Normalization also gives ability 
-to compare both datasets on the same plot. If we do not normalize than Y axis will be too high and it will be hard to compare both scatter plots visually.
+Before we use these joined data in the plot, we need to normalise the numbers, so that will look nicer on the plot. Normalisation also gives ability 
+to compare both datasets on the same plot. If we do not normalise then Y axis will be too high, so that it will be hard to compare both scatter plots visually.
 
 ```python
 def normalize(df, feature_name):
@@ -229,7 +229,7 @@ percentValues = normalize(joined, "percent")
 indexValues = normalize(joined, "index2010")
 ```
 
-After normalization we can use Plotly API to make a plot and save it into HTML file:
+After normalisation we can use Plotly API to make a plot and save it into HTML file:
 
 ```python
 data = [
@@ -248,12 +248,18 @@ If we open `plot.html` file in the internet browser, then it will look like the 
 
 ### Data Analyst Summary
 
-Despite the 2008 financial crysis in housing led to price drop, the house purchase loan got increased and still increasing up to 2020 year.
-Bank loan interest rate may seem cheap, but regular house prices increases dramatically, so that cheap loan does not help that much. One has to stil pay a lot
-in order to afford a house or own appartment.
+Despite the 2008 financial crisis in housing led to price drop, the house purchase loan got increased and still increasing up to 2020 year.
+Bank loan interest rate may seem cheap, but regular house prices increases dramatically, so that cheap loan does not help that much. One has to still pay a lot
+in order to afford a house or own apartment.
 
 ## Summary
 
-We have seesn that one can easily use PySpark and its SQL API to process and analyse the data. In real life, we should not use use Spark to analyze such 
-small files, this can be done using other Python libraries. However, this example can be used to write another program to analyze peta-byte scale data
+We have seen that one can easily use PySpark and its SQL API to process and analyse the data. In real life, we should not use use Spark to analyse such 
+small files, this can be done using other Python libraries. However, this example can be used to write another program to analyse peta-byte scale data
 using Spark cluster with massive parallelism.
+
+## Links
+
+1. GitHub Project: [https://github.com/nnovakova/pyspark-plotly](https://github.com/nnovakova/pyspark-plotly)
+2. [Plotly Documentation](https://plotly.com/python/)
+3. [Spark SQL Documentation](https://spark.apache.org/sql/)
