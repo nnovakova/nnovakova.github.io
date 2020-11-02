@@ -6,19 +6,21 @@ date=2020-02-25
 toc_disabled=true
 +++
 
-**Dr. Nadiia Novakova**
-
-Data Scientist
-
-**Birthday:** 27th of April 1985
-
-**Contact:** nadiia.novakova at gmail dot com, cell: +49 152 389 932 26
+<table align="left">
+    <tr>
+        <td align="left">{{ resize_image(path="cv/photo_nnovakova.jpg", width=190, height=220, op="fit_height") }}</td>        
+        <td align="left">            
+            <b>Dr. Nadiia Novakova</b><br/><br/>
+            <p>Data Scientist</p>
+            <b>Birthday:</b> 27th of April 1985<br/><br/>
+            <b>Contact:</b> nadiia.novakova at gmail dot com, cell: +49 152 389 932 26<br/><br/>
+            <b>Code:</b> <a href="https://github.com/nnovakova">https://github.com/nnovakova</a><br/><br/>
+            <b>Blog-posts:</b> <a href="https://nnovakova.github.io">https://nnovakova.github.io</a><br/>
+        </td>
+    </tr>    
+</table> 
 
 {{ social_links() }}
-
-**Code:** [https://github.com/nnovakova](https://github.com/nnovakova)
-
-**Blog-posts:** [https://nnovakova.github.io](https://nnovakova.github.io)
 
 **Education:** 
 - Ph.D. in Computer Science 12.2007-02.2014, Donetsk National University (DNU), Ukraine
