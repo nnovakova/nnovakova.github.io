@@ -1,10 +1,10 @@
 +++
-title="Named Entity Recognition using Apache OpenNLP. Customization Model: Data Preparation."
+title="NER using OpenNLP. Customization Model: Data Preparation."
 date=2020-11-10
 
 [taxonomies]
 categories = ["Programming"]
-tags = ["java","opennlp","corpus annotation","model customisation"]
+tags = ["java","opennlp","corpus annotation","model customization"]
 
 [extra]
 toc = true
