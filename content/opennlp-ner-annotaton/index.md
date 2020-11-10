@@ -4,15 +4,13 @@ date=2020-11-10
 
 [taxonomies]
 categories = ["Programming"]
-tags = ["python", "static typing"]
+tags = ["java","opennlp","corpus annotation","model customisation"]
 
 [extra]
 toc = true
 
 +++
 
-<h1>Named Entity Recognition using Apache OpenNLP. Customization Model: Data Preparation.</h1>
-When we are talking about NER, we are talking about one sub-task of a NLP(Natural Language Processing). 
 <br><br><b>Why NLP?</b><br>
  Natural language processing is a component of Text mining that performs a special kind of linguistic analysis that essentially helps a machine
 “read” text. So this part of Data Science provides methods and approaches to mining patterns in texts.
