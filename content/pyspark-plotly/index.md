@@ -14,7 +14,7 @@ toc = true
 Apache Spark is an abstract query engine that allows to process data at scale. Spark provides an API in several languages such as Scala, Java and Python.
 Today I would like to show you how to use Python and [PySpark](https://databricks.com/glossary/pyspark) to do data analytics in Spark SQL API. 
 I will also use Plotly library to visualise processed data.
-
+<!-- more -->
 ## Datasets
 
 I am going to use public datasets available at:

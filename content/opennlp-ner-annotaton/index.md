@@ -3,7 +3,7 @@ title="NER using OpenNLP. Data Preparation."
 date=2020-11-10
 
 [taxonomies]
-categories = ["NLP"]
+categories = ["NLP", "Data Science"]
 tags = ["opennlp","corpus annotation","model customization"]
 
 [extra]
@@ -15,7 +15,7 @@ toc = true
 
  Natural language processing is a component of Text Mining that performs a special kind of linguistic analysis that essentially helps a machine
 to __read__ text. So this part of Data Science provides methods and approaches to mining patterns in texts. Thus NER is just one in the list of NLP tasks.
-
+<!-- more -->
 NER has a lot of synonyms, such as Entity Identification, Entity Chunking and Entity Extraction. 
 
 **Named Entity Recognition** is a process of finding named-entities (entities, valuable for some special domain) in the text.
