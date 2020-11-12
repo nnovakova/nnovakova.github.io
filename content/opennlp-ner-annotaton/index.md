@@ -11,7 +11,7 @@ toc = true
 
 +++
 
-# Why NLP?
+## Why NLP?
 
  Natural language processing is a component of Text Mining that performs a special kind of linguistic analysis that essentially helps a machine
 to __read__ text. So this part of Data Science provides methods and approaches to mining patterns in texts. Thus NER is just one in the list of NLP tasks.
