@@ -12,6 +12,7 @@ toc = true
 +++
 
 In [the previous article](https://nnovakova.github.io/opennlp-ner-annotaton/) I described how to prepare training data (corpus) for training with OpenNLP for a specific domain and custom entities. 
+<!-- more -->
 
 Now it is time to use annotated corpus for the next stage of NLP pipeline.
 Before, we completed the first step of the pipeline – training data preparation. Now it is time to start real learning process.
