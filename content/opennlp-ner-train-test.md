@@ -106,3 +106,4 @@ Pandemieausl
 OpenNLP is a robust and free open source alternative for NER task solving. 
 The biggest problem when using OpenNLP is a corpus preparation. It takes a lot of resources and requires accurate annotation. This accuracy directly affects the training quality.
 
+Project source code using OpenNLP you can found here: [https://github.com/nnovakova/opennlp-ner](https://github.com/nnovakova/opennlp-ner)
