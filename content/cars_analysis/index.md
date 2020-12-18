@@ -338,7 +338,9 @@ I have an advice that in southern states white is more preferable than in northe
 ```python
 car_by_colors_state = us_cars.groupby(['color','state'])['state'].count().reset_index(name='count').sort_values('count',ascending = False)
 ```
+
 {{ resize_image(path="cars_analysis/images/Screen Shot 2020-12-16 at 21.58.45.png", width=400, height=700, op="fit_width") }}
+
 ```python
 white_color_in_state=car_by_colors_state[car_by_colors_state['color']=='white'].head(5)
 black_color_in_state=car_by_colors_state[car_by_colors_state['color']=='black'].head(5)
@@ -390,7 +392,9 @@ layout = go.Layout(
 fig = go.Figure(data = [white_trace,black_trace,gray_trace,silver_trace,red_trace], layout = layout)
 iplot(fig)
 ```
+
 {{ resize_image(path="cars_analysis/images/Screen Shot 2020-12-16 at 22.00.10.png", width=800, height=700, op="fit_width") }}
+
 As I previously guessed, the white cars are selling better in southern states such as Texas, California and by surprise in Michigan, which is northern state. 
 Black cars are popular in northern Pennsylvania. What is strange, that in southern Florida white cars are less popular than black ones. 
 At the same time other colours are also represented.
