@@ -14,6 +14,8 @@ toc = true
 As I am working with Java code, I also find static types in my project as a useful thing. They help me to reason about my code
 and avoid simple bugs, for example if I pass incorrect argument to some method or function. 
 
+<!-- more -->
+
 [Python](https://en.wikipedia.org/wiki/Python_%28programming_language%29) is a dynamically-typed language. 
 This property makes it faster to write code, but NOT necessarily easier to read. Type annotations and type checkers appeared in Python not so long time ago. Today, there are several type checkers in Python eco-system:
 
