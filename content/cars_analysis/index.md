@@ -24,7 +24,7 @@ I think it is going to be fascinating to work with these datasets because of the
 
 The goal of this research is to show the common trends in the totaly different car markets as well as people preferences in different societies, but not to estimate total sales and so on. I believe this research is representative enough for this, but is not enough to assess this market.  
 
-The full source code you can find here: [GitHub](TODO)
+The full source code you can find here: [GitHub](https://github.com/nnovakova/cars)
 
 # Ukrainian Cars
 
