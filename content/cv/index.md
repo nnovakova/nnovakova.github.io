@@ -11,7 +11,7 @@ toc_disabled=true
         <td align="left">{{ resize_image(path="cv/photo_nnovakova.jpg", width=190, height=220, op="fit_height") }}</td>        
         <td align="left">            
             <b>Dr. Nadiia Novakova</b><br/><br/>
-            <p>Data Scientist</p>
+            <b><h3>Data Scientist</h3></b>
             <b>Birthday:</b> 27th of April 1985<br/><br/>
             <b>Contact:</b> nadiia.novakova at gmail dot com, cell: +49 152 389 932 26<br/><br/>
             <b>Code:</b> <a href="https://github.com/nnovakova">https://github.com/nnovakova</a><br/><br/>
@@ -28,16 +28,16 @@ toc_disabled=true
 - Master in Computer Science (Diploma with honors) 09.2006-06.2007, DNU, Ukraine 
 - Bachelor in Computer Science (Diploma with honors) 09.2002-06.2006, DNU, Ukraine 
 
-**Summary:** 13 years of academic and hands-on experience in the field of Software Development, Data Sceince and Machine Learning.
+**Summary:** 13 years of professional experience in the field of Data Science, Machine Learning and Software Development.
 
 _Development practice:_
 
+- Feature Engineering
 - Agile, Scrum
-- CI/CD, Unit testing, Test automation
-- Code Review
+- CI/CD, unit testing, test automation
 
 _Technical expertise:_
-- Developing commercial applications in Java, Python, MongoDB, Windows, Linux, Docker
+- Developing machine learning applications in Python, Java with MongoDB, Windows, Linux, Docker
 - Natural Language Processing, Machine Learning, Data Mining
 - Good expertise in web technologies: JavaScript, HTML/CSS
 
@@ -45,7 +45,7 @@ _Technical expertise:_
 
 ## Work Experience
 
-**Data Scientist, Data Engineer, Java Developer in Minds-Medical GmbH, Frankfurt, Germany**
+**Data Scientist in Minds-Medical GmbH, Frankfurt, Germany**
 
 _2018 – present_
 
@@ -59,12 +59,13 @@ _2018 – present_
     <tr>
         <td align="left">Responsibilities</td>                
         <td align="left">
-        Models designing, creating and implementation based on machine learning algorithms and artificial intelligence methods in the field of pattern recognition and Neuro-Linguistic Programming (NLP). Using Named Entity recognition approaches in the tasks of classification and data anonymization. Comprehensive model development for documents logical zones recognition based on a combination of Tensorflow pre-trained image recognition models and extracted meta-data from HTML/CSS. 
+        Model designing and implementation based on machine learning algorithms and artificial intelligence methods in the field of pattern recognition and <b>Neuro-Linguistic Programming (NLP)</b>. Using <b>Named Entity recognition (NER)</b> approaches for data classification and anonymization.<br/><br/>        
+        Comprehensive model development for logical zones recognition in printed documents based on a combination of <b>Tensorflow</b> pre-trained image recognition models and extracted meta-data from HTML/CSS. 
         </td>        
     </tr>
     <tr>
         <td align="left">Technologies</td>
-        <td align="left">Java, Python, SpringBoot, MongoDB, Git, Bitbucket, Apache OpenNLPTool, Tensorflow, Swagger, Docker, IntelliJ, Junit, Mockito, HTML/CSS, MySQL, MSSQL</td>        
+        <td align="left">Python, Java, Apache OpenNLP, Tensorflow, SpringBoot, MongoDB, Git, Bitbucket, Swagger, Docker, IntelliJ, Junit, Mockito, HTML/CSS, MySQL, MSSQL</td>        
     </tr>
 </table>  
 &nbsp;      
@@ -82,11 +83,11 @@ _2018_
     </tr>
     <tr>
         <td align="left">Responsibilities</td>                
-        <td align="left"> Implementation of a prototype for visualisation of social networks.</td>        
+        <td align="left">Implementation of a prototype for visualisation of social networks.</td>        
     </tr>
     <tr>
         <td align="left">Technologies</td>
-        <td align="left">JavaScript, D3.js, Python</td>        
+        <td align="left">Python, JavaScript, D3.js</td>        
     </tr>
 </table>  
 &nbsp;
@@ -95,7 +96,7 @@ _2018_
 
 _2014 - 2016_
 
-**Software Engineer, Data Analyst in DORIS, Ukraine (part-time)**
+**Data Analyst in DORIS, Ukraine (part-time)**
 
 _2011 – 2013_
 
@@ -109,12 +110,12 @@ _2011 – 2013_
     <tr>
         <td align="left">Responsibilities</td>                
         <td align="left">
-          Financial statements analysis, modules of the economic state and business planning in the automated business control system implementation
+        Financial statements analysis, modules of the economic state and business planning in the automated business control system implementation
         </td>        
     </tr>
     <tr>
         <td align="left">Technologies</td>
-        <td align="left">Java, MATLAB, MS Excel</td>        
+        <td align="left">Matlab, SQL, Java, MS Excel</td>        
     </tr>
 </table>  
 &nbsp;      
@@ -133,7 +134,7 @@ _2007 – 2014_
     <tr>
         <td align="left">Responsibilities</td>                
         <td align="left">
-          Teaching subjects: Evaluation and Fuzzy Logic models, Risk Control and Decision Making Systems, Relational Database Management Systems, Web-design
+        Teaching subjects: Evaluation and Fuzzy Logic models, Risk Control and Decision Making Systems, Relational Database Management Systems, Web-design
         </td>        
     </tr>
     <tr>
@@ -171,13 +172,13 @@ _2007_
     <tr>
         <td align="left">Software development tools</td>
         <td align="left">
-        IntelliJ, Git, Docker, Swagger, Anaconda
+        Jupyter, Anaconda, Git, Docker, Swagger, IntelliJ
         </td>        
     </tr>
     <tr>
         <td align="left">Data Management</td>
         <td align="left">
-        MongoDB, Oracle/PLSQL, MySQL, MSSQL, MS Excel, Tableau
+        Tableau, MongoDB, Oracle/PLSQL, MySQL, MSSQL, MS Excel
         </td>        
     </tr>
     <tr>
@@ -186,7 +187,7 @@ _2007_
     </tr>
     <tr>
         <td align="left">Programming languages, technologies</td>
-        <td align="left">Java, Python</td>        
+        <td align="left">Python, Java</td>        
     </tr>
     <tr>
         <td align="left">Web</td>
@@ -198,7 +199,7 @@ _2007_
     </tr>
     <tr>
         <td align="left">Libraries / Tool-kits</td>
-        <td align="left">Spring, SpringBoot, Numpy, Pandas, OpenNLP, scikit-learn</td>        
+        <td align="left">Numpy, Pandas, OpenNLP, scikit-learn, Spring, SpringBoot,</td>        
     </tr>
 </table>
 &nbsp;
