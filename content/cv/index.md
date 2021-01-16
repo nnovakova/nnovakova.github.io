@@ -53,7 +53,7 @@ _2018 – present_
     <tr>
         <td align="left">Company</td>
         <td align="left">
-        Developing an artificial intelligence system for medical coding
+        Developing an artificial intelligence system for medical coding. <a href="https://www.minds-medical.de">minds-medical.de</a>
         </td>        
     </tr>
     <tr>
@@ -78,7 +78,7 @@ _2018_
     <tr>
         <td align="left">Company</td>
         <td align="left">
-        Dynamic visualisation of networks. <a href="http://networkval.com">http://networkval.com</a>
+        Dynamic visualisation of networks. <a href="http://networkval.com">networkval.com</a>
         </td>        
     </tr>
     <tr>
