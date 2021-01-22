@@ -1,7 +1,18 @@
-# Basic Feature Engineering Techniques for Machine Learning (under data heterogeneity)
++++
+title="Basic Feature Engineering Techniques for ML"
+date=2021-01-22
+draft = false
+[taxonomies]
+categories = ["Data Science"]
+tags = ["python", "data-transformation", "feature-engineering"]
+
+[extra]
+toc = true
+
++++
 
 In this topic I want to describe some besic data transformation and analysing techniques to prepare data for modeling.
-For demontstration I took Medical Cost Personal Datasets from Kaggle.
+For demonstration I took Medical Cost Personal Datasets from Kaggle.
 
 Medical Cost Personal Datasets
 Insurance Forecast by using Linear Regression
