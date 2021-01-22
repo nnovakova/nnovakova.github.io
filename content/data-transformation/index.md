@@ -11,12 +11,10 @@ toc = true
 
 +++
 
-In this topic I want to describe some besic data transformation and analysing techniques to prepare data for modeling.
+In this topic I want to describe some basic data transformation and analysing techniques to prepare data for modelling.
 For demonstration I took Medical Cost Personal Datasets from Kaggle.
-
-Medical Cost Personal Datasets
-Insurance Forecast by using Linear Regression
-[https://www.kaggle.com/mirichoi0218/insurance]
+<!-- more -->
+[Medical Cost Personal Datasets Insurance Forecast by using Linear Regression](https://www.kaggle.com/mirichoi0218/insurance)
 
 
 ```python
@@ -35,10 +33,6 @@ warnings.filterwarnings('ignore')
 
 ```python
 os.chdir('/python/insurence/')
-```
-
-
-```python
 df = pd.read_csv("insurance.csv")
 ```
 
@@ -130,24 +124,24 @@ df.head(5)
 
 
 
-#### Numerical:
+# Numerical
 
-age: age of primary beneficiary
+- age: age of primary beneficiary
 
-bmi: Body mass index, providing an understanding of body, weights that are relatively high or low relative to height,
+- bmi: body mass index, providing an understanding of a body, weights that are relatively high or low relative to height,
 objective index of body weight (kg / m ^ 2) using the ratio of height to weight, ideally 18.5 to 24.9
 
-charges: Individual medical costs billed by health insurance
+- charges: individual medical costs billed by health insurance
 
-children: Number of children covered by health insurance / Number of dependents
+- children: number of children covered by health insurance / number of dependents
 
-#### Categorical:
+# Categorical
 
-sex: insurance contractor gender, female, male
+- sex: insurance contractor gender, female, male
 
-smoker: smoking or not
+- smoker: smoking or not
 
-region: the beneficiary's residential area in the US, northeast, southeast, southwest, northwest.
+- region: the beneficiary's residential area in the US, northeast, southeast, southwest, northwest.
 
 
 ```python
@@ -238,47 +232,47 @@ df.describe()
   </tbody>
 </table>
 </div>
-
-
+<br/>
 
 
 ```python
 df.info()
+
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1338 entries, 0 to 1337
+Data columns (total 7 columns):
+  #   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+  0   age       1338 non-null   int64  
+  1   sex       1338 non-null   object 
+  2   bmi       1338 non-null   float64
+  3   children  1338 non-null   int64  
+  4   smoker    1338 non-null   object 
+  5   region    1338 non-null   object 
+  6   charges   1338 non-null   float64
+dtypes: float64(2), int64(2), object(3)
+memory usage: 73.3+ KB
 ```
 
-    <class 'pandas.core.frame.DataFrame'>
-    RangeIndex: 1338 entries, 0 to 1337
-    Data columns (total 7 columns):
-     #   Column    Non-Null Count  Dtype  
-    ---  ------    --------------  -----  
-     0   age       1338 non-null   int64  
-     1   sex       1338 non-null   object 
-     2   bmi       1338 non-null   float64
-     3   children  1338 non-null   int64  
-     4   smoker    1338 non-null   object 
-     5   region    1338 non-null   object 
-     6   charges   1338 non-null   float64
-    dtypes: float64(2), int64(2), object(3)
-    memory usage: 73.3+ KB
-
-
-## Charges distributon
+# Charges distribution
 
 Let's research the distributions for numerical features of the set.
-Start with Charges and analythe it's distribution.
-Our goal to make destribution normal for each feature before starting using this data in modeling.
+Start with charges and analyse its distribution.
+Our goal is to make normal distribution for each feature before starting using this data in modelling.
 
 
 ```python
-#Charges distributon
+#Charges distribution
 sns.distplot(df['charges'])
 ```
 {{ resize_image(path="data-transformation/images/output_12_1.png", width=400, height=400, op="fit_width") }}
 
 
 We can se that Charges normal distribution is asymmetrical.
-A task of Data Scientist during feature preparation to achive data uniformity
-For this there are some techniques applying (see more: [ https://www.analyticsvidhya.com/blog/2020/10/7-feature-engineering-techniques-machine-learning/) ] or [https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114#1c08]
+Task of the data scientist during the feature preparation is to achieve data uniformity
+There are some techniques for that to apply (see more: [https://www.analyticsvidhya.com/blog/2020/10/7-feature-engineering-techniques-machine-learning](https://www.analyticsvidhya.com/blog/2020/10/7-feature-engineering-techniques-machine-learning/) or [https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114#1c08](https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114#1c08)
+
 - Imputation
 - Handling Outliers
 - Binning
@@ -287,12 +281,11 @@ For this there are some techniques applying (see more: [ https://www.analyticsvi
 - Grouping Operations
 - Scaling
 
+We will apply some of them depends on what behaviour we will have in feature samples.
 
- We will apply some of them depends of what behaviour we will have in features samples.
+## Outliers in charges
 
-### Outliers for charges
-
-Lets check how much outliers in Charges distribution
+Let's check how much outliers in Charges distribution.
 
 
 ```python
@@ -310,20 +303,21 @@ Tere are some imputation approaches for that. I'll try to delete outliers or rep
 feature = 'charges'
 ```
 
-#### Imputation and Handling outliers
+### Imputation and Handling outliers
 
-Here it is calculating limit lower and upper values for a sample. Values over of this diapason (lover limit;upper limit) are outliers
+Below I am calculating limit the lower and upper values for a sample. 
+Values outside of this range (lover limit, upper limit) are outliers.
 
 
 ```python
-#calculate limit lower and upper values for a sample
+#calculate lower and upper limit values for a sample
 def boundary_values (feature):
-    feature_q25,feature_q75=np.percentile(df[feature],25),np.percentile(df[feature],75)
-    feature_IQR=feature_q75-feature_q25
-    Threshold=feature_IQR*1.5 #interquartile range (IQR)
-    feature_lower,feature_upper=feature_q25-Threshold,feature_q75+Threshold
-    print("Lower limit of "+feature+" distribution: "+str(feature_lower))
-    print("Upper limit of "+feature+" distribution: "+str(feature_upper))
+    feature_q25,feature_q75 = np.percentile(df[feature], 25), np.percentile(df[feature], 75)
+    feature_IQR = feature_q75 - feature_q25
+    Threshold = feature_IQR * 1.5 #interquartile range (IQR)
+    feature_lower, feature_upper = feature_q25-Threshold, feature_q75 + Threshold
+    print("Lower limit of " + feature + " distribution: " + str(feature_lower))
+    print("Upper limit of " + feature + " distribution: " + str(feature_upper))
     return feature_lower,feature_upper;
     
 
@@ -334,18 +328,19 @@ def manage_outliers(df,feature_lower,feature_upper):
     df_del = df.copy()
     df_median = df.copy()
     
-    median = df_del.loc[(df_del[feature]<feature_upper)&(df_del[feature]>feature_lower), feature].median()
+    median = df_del.loc[(df_del[feature] < feature_upper) & \
+      (df_del[feature] > feature_lower), feature].median()
 
-    df_del.loc[(df_del[feature]> feature_upper)] = np.nan
-    df_del.loc[(df_del[feature]< feature_lower)] = np.nan
+    df_del.loc[(df_del[feature] > feature_upper)] = np.nan
+    df_del.loc[(df_del[feature] < feature_lower)] = np.nan
 
-    df_del.fillna(median,inplace=True)
+    df_del.fillna(median, inplace=True)
    
-    df_median.loc[(df_median[feature]> charges_upper)] = np.nan
-    df_median.loc[(df_median[feature]< charges_lower)] = np.nan
+    df_median.loc[(df_median[feature] > charges_upper)] = np.nan
+    df_median.loc[(df_median[feature] < charges_lower)] = np.nan
     df_median.dropna(subset = [feature], inplace=True)
 
-    return df_del,df_median;
+    return df_del, df_median;
 ```
 
 
@@ -354,34 +349,49 @@ def manage_outliers(df,feature_lower,feature_upper):
 x,y = boundary_values(feature)
 
 #samples with modified outliers
-df_median, df_del= manage_outliers(df,x,y)
+df_median, df_del = manage_outliers(df,x,y)
 ```
 
-    Lower limit of charges distribution: -13109.1508975
-    Upper limit of charges distribution: 34489.350562499996
+Lower limit of charges distribution: -13109.1508975
 
-
+Upper limit of charges distribution: 34489.350562499996
 
 ```python
 df_median['charges'].mean()
 ```
-
-
-
-
-    9770.084335798923
-
-
+9770.084335798923
 
 
 ```python
-df_agg = pd.DataFrame({'df':[df['charges'].mean(), df['charges'].max(), df['charges'].min(),df['charges'].std(),df['charges'].count()]}, columns = ['df'],index = ['mean','max','min','std','count'])
-df_agg['df_mean'] = pd.DataFrame({'df_median':[df_median['charges'].mean(), df_median['charges'].max(), df_median['charges'].min(),df_median['charges'].std(),df_median['charges'].count()]}, columns = ['df_median'],index = ['mean','max','min','std','count'])
-df_agg['df_del'] = pd.DataFrame({'df_del':[df_del['charges'].mean(), df_del['charges'].max(), df_del['charges'].min(),df_del['charges'].std(),df_del['charges'].count()]}, columns = ['df_del'],index = ['mean','max','min','std','count'])
+df_agg = pd.DataFrame(
+    {'df': [
+        df['charges'].mean(),
+        df['charges'].max(),
+        df['charges'].min(),
+        df['charges'].std(),
+        df['charges'].count()]
+     }, columns=['df'], index=['mean', 'max', 'min', 'std', 'count'])
+
+df_agg['df_mean'] = pd.DataFrame(
+    {'df_median': [
+        df_median['charges'].mean(),
+        df_median['charges'].max(),
+        df_median['charges'].min(),
+        df_median['charges'].std(),
+        df_median['charges'].count()]
+     }, columns=['df_median'], index=['mean', 'max', 'min', 'std', 'count'])
+
+df_agg['df_del'] = pd.DataFrame(
+    {'df_del': [
+        df_del['charges'].mean(),
+        df_del['charges'].max(),
+        df_del['charges'].min(),
+        df_del['charges'].std(),
+        df_del['charges'].count()]
+     }, columns=['df_del'], index=['mean', 'max', 'min', 'std', 'count'])
+
 df_agg
 ```
-
-
 
 
 <div>
@@ -441,7 +451,7 @@ df_agg
   </tbody>
 </table>
 </div>
-
+<br/>
 
 
 
@@ -452,10 +462,9 @@ fig, ax = plt.subplots(2,2, figsize=(15, 5))
 
 sns.distplot(ax = ax[0,0], x = df['charges'])
 sns.distplot(ax = ax[1,0], x = df_median['charges'])
-sns.distplot(ax = ax[1,1], x= df_del['charges'])
+sns.distplot(ax = ax[1,1], x = df_del['charges'])
 plt.show()
 ```
-
 
 {{ resize_image(path="data-transformation/images/output_25_0.png", width=1200, height=1000, op="fit_width") }}
    
@@ -470,8 +479,6 @@ df_shape['skew_del'] = df_del.agg(['skew', 'kurtosis']).transpose()['skew']
 df_shape['kurtosis_del'] = df_del.agg(['skew', 'kurtosis']).transpose()['kurtosis']
 df_shape
 ```
-
-
 
 
 <div>
@@ -540,16 +547,16 @@ df_shape
   </tbody>
 </table>
 </div>
+<br/>
 
 
+Let's look at the charges row. Here is some positive changes: skew and kurtosis decreased, but still not significantly. So charges still need additional improvements.
 
-Look in charges row. Here is some positive changes: skew and kurtosis decreeased, but still not significantly. So charges feater still need additional improvements.
+There are a few data transformation methods solving abnormality. We will try two of them (Square Root and Log) and choose better for the dataset.
 
-There are a few data transformation methods solwing abnormality. Let's try there two of them (Square Root and Log) and choose better for the data set.
+### Square Root transformation
 
-#### Square Root transformation
-
- Square root method is typically used when your data is moderately skewed  (see more: https://www.marsja.se/transform-skewed-data-using-square-root-log-box-cox-methods-in-python/)
+ Square root method is typically used when your data is moderately skewed, [see more here](https://www.marsja.se/transform-skewed-data-using-square-root-log-box-cox-methods-in-python/).
 
 
 ```python
@@ -558,13 +565,12 @@ df_median.insert(len(df_median.columns), 'charges_Sqrt',np.sqrt(df_median.iloc[:
 df_del.insert(len(df_del.columns), 'charges_Sqrt',np.sqrt(df_del.iloc[:,6]))
 ```
 
-
 ```python
 fig, ax = plt.subplots(2,2, figsize=(15, 5))
 
 sns.distplot(ax = ax[0,0], x = df['charges_Sqrt'])
 sns.distplot(ax = ax[1,0], x = df_median['charges_Sqrt'])
-sns.distplot(ax = ax[1,1], x= df_del['charges_Sqrt'])
+sns.distplot(ax = ax[1,1], x = df_del['charges_Sqrt'])
 plt.show()
 ```
 
@@ -662,10 +668,10 @@ df_shape_sqrt
   </tbody>
 </table>
 </div>
+<br/>
 
 
-
-#### Log transformation
+### Log transformation
 
 
 ```python
@@ -685,8 +691,6 @@ df_shape_log['skew_del'] = df_del.agg(['skew', 'kurtosis']).transpose()['skew']
 df_shape_log['kurtosis_del'] = df_del.agg(['skew', 'kurtosis']).transpose()['kurtosis']
 df_shape_log
 ```
-
-
 
 
 <div>
@@ -773,8 +777,7 @@ df_shape_log
   </tbody>
 </table>
 </div>
-
-
+<br/>
 
 
 ```python
@@ -794,18 +797,18 @@ plt.show()
 
 Here in table we can compare pairs skew-kurtosis for three DF: unmodified, with outliers changed on mean and with deleted outliers.
 The first three pare for Charges DF looks non-normal, because both in pair are enough far from 0.
-After Square-Root transformations the best pair is a mediand_df pair with lower skew and kurtosis in the same time.
+After Square-Root transformations the best pair is a `mediand_df` pair with lower skew and kurtosis in the same time.
 If compare with Log-transformation, the best values for normal distribution is in the initial DF.
-For df_del there are a good result in solwing skewness issue.
-Log-transformation works good with assimetrical data.
-IF compare shapes on the graphs, we see there that initial DF is more symmetrical.
+For `df_del` there are a good result in solving skewness issue.
+Log-transformation works good with asymmetrical data.
+If we compare shapes on the graphs, we see there that initial DF is more symmetrical.
 
-#### Interim conclusions: Desribution is still non-normal. But anyway the previous transformations get us some enough good results and allow to work with data further. For a modeling it makes sense to use log-transformed charges or square-root-transformed charges and outliers replaced by medians. Deleting outliers help just partly with only with kurtosis issue.
+_Interim conclusions: Distribution is still non-normal. But anyway the previous transformations get us some enough good results and allow to work with data further. For a modelling it makes sense to use log-transformed charges or square-root-transformed charges and outliers replaced by medians. Deleting outliers helps partly only with kurtosis issue._
 
-#### Addition:
+### Addition
 
 The Box-Cox transformation is a technique to transform non-normal data into normal shape.
-Box-cox transformation attempts to transform a set of data to a normal distribution by finding the value of λ that minimizes the variation. (see more: https://medium.com/@ronakchhatbar/box-cox-transformation-cba8263c5206)
+Box-cox transformation attempts to transform a set of data to a normal distribution by finding the value of λ that minimises the variation. [see more here](https://medium.com/@ronakchhatbar/box-cox-transformation-cba8263c5206)
 
 
 ```python
@@ -820,23 +823,18 @@ sns.distplot(skewed_box_cox)
 df['boxcox'].skew()
 ```
 
-
-    -0.008734097133920404
-
+-0.008734097133920404
 
 
 ```python
 df['boxcox'].kurtosis()
 ```
 
+-0.6502935539475279
 
-    -0.6502935539475279
+_Box-cox gives good results and can be used for 'charges' as Log-transformation_
 
-
-
-#### Box-cox gives good results and can be used for 'charges' as Log-transformation
-
-### BMI Distribution
+# BMI Distribution
 
 
 ```python
@@ -844,13 +842,11 @@ sns.distplot(df['bmi'])
 ```
 {{ resize_image(path="data-transformation/images/output_47_1.png", width=400, height=400, op="fit_width") }}
 
-
-```python
 At first glance, the distribution looks normal.
-```
-#### Shapiro Normality test
 
-There is one more test allows to check normality of destribution. It is Shapiro test. For this spicy library can be use
+## Shapiro Normality test
+
+There is one more test allows to check normality of distribution. It is Shapiro test. For this spicy library can be use
 
 
 ```python
@@ -862,29 +858,25 @@ else:
     print('Distribution is normal')
 ```
 
-    Distribution is normal
-
+Distribution is normal
 
 
 ```python
 df.agg(['skew', 'kurtosis'])['bmi'].transpose()
 ```
 
+skew        0.284047
+kurtosis   -0.050732
+Name: bmi, dtype: float64
 
 
 
-    skew        0.284047
-    kurtosis   -0.050732
-    Name: bmi, dtype: float64
+_Interim conclusions: BMI index distributed normally_
 
 
+# Age Distribution 
 
-##### Interim conclusions: BMI index destributed normally
-
-
-### Age Distributon 
-
-As we see on the plot, ages density is quite equal, exept age near 20. Let's take a look deeper
+As we see on the plot, ages density is quite equal, except age near 20. Let's take a look deeper
 
 
 ```python
@@ -894,61 +886,44 @@ sns.distplot(df['age'])
 
     
 
-
-#### Outliers for Age
+## Outliers for Age
 
 
 ```python
 sns.boxplot(x=df['age'])
 ```
 
-
 {{ resize_image(path="data-transformation/images/output_58_1.png", width=400, height=400, op="fit_width") }}
     
-    
-
-
 
 ```python
 df.agg(['skew', 'kurtosis'])['age'].transpose()
 ```
 
 
-
-
-    skew        0.055673
-    kurtosis   -1.245088
-    Name: age, dtype: float64
-
-
+skew        0.055673
+kurtosis   -1.245088
+Name: age, dtype: float64
 
 
 ```python
 df.describe()['age']
+
+count    1338.000000
+mean       39.207025
+std        14.049960
+min        18.000000
+25%        27.000000
+50%        39.000000
+75%        51.000000
+max        64.000000
+Name: age, dtype: float64
 ```
-
-
-
-
-    count    1338.000000
-    mean       39.207025
-    std        14.049960
-    min        18.000000
-    25%        27.000000
-    50%        39.000000
-    75%        51.000000
-    max        64.000000
-    Name: age, dtype: float64
-
-
 
 
 ```python
 df.describe()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1052,56 +1027,46 @@ df.describe()
   </tbody>
 </table>
 </div>
-
-
-
+<br/>
 
 ```python
 #samples with modified outliers
 #calculate limits
 feature = 'age'
 x,y = boundary_values(feature)
+
+Lower limit of age distribution: -9.0
+Upper limit of age distribution: 87.0
+
 ```
 
-    Lower limit of age distribution: -9.0
-    Upper limit of age distribution: 87.0
-
-    -9.0
-
-
-So we see that there is no outliers in this distribution
-
-Let's see "left side" counts by ages
+So we see that there are no outliers in this distribution. Let's look at the "left side" counts by ages:
 
 
 ```python
 df.groupby(['age'])['age'].count().head(10)
+
+age
+18    69
+19    68
+20    29
+21    28
+22    28
+23    28
+24    28
+25    28
+26    28
+27    28
+Name: age, dtype: int64
 ```
 
-
-    age
-    18    69
-    19    68
-    20    29
-    21    28
-    22    28
-    23    28
-    24    28
-    25    28
-    26    28
-    27    28
-    Name: age, dtype: int64
-
-
-
-As we see from the histogram and last output that it is near 2 times more data near 20 years, and it shouls be corrected.
-I want to find median value count for age and decrease diapasone of 18-19 years old till this median.
+As we see from the histogram and last output that it is near 2 times more data near 20 years, and it should be corrected.
+I want to find median value count for age and decrease diapasons of 18-19 years old till this median.
 
 
 ```python
 n = int(df['age'].value_counts().median())
 ```
-
 
 ```python
 df1 = df.copy()
@@ -1119,23 +1084,17 @@ df = df.drop(df_19.iloc[n:df2.size,:].index)
 
 ```python
 df.describe()['age']
+
+count    1255.000000
+mean       40.576892
+std        13.422954
+min        18.000000
+25%        29.000000
+50%        41.000000
+75%        52.000000
+max        64.000000
+Name: age, dtype: float64
 ```
-
-
-
-
-    count    1255.000000
-    mean       40.576892
-    std        13.422954
-    min        18.000000
-    25%        29.000000
-    50%        41.000000
-    75%        52.000000
-    max        64.000000
-    Name: age, dtype: float64
-
-
-
 
 ```python
 sns.distplot(df['age'])
@@ -1143,25 +1102,22 @@ sns.distplot(df['age'])
 {{ resize_image(path="data-transformation/images/output_70_1.png", width=400, height=400, op="fit_width") }}
 
 
-
-
 ```python
 df.agg(['skew', 'kurtosis'])['age'].transpose()
+
+skew        0.004377
+kurtosis   -1.195052
+Name: age, dtype: float64
 ```
 
+We have reduced skewness and kurtosis a little bit.
 
-    skew        0.004377
-    kurtosis   -1.195052
-    Name: age, dtype: float64
+_Interim conclusions: It make sense here to leave this distribution as it is because it shows all ages more-less equally and doesn't need to be more normal distributed._
 
+# Conclusions
 
+- In this article I described the most typical, often used and effective transformation approaches to get normal distribution. This transformations are important for the further modelling applying. Some model are sensitive for the data view and data scientist has to investigate more in a data preparation.
+- As a result we can see, that Log-transformation is the most universal and effective one technique. It solve most of the skewness and kurtosis problems. Box-Cox transformations are the same effective and flexible.
+- It can happen that data looks non-normal, but in the same time it doesn't have some outliers or very high kurtosis. In this situation it make sense to analyse such data locally and adjust it manually, for example deleting data or replacing it for a median/mean/max/min/random etc. values.
 
-So dropping reduced skewness and kurtosis a little bit.
-
-##### Interim conclusions: It make sence there to leave this distribution as it is because it is performe all ages more-less equally and doesn't need to be more normal distributed.
-
-### Conclusions: 
-#### In this article I described the most typical, often used and effective transformation approaches to get normal distibution. This transformations are important for the further modeling applying. Some model are sensitive for the data view and data scientis have to investigate more in a data preparation.
-#### As a result we can see, that Log-transformation is the most universal and effective one technique. It solve most of the skeweness and kurtosis problems. Box-Cox transformations are the same effective and flexible.
-#### It can happend that data looks non-normal, but in the same time it doesn't have some outliers or very high kurtosis. In this situation it make sence analyse data locally and adjust it manually, for example deleting data or replacing it for a median/mean/max/min/random etc. values.
 
