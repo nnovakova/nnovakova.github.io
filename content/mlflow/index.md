@@ -194,8 +194,6 @@ mlflow run -e main . \
 
 So I did that and got all runs logged in MLFlow:
 
-![MLFLow UI experiment runs](images/mlflow-runs.png)
-
 {{ resize_image(path="mlflow/images/mlflow-runs.png", width=1200, height=1000, op="fit_width") }}
 
 If I click on the last run, I even can see how loss function is

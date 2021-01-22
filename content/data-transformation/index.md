@@ -42,13 +42,9 @@ os.chdir('/python/insurence/')
 df = pd.read_csv("insurance.csv")
 ```
 
-
 ```python
 df.head(5)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -157,9 +153,6 @@ region: the beneficiary's residential area in the US, northeast, southeast, sout
 ```python
 df.describe()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -280,9 +273,7 @@ Our goal to make destribution normal for each feature before starting using this
 #Charges distributon
 sns.distplot(df['charges'])
 ```
-    
-![png](images/output_12_1.png)
-    
+{{ resize_image(path="data-transformation/images/output_12_1.png", width=1200, height=1000, op="fit_width") }}
 
 
 We can se that Charges normal distribution is asymmetrical.
@@ -307,10 +298,8 @@ Lets check how much outliers in Charges distribution
 ```python
 sns.boxplot(x=df['charges'])
 ```
-
-![png](images/output_16_1.png)
+{{ resize_image(path="data-transformation/images/output_16_1.png", width=1200, height=1000, op="fit_width") }}
     
-
 
 There are a lot of outliers from the right side. 
 Tere are some imputation approaches for that. I'll try to delete outliers or replace outliers by median value and compare results.
@@ -468,10 +457,8 @@ plt.show()
 ```
 
 
-    
-![png](images/output_25_0.png)
-    
-
+{{ resize_image(path="data-transformation/images/output_25_0.png", width=1200, height=1000, op="fit_width") }}
+   
 
 
 ```python
@@ -582,8 +569,7 @@ plt.show()
 ```
 
 
-    
-![png](images/output_32_0.png)
+{{ resize_image(path="data-transformation/images/output_32_0.png", width=1200, height=1000, op="fit_width") }}
     
 
 
@@ -801,8 +787,8 @@ plt.show()
 ```
 
 
+{{ resize_image(path="data-transformation/images/output_37_0.png", width=1200, height=1000, op="fit_width") }}
     
-![png](images/output_37_0.png)
     
 
 
@@ -828,29 +814,20 @@ sns.distplot(skewed_box_cox)
 ```
 
 
-    
-![png](images/output_42_0.png)
-    
-
-
+{{ resize_image(path="data-transformation/images/output_42_0.png", width=1200, height=1000, op="fit_width") }}
 
 ```python
 df['boxcox'].skew()
 ```
 
 
-
-
     -0.008734097133920404
-
 
 
 
 ```python
 df['boxcox'].kurtosis()
 ```
-
-
 
 
     -0.6502935539475279
@@ -865,10 +842,7 @@ df['boxcox'].kurtosis()
 ```python
 sns.distplot(df['bmi'])
 ```
-
-![png](images/output_47_1.png)
-    
-
+{{ resize_image(path="data-transformation/images/output_47_1.png", width=1200, height=1000, op="fit_width") }}
 
 
 ```python
@@ -916,8 +890,8 @@ As we see on the plot, ages density is quite equal, exept age near 20. Let's tak
 ```python
 sns.distplot(df['age'])
 ```
+{{ resize_image(path="data-transformation/images/output_56_1.png", width=1200, height=1000, op="fit_width") }}
 
-![png](images/output_56_1.png)
     
 
 
@@ -929,8 +903,8 @@ sns.boxplot(x=df['age'])
 ```
 
 
+{{ resize_image(path="data-transformation/images/output_58_1.png", width=1200, height=1000, op="fit_width") }}
     
-![png](images/output_58_1.png)
     
 
 
@@ -1166,9 +1140,8 @@ df.describe()['age']
 ```python
 sns.distplot(df['age'])
 ```
-    
-![png](images/output_70_1.png)
-    
+{{ resize_image(path="data-transformation/images/output_70_1.png", width=1200, height=1000, op="fit_width") }}
+
 
 
 
