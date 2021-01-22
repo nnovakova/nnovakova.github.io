@@ -298,7 +298,7 @@ Lets check how much outliers in Charges distribution
 ```python
 sns.boxplot(x=df['charges'])
 ```
-{{ resize_image(path="data-transformation/images/output_16_1.png", width=1200, height=1000, op="fit_width") }}
+{{ resize_image(path="data-transformation/images/output_16_1.png", width=400, height=400, op="fit_width") }}
     
 
 There are a lot of outliers from the right side. 
@@ -814,7 +814,7 @@ sns.distplot(skewed_box_cox)
 ```
 
 
-{{ resize_image(path="data-transformation/images/output_42_0.png", width=1200, height=1000, op="fit_width") }}
+{{ resize_image(path="data-transformation/images/output_42_0.png", width=400, height=400, op="fit_width") }}
 
 ```python
 df['boxcox'].skew()
@@ -842,7 +842,7 @@ df['boxcox'].kurtosis()
 ```python
 sns.distplot(df['bmi'])
 ```
-{{ resize_image(path="data-transformation/images/output_47_1.png", width=1200, height=1000, op="fit_width") }}
+{{ resize_image(path="data-transformation/images/output_47_1.png", width=400, height=400, op="fit_width") }}
 
 
 ```python
@@ -890,7 +890,7 @@ As we see on the plot, ages density is quite equal, exept age near 20. Let's tak
 ```python
 sns.distplot(df['age'])
 ```
-{{ resize_image(path="data-transformation/images/output_56_1.png", width=1200, height=1000, op="fit_width") }}
+{{ resize_image(path="data-transformation/images/output_56_1.png", width=400, height=400, op="fit_width") }}
 
     
 
@@ -903,7 +903,7 @@ sns.boxplot(x=df['age'])
 ```
 
 
-{{ resize_image(path="data-transformation/images/output_58_1.png", width=1200, height=1000, op="fit_width") }}
+{{ resize_image(path="data-transformation/images/output_58_1.png", width=400, height=400, op="fit_width") }}
     
     
 
@@ -1140,7 +1140,7 @@ df.describe()['age']
 ```python
 sns.distplot(df['age'])
 ```
-{{ resize_image(path="data-transformation/images/output_70_1.png", width=1200, height=1000, op="fit_width") }}
+{{ resize_image(path="data-transformation/images/output_70_1.png", width=400, height=400, op="fit_width") }}
 
 
 
