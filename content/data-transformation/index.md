@@ -273,7 +273,7 @@ Our goal to make destribution normal for each feature before starting using this
 #Charges distributon
 sns.distplot(df['charges'])
 ```
-{{ resize_image(path="data-transformation/images/output_12_1.png", width=700, height=700, op="fit_width") }}
+{{ resize_image(path="data-transformation/images/output_12_1.png", width=400, height=400, op="fit_width") }}
 
 
 We can se that Charges normal distribution is asymmetrical.
