@@ -16,7 +16,7 @@ For demonstration I took Medical Cost Personal Datasets from Kaggle.
 
 Medical Cost Personal Datasets
 Insurance Forecast by using Linear Regression
-https://www.kaggle.com/mirichoi0218/insurance
+[https://www.kaggle.com/mirichoi0218/insurance]
 
 
 ```python
@@ -278,7 +278,7 @@ sns.distplot(df['charges'])
 
 We can se that Charges normal distribution is asymmetrical.
 A task of Data Scientist during feature preparation to achive data uniformity
-For this there are some techniques applying (see more: https://www.analyticsvidhya.com/blog/2020/10/7-feature-engineering-techniques-machine-learning/): or https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114#1c08
+For this there are some techniques applying (see more: [ https://www.analyticsvidhya.com/blog/2020/10/7-feature-engineering-techniques-machine-learning/) ] or [https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114#1c08]
 - Imputation
 - Handling Outliers
 - Binning
