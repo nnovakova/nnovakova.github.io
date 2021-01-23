@@ -269,9 +269,9 @@ sns.distplot(df['charges'])
 {{ resize_image(path="data-transformation/images/output_12_1.png", width=400, height=400, op="fit_width") }}
 
 
-We can se that Charges normal distribution is asymmetrical.
-Task of the data scientist during the feature preparation is to achieve data uniformity
-There are some techniques for that to apply (see more: [https://www.analyticsvidhya.com/blog/2020/10/7-feature-engineering-techniques-machine-learning](https://www.analyticsvidhya.com/blog/2020/10/7-feature-engineering-techniques-machine-learning/) or [https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114#1c08](https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114#1c08)
+We can see that `charges` normal distribution is asymmetrical.
+Task of the data scientist during the feature preparation is to achieve data uniformity.
+There are some techniques for that to apply [see more here](https://www.analyticsvidhya.com/blog/2020/10/7-feature-engineering-techniques-machine-learning/) or [here](https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114#1c08).
 
 - Imputation
 - Handling Outliers
@@ -285,7 +285,7 @@ We will apply some of them depends on what behaviour we will have in feature sam
 
 ## Outliers in charges
 
-Let's check how much outliers in Charges distribution.
+Let's check how much outliers in `charges` distribution.
 
 
 ```python
@@ -576,7 +576,6 @@ plt.show()
 
 
 {{ resize_image(path="data-transformation/images/output_32_0.png", width=1200, height=1000, op="fit_width") }}
-    
 
 
 
@@ -589,9 +588,6 @@ df_shape_sqrt['skew_del'] = df_del.agg(['skew', 'kurtosis']).transpose()['skew']
 df_shape_sqrt['kurtosis_del'] = df_del.agg(['skew', 'kurtosis']).transpose()['kurtosis']
 df_shape_sqrt
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -796,19 +792,19 @@ plt.show()
 
 
 Here in table we can compare pairs skew-kurtosis for three DF: unmodified, with outliers changed on mean and with deleted outliers.
-The first three pare for Charges DF looks non-normal, because both in pair are enough far from 0.
+The first three pare for `charges` DF looks non-normal, because both in pair are enough far from 0.
 After Square-Root transformations the best pair is a `mediand_df` pair with lower skew and kurtosis in the same time.
 If compare with Log-transformation, the best values for normal distribution is in the initial DF.
 For `df_del` there are a good result in solving skewness issue.
 Log-transformation works good with asymmetrical data.
 If we compare shapes on the graphs, we see there that initial DF is more symmetrical.
 
-_Interim conclusions: Distribution is still non-normal. But anyway the previous transformations get us some enough good results and allow to work with data further. For a modelling it makes sense to use log-transformed charges or square-root-transformed charges and outliers replaced by medians. Deleting outliers helps partly only with kurtosis issue._
+> Interim conclusions: Distribution is still non-normal. But anyway the previous transformations get us some enough good results and allow to work with data further. For a modelling it makes sense to use log-transformed charges or square-root-transformed charges and outliers replaced by medians. Deleting outliers helps partly only with kurtosis issue.
 
 ### Addition
 
 The Box-Cox transformation is a technique to transform non-normal data into normal shape.
-Box-cox transformation attempts to transform a set of data to a normal distribution by finding the value of λ that minimises the variation. [see more here](https://medium.com/@ronakchhatbar/box-cox-transformation-cba8263c5206)
+Box-cox transformation attempts to transform a set of data to a normal distribution by finding the value of λ that minimises the variation, [see more here](https://medium.com/@ronakchhatbar/box-cox-transformation-cba8263c5206)
 
 
 ```python
@@ -832,7 +828,7 @@ df['boxcox'].kurtosis()
 
 -0.6502935539475279
 
-_Box-cox gives good results and can be used for 'charges' as Log-transformation_
+ > Box-cox gives good results and can be used for 'charges' as Log-transformation
 
 # BMI Distribution
 
@@ -871,7 +867,7 @@ Name: bmi, dtype: float64
 
 
 
-_Interim conclusions: BMI index distributed normally_
+> Interim conclusions: BMI index distributed normally
 
 
 # Age Distribution 
@@ -1112,12 +1108,12 @@ Name: age, dtype: float64
 
 We have reduced skewness and kurtosis a little bit.
 
-_Interim conclusions: It make sense here to leave this distribution as it is because it shows all ages more-less equally and doesn't need to be more normal distributed._
+> Interim conclusions: It make sense here to leave this distribution as it is because it shows all ages more-less equally and doesn't need to be more normal distributed.
 
 # Conclusions
 
 - In this article I described the most typical, often used and effective transformation approaches to get normal distribution. This transformations are important for the further modelling applying. Some model are sensitive for the data view and data scientist has to investigate more in a data preparation.
-- As a result we can see, that Log-transformation is the most universal and effective one technique. It solve most of the skewness and kurtosis problems. Box-Cox transformations are the same effective and flexible.
+- As a result we can see, that Log-transformation is the most universal and effective technique. It solves most of the skewness and kurtosis problems. Box-Cox transformations are also effective and flexible.
 - It can happen that data looks non-normal, but in the same time it doesn't have some outliers or very high kurtosis. In this situation it make sense to analyse such data locally and adjust it manually, for example deleting data or replacing it for a median/mean/max/min/random etc. values.
 
 
