@@ -1,17 +1,18 @@
 +++
-title="Depression Detection Based on Speech Data "
-date=2021-01-18
-draft = true
+title="Depression detection based on speech data "
+date=2021-02-23
+draft = false
 
 [taxonomies]
 categories = ["Python", "Data Science", "Data Analysis","Data Preparation"]
-tags = ["data analysis","data preparation","plotly","pandas", "numpy","modelin"]
+tags = ["data analysis","data preparation","matplotlib","pandas", "numpy","modelling"]
 
 [extra]
 toc = true
 +++
 
-In this topic I would like to show how to manage a dataset where there are a lot of features (especially some numeric data with completely incomprehensible meaning and influence on whole dataset)
+In this topic I would like to show how to manage a dataset with many features 
+(especially numeric data with completely unclear meaning and influence on whole dataset)
 
 [GitHub]: (https://github.com/nnovakova/ads_analysis)
 
@@ -19,13 +20,11 @@ The dataset contains speech features and clinical variables
 from participants of a depression related study. 
 Based on speech recordings, vocal features have been derived from
 different categories. 
-Each feature contains a tag ‘_{pos,neg}’, which refers to the vocal task it
+Each feature contains a tag `_{pos,neg}`, which refers to the vocal task it
 was extracted from. 
-Clinical and demographic variables of participants can be found at the
-beginning. 
-The study was meant to show a link between voice patterns and a
-depression scale (variable ADS). 
-
+Clinical and demographic variables of participants can be found at the beginning. 
+The study was meant to show a relation between voice patterns and depression scale (variable ADS). 
+<!-- more -->
 
 _Description:_
 
@@ -44,7 +43,7 @@ symptoms.
 
 6 - 171: 84 speech features computed for negative and positive stories.
 Column names contain feature names and the story sentiment it
-was computed, all separated by underscores i.e., speech_ratio_pos
+was computed from. They are all separated by underscores i.e., speech_ratio_pos
 refers to speech ratio computed for positive stories.
 
 
@@ -66,6 +65,7 @@ from sklearn.preprocessing import LabelEncoder
 from scipy.stats import  ttest_ind
 import scipy.stats as stats
 import warnings
+
 warnings.filterwarnings('ignore')
 df = pd.read_csv("data.csv")
 df.shape
@@ -75,7 +75,7 @@ df.shape
 ```
 
 
-Genger is a catigorical variable. It should be transformed to numerical
+Gender is a categorical variable. It should be transformed to numerical value:
 
 
 ``` python
@@ -91,9 +91,9 @@ df.head()
 {{ resize_image(path="ads-analysis/images/output_34_2.png", width=800, height=700, op="fit_width") }}
 
 
-It is not enough data  to devide data on to subsets by gender. So I will first explore and learn models with entire dataset.
+It is not enough data to divide data on to subsets by gender. So I will first explore and learn models with entire dataset.
 I will compare results afterwards.
-This dataset has 215 features. For more comfortable exploration I look at the feature cuts according the task description 
+This dataset has __215 features__. For more comfortable exploration I look at the feature cuts according the task description 
 
 
 ``` python
@@ -102,9 +102,10 @@ df_sf = df.iloc[:,5:172]
 df_tf = df.iloc[:,172:]
 ```
 
-Previous data exploration shows that ADS can be a target variable. It is possible to classify participants as
-0 - "has dipressive symptoms",
-1 - "has no dipressive symptoms"
+Previous data exploration shows that ADS can be a target variable. It is possible to classify participants as:
+- 0 - "has depressive symptoms",
+- 1 - "has no depressive symptoms"
+
 ``` python
 df['ADS_cat']=df['ADS'].map(lambda x: 1 if x>17 else 0)
 ``` 
@@ -170,10 +171,14 @@ mean_number_subordinate_clauses_neg: 0.0
 mean_number_subordinate_clauses_pos: 0.0
 ```
 ``` python
-df =df.drop(['espinola_zero_crossing_metric_pos','mean_number_subordinate_clauses_neg','mean_number_subordinate_clauses_pos'], axis = 1)
+df =df.drop(['espinola_zero_crossing_metric_pos', \
+    'mean_number_subordinate_clauses_neg', \
+    'mean_number_subordinate_clauses_pos'], axis = 1)
 ```
 ## Outliers influence elimination
-For more accurate results feature sets should be normally distributed
+
+For more accurate results feature sets should be normally distributed.
+
 ### Demographical features
 
 ``` python
@@ -197,7 +202,7 @@ sns.boxplot(df['ADS'])
 
 We can see that ADS has outliers, that is why it has right skew and quite big kurtosis
 
-Let's try to normalise this feature set
+Let's try to normalise this feature set.
 
 ### ADS Normality Exploration
 ``` python
@@ -246,7 +251,8 @@ sns.distplot(df['ADS'], fit = norm)
 ```
 {{ resize_image(path="ads-analysis/images/output_46_1.png", width=400, height=700, op="fit_width") }}
 
-These transformations helped to decrease outlier influenses as we see on the graph and by skew/kurtosis indexes
+These transformations helped to decrease outlier influences as we see on the graph and by skew/kurtosis indexes.
+
 ### Age Normality Exploration
 ``` python
 sns.distplot(df['age'], fit = norm)
@@ -281,7 +287,8 @@ sns.displot(df['gender'])
 ```
 {{ resize_image(path="ads-analysis/images/output_54_1.png", width=400, height=700, op="fit_width") }}
 
-Women in test ~ 3 times more then men. It can influence on the quality of training further
+Women in test appear ~ 3 times more than men. It can influence the training quality further.
+
 ### Education Normality Exploration
 ``` python
 sns.distplot(df['education'], fit = norm)
@@ -296,7 +303,7 @@ skew        0.007860
 kurtosis   -0.137656
 Name: education, dtype: float64
 ```
-Education is more-less normally distributed. It can be fixed by standartisation on the next step 
+Education is more-less normally distributed. It can be fixed by standardisation on the next step. 
 
 ### Speech Features / Transcript Features Normality Exploration
 ``` python
@@ -382,14 +389,16 @@ for i in df_tf.columns:
 ```
 Both groups of features are normally distributed
 
-### Standartisation
+### Standardisation
+
 ``` python
 from sklearn.preprocessing import StandardScaler
 num_cols = df.iloc[:,3:df.shape[1]-1].columns
 print(num_cols)
 ```
+
 ``` python
-# apply standardization on numerical features
+# apply standardisation on numerical features
 
 for i in num_cols:
     scale = StandardScaler().fit(df[[i]])
@@ -436,17 +445,17 @@ X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_sta
 
 model = LogisticRegression(solver='liblinear', random_state=0)
 def train_test_model(model):
-model.fit(X_train, y_train)
-pred = model.predict(X_train)
-print(f"Predicted : {pred}")
-score = model.score(X_test, y_test)
-print(f"Score: {score}")
-return score
+    model.fit(X_train, y_train)
+    pred = model.predict(X_train)
+    print(f"Predicted : {pred}")
+    score = model.score(X_test, y_test)
+    print(f"Score: {score}")
+    return score
 ```
 
 ``` python
 score = train_test_model(model)
-score_set =  pd.DataFrame(data = [score], columns =['LR_score'], index = ['all_set'])
+score_set = pd.DataFrame(data = [score], columns = ['LR_score'], index = ['all_set'])
 ```
 ``` bash
 Predicted : [1 0 0 1 1 1 0 0 0 0 1 0 1 1 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 1
@@ -491,9 +500,10 @@ weighted avg       0.62      0.60      0.60        25
 ```
 
 
-It is not enough good accuracy. Let's try other binary classifiers
+Accuracy value is not good enough. Let's try other binary classifiers.
 
 ### Support vector machine
+
 ``` python
 from sklearn import svm
 model = svm.SVC(kernel='linear', C=1,gamma='auto')
@@ -533,7 +543,7 @@ score_set
 ``` python
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import metrics
-# Create Decision Tree classifer object
+# Create Decision Tree classifier object
 model = DecisionTreeClassifier()
 score_set['DTree_score'] = train_test_model(model)
 ```
@@ -671,10 +681,11 @@ Logistic Regression and SVM got the best results, but not enough good.
 
 ## Correlation exploration
 
-To increase model scores, maybe it make sense to decrease amount of features.
-For this, we need to find more correlated ones with ADS
+To increase model scores, it make sense to decrease amount of features.
+For that, we need to find more correlated ones with ADS.
 
-It is too much features to visualise correlation, that is why I'm dividing them in chunks
+It is too many features to visualise correlation, so I am dividing them into chunks:
+
 ``` python
 #correlation matrix
 df_demograph = df.iloc[:,1:5]
@@ -721,8 +732,9 @@ sns.heatmap(corrmat, vmax=.8, square=True);
 ```
 {{ resize_image(path="ads-analysis/images/output_124_0.png", width=700, height=700, op="fit_width") }}
 
-There is no strong correlation between ADS and another features
-Extract all features which have at least absolute correlation > 0.2
+There is no strong correlation between ADS and other features.
+Extract all features which have at least absolute `correlation > 0.2`:
+
 ``` python
 short_df = df.copy()
 short_df = short_df.drop(['id'],axis=1)
@@ -738,7 +750,7 @@ short_df = selected_columns.copy()
 short_df = short_df.drop('ADS',axis = 1)
 ```
 ``` bash
-New feature set indeses:
+New feature set indexes:
 Index(['ADS', 'total_phonation_time_pos', 'average_amplitude_change_pos',
 'average_mfccs_12_neg', 'average_mfccs_14_neg', 'average_mfccs_15_neg',
 'average_mfccs_19_neg', 'average_mfccs_12_pos', 'average_mfccs_13_pos',
@@ -757,7 +769,7 @@ short_df['gender'] = df['gender']
 short_df['education'] = df['education']
 ```
 
-Try to train/validate model with less features. Try it just for LR and SVM for the first approach  
+Trying to train/validate model with less features for `LR` and `SVM` for the first approach:  
 
 ``` python
 X = short_df.copy()
@@ -768,6 +780,7 @@ X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_sta
 
 model = LogisticRegression(solver='liblinear', random_state=0)
 score = train_test_model(model)
+
 ```
 ``` bash
 Predicted : [1 0 1 0 1 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 0 1 1 0
@@ -785,11 +798,13 @@ Predicted : [1 0 1 0 1 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0
 1 0 0 1 0 1 0 1 0 1 1 0 1 0 0 1 0 0 0 0 1 0]
 Score: 0.52
 ```
-Decreasing features reduced acurracy of algorithms
+
+Accuracy of algorithms reduced due to decreasing number of features.
 
 # Exploration by Gender  
 
 ### Divide data by gender
+
 ``` python
 df_male = df[df['gender']=='male']
 df.drop(['gender'], axis = 1)
@@ -814,7 +829,9 @@ df_female = df.loc[df['gender']==1]
 df_female = df_female.drop('gender',axis=1)
 df_female
 ```
-Let's try the male/female datasets for two algorithms with the best accuracy for whole dataset: SVM and Logistic Regression
+
+Let's try the male/female datasets for two algorithms with the best accuracy for the whole dataset: SVM and Logistic Regression
+
 ``` python
 X = df_male.copy()
 X = X.drop('ADS_cat',axis=1)
@@ -887,11 +904,11 @@ gender_score_set
 ```
 {{ resize_image(path="ads-analysis/images/output_135.png", width=150, height=700, op="fit_width") }}
 
-Dividing on subsets gives higher classification accuracy just in male gender group, and lower for female
+Dividing on subsets gives higher classification accuracy just in male gender group, and lower for female.
 
 ## Cross Validation as classification improvement approach
 
-Cross validation can help to improve training
+Cross validation may help to improve training.
 
 ### Initial Set
 
@@ -1048,9 +1065,10 @@ result = pd.concat([score_set_cv , score_set_cv_male, score_set_cv_female])
 ```
 {{ resize_image(path="ads-analysis/images/output_136.png", width=500, height=700, op="fit_width") }}
 
-## Summary
+# Summary
 1. Logistic regression gives the best results on all subsets after cross-validation.
-2. SVM has very close (good) results.
-3. Decission Tree, Random Forest, Naive Bayes look like overfitting.
-4. KNN is not good enough comparing to the first a couple of models.
-5. There is a probability that overal modeling results would be better, if having bigger dataset.
+1. SVM has very close (good) results.
+1. Decision Tree, Random Forest, Naive Bayes look like overfitting.
+1. KNN is not good enough comparing to the first a couple of models.
+1. There is a probability that overall modelling results would be better, if having bigger dataset.
+

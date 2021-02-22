@@ -15,7 +15,7 @@ In this article I want to show some basic data preparation and analytics tasks. 
 
 I have been looking for some datasets that I can easily manipulate to demonstrate the first pre-step of the  Machine Learning - 
 data preparation and cleaning. So I started to surf the Internet for datasets I can somehow explain and easily interpret based on my experience. 
-
+<!-- more -->
 For this tasks I used two Kaggle datasets:
 - [UA Cars dataset](https://www.kaggle.com/dimakyn/vehicles-price-2020-ukraine)
 - [US Cars dataset](https://www.kaggle.com/doaaalsenani/usa-cers-dataset)
