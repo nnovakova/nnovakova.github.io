@@ -1070,10 +1070,10 @@ df1 = df.copy()
 df_19 = df1[(df1['age']==19)]
 df_18 = df1[(df1['age']==18)]
 df_19.describe()
-df_18.iloc[n:df2.size,:].index
-df_19.iloc[n:df2.size,:].index
-df = df.drop(df_18.iloc[n:df2.size,:].index)
-df = df.drop(df_19.iloc[n:df2.size,:].index)
+df_18.iloc[n:df_18.size,:].index
+df_19.iloc[n:df_19.size,:].index
+df = df.drop(df_18.iloc[n:df_18.size,:].index)
+df = df.drop(df_19.iloc[n:df_19.size,:].index)
 
 ```
 

@@ -33,8 +33,8 @@ toc_disabled=true
 _Development practice:_
 
 - Feature Engineering
-- Agile, Scrum
 - CI/CD, unit testing, test automation
+- Agile, Scrum
 
 _Technical expertise:_
 - Developing machine learning applications in Python, Java with MongoDB, Windows, Linux, Docker
@@ -59,13 +59,13 @@ _2018 – present_
     <tr>
         <td align="left">Responsibilities</td>                
         <td align="left">
-        Model designing and implementation based on machine learning algorithms and artificial intelligence methods in the field of pattern recognition and <b>Neuro-Linguistic Programming (NLP)</b>. Using <b>Named Entity recognition (NER)</b> approaches for data classification and anonymization.<br/><br/>        
+        Model designing and implementation based on machine learning algorithms and artificial intelligence methods in the field of pattern recognition and <b>Natural-Language Processing (NLP)</b>. Using <b>Named Entity recognition (NER)</b> approaches for data classification and anonymization.<br/><br/>        
         Comprehensive model development for logical zones recognition in printed documents based on a combination of <b>Tensorflow</b> pre-trained image recognition models and extracted meta-data from HTML/CSS. 
         </td>        
     </tr>
     <tr>
         <td align="left">Technologies</td>
-        <td align="left">Python, Java, Apache OpenNLP, Tensorflow, SpringBoot, MongoDB, Git, Bitbucket, Swagger, Docker, IntelliJ, Junit, Mockito, HTML/CSS, MySQL, MSSQL</td>        
+        <td align="left">Python, Apache OpenNLP, Tensorflow, Java, SpringBoot, MongoDB, Git, Bitbucket, Swagger, Docker, IntelliJ, Junit, Mockito, HTML/CSS, MySQL, MSSQL</td>        
     </tr>
 </table>  
 &nbsp;      
