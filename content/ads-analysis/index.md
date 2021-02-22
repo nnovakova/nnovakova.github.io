@@ -13,6 +13,7 @@ toc = true
 
 In this topic I would like to show how to manage a dataset where there are a lot of features (especially some numeric data with completely incomprehensible meaning and influence on whole dataset)
 
+[GitHub]: (https://github.com/nnovakova/ads_analysis)
 
 The dataset contains speech features and clinical variables
 from participants of a depression related study. 
