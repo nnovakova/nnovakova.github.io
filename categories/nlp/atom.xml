@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Nadiia Novakova - NLP</title>
+	<link href="https://nnovakova.github.io/categories/nlp/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://nnovakova.github.io"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2020-11-10T00:00:00+00:00</updated>
+	<id>https://nnovakova.github.io/categories/nlp/atom.xml</id>
+	<entry xml:lang="en">
+		<title>NER using OpenNLP. Data Preparation.</title>
+		<published>2020-11-10T00:00:00+00:00</published>
+		<updated>2020-11-10T00:00:00+00:00</updated>
+		<link href="https://nnovakova.github.io/opennlp-ner-annotaton/" type="text/html"/>
+		<id>https://nnovakova.github.io/opennlp-ner-annotaton/</id>
+		<content type="html">&lt;h2 id=&quot;why-nlp&quot;&gt;Why NLP?&lt;&#x2F;h2&gt;
+&lt;p&gt;Natural language processing is a component of Text Mining that performs a special kind of linguistic analysis that essentially helps a machine
+to &lt;strong&gt;read&lt;&#x2F;strong&gt; text. So this part of Data Science provides methods and approaches to mining patterns in texts. Thus NER is just one in the list of NLP tasks.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
+&lt;p&gt;NER has a lot of synonyms, such as Entity Identification, Entity Chunking and Entity Extraction. &lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Named Entity Recognition&lt;&#x2F;strong&gt; is a process of finding named-entities (entities, valuable for some special domain) in the text.&lt;&#x2F;p&gt;
+&lt;p&gt;Standard kinds of entities looking for (using NER) in texts are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Person.&lt;&#x2F;li&gt;
+&lt;li&gt;Organization.&lt;&#x2F;li&gt;
+&lt;li&gt;Location.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Let&#x27;s clarify some common terms used in NLP:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gazetteers (List of Seeds, Seeds, Named Entity Lists): list of domain entities. &lt;&#x2F;li&gt;
+&lt;li&gt;Corpus (Corpora): a huge natural language text representing special domain.&lt;&#x2F;li&gt;
+&lt;li&gt;Annotation (Markup process): process of entities marking-up in a corpus.&lt;&#x2F;li&gt;
+&lt;li&gt;Learning process: training&#x2F;testing process using annotated corpus.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;ner-via-opennlp-library&quot;&gt;NER via OpenNLP library&lt;&#x2F;h1&gt;
+&lt;p&gt;We can use &lt;a href=&quot;https:&#x2F;&#x2F;opennlp.apache.org&#x2F;&quot;&gt;Apache OpenNLP&lt;&#x2F;a&gt; library to implement above process.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Apache OpenNLP has a standard pipeline for NLP learning process:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Preparing List of Entities&lt;&#x2F;li&gt;
+&lt;li&gt;Annotating corpus &#x2F; Use OpenNLP corpus&lt;&#x2F;li&gt;
+&lt;li&gt;Training OpenNLP Parameters&lt;&#x2F;li&gt;
+&lt;li&gt;Training own model &#x2F; Use pre-trained models for corresponding corpus&lt;&#x2F;li&gt;
+&lt;li&gt;Testing model with relevant data&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;1-named-entity-list-preparations&quot;&gt;1. Named-entity list preparations&lt;&#x2F;h2&gt;
+&lt;p&gt;There are a lot of examples how to use Apache OpenNLP standard domain with models by default. I would like to make the task more complex. In this case, let us
+customize NER for medical domain and allow model to find medical entities in text documents.
+We will try to learn model to find special entities in German language. There are no pretrained German models for Apache OpenNLP.&lt;&#x2F;p&gt;
+&lt;p&gt;For the construction of a list of medical entities,  I used &lt;a href=&quot;https:&#x2F;&#x2F;www.dimdi.de&#x2F;dynamic&#x2F;de&#x2F;klassifikationen&#x2F;weitere-klassifikationen-und-standards&#x2F;mesh&#x2F;index.html&quot;&gt;MeSH open-sourced database&lt;&#x2F;a&gt;.
+Medical Subject Headings (MeSH) DB – is a poly-hierarchical, concept-based thesaurus for the cataloging of book and media collections, indexing of databases and creation of search profiles in medical domain. Terms are extracted in the separate file where each line contains just one seed.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;2-corpus-preparation&quot;&gt;2. Corpus preparation&lt;&#x2F;h2&gt;
+&lt;p&gt;Corpus is important step of NER. Let us prepare an unlabelled corpus. Apache OpenNLP has a strict syntax for that. &lt;&#x2F;p&gt;
+&lt;p&gt;Corpus requirements:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;have lots of data. In OpenNLP documentation, it is recommended a minimum of 15000 sentences.&lt;&#x2F;li&gt;
+&lt;li&gt;entities should be surrounded by tags in format &amp;lt;START:entity-name&amp;gt; Entity &amp;lt;END&amp;gt;.  Entity name is a label of entities your learning model is going to look for.&lt;&#x2F;li&gt;
+&lt;li&gt;add spaces between tags (START&#x2F;END) and labeled data.&lt;&#x2F;li&gt;
+&lt;li&gt;if possible, use one label per model. Multiple labels are possible, but it is not recommended.&lt;&#x2F;li&gt;
+&lt;li&gt;each line contains just one sentence. &lt;&#x2F;li&gt;
+&lt;li&gt;empty lines delimit documents.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Next steps 3-5 will be described in the next article.&lt;&#x2F;p&gt;
+&lt;p&gt;Project source code using OpenNLP you can found here: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;nnovakova&#x2F;opennlp-annotator&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;nnovakova&#x2F;opennlp-annotator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

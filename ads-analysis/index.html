@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  
+  
+  
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css"
+    rel="stylesheet" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <link href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;site.css' rel="stylesheet" />
+
+  
+  
+
+  <title>
+    
+Nadiia Novakova | Depression detection based on speech data 
+
+  </title>
+
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/201b8d5e05.js"></script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYPZQFCYHT"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-RYPZQFCYHT");
+  </script>
+  
+</head>
+
+<body class="has-background-white">
+  
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="https:&#x2F;&#x2F;nnovakova.github.io">Nadiia Novakova</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;'>
+            Blog
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;cv'>
+            CV
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags'>
+            Tags
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories'>
+            Categories
+          </a>
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title is-1">
+            Depression detection based on speech data 
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="fas fa-user"></i>
+    </span>
+    Nadiia Novakova published on
+    <span class="icon">
+      <i class="far fa-calendar-alt"></i>
+    </span>
+    <time datetime='2021-02-23'>February 23, 2021</time>
+  </p>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="far fa-clock"></i>
+    </span>
+    22 min,
+    <span class="icon">
+      <i class="fas fa-pencil-alt"></i>
+    </span>
+    4234 words
+  </p>
+
+            </div>
+            <div class="column">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Categories:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;python&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Python
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;data-science&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Data Science
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;data-analysis&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Data Analysis
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;data-preparation&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Data Preparation
+      </a>
+    
+  </p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Tags:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;data-analysis&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        data analysis
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;data-preparation&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        data preparation
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;matplotlib&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        matplotlib
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;pandas&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        pandas
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;numpy&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        numpy
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;modelling&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        modelling
+      </a>
+    
+  </p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>In this topic I would like to show how to manage a dataset with many features 
+(especially numeric data with completely unclear meaning and influence on whole dataset)</p>
+<p>The dataset contains speech features and clinical variables
+from participants of a depression related study. 
+Based on speech recordings, vocal features have been derived from
+different categories. 
+Each feature contains a tag <code>_{pos,neg}</code>, which refers to the vocal task it
+was extracted from. 
+Clinical and demographic variables of participants can be found at the beginning. 
+The study was meant to show a relation between voice patterns and depression scale (variable ADS). </p>
+<span id="continue-reading"></span>
+<p><em>Description:</em></p>
+<p>1: Participant identifier number in the study</p>
+<p>2 - 4: Participant recorded demographic information</p>
+<p>5: Depression score that records disturbances caused by depressive
+symptoms on a scale of 0-60. The participants can be classified into
+a group with (ADS &gt; 17) and without (ADS &lt; 17) depressive
+symptoms.</p>
+<p>6 - 171: 84 speech features computed for negative and positive stories.
+Column names contain feature names and the story sentiment it
+was computed from. They are all separated by underscores i.e., speech_ratio_pos
+refers to speech ratio computed for positive stories.</p>
+<p>172-215: 22 transcript features computed for negative and positive stories.
+Column names contain features name and the story sentiment it
+was computed, all separated by underscores i.e.,
+adjective_rate_neg refers to adjective rate computed for negative
+stories.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">pandas </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">pd
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">matplotlib </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">pyplot </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">plt
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">os
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">numpy </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">np
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">seaborn </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">sns
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn.preprocessing </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">LabelEncoder
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">scipy.stats </span><span style="color:#b48ead;">import  </span><span style="color:#c0c5ce;">ttest_ind
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">scipy.stats </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">stats
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">warnings
+
+warnings.</span><span style="color:#bf616a;">filterwarnings</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ignore</span><span style="color:#c0c5ce;">&#39;)
+df = pd.</span><span style="color:#bf616a;">read_csv</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">data.csv</span><span style="color:#c0c5ce;">&quot;)
+df.shape
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">121,</span><span style="color:#c0c5ce;"> 215)
+</span></code></pre>
+<p>Gender is a categorical variable. It should be transformed to numerical value:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df[&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">unique</span><span style="color:#c0c5ce;">()
+</span><span style="color:#bf616a;">array</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">female</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">male</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">dtype</span><span style="color:#c0c5ce;">=object)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;"># Coding categorical feature &quot;gender&quot; as 0- male , 1- female
+</span><span style="color:#c0c5ce;">df_gender = df[&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">map</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">x</span><span style="color:#c0c5ce;">:</span><span style="color:#d08770;">0 </span><span style="color:#b48ead;">if </span><span style="color:#c0c5ce;">x==&#39;</span><span style="color:#a3be8c;">male</span><span style="color:#c0c5ce;">&#39; </span><span style="color:#b48ead;">else </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+df[&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;] = df_gender
+df.</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">()
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;3d762fd6f35fe00300.png" />
+<p>It is not enough data to divide data on to subsets by gender. So I will first explore and learn models with entire dataset.
+I will compare results afterwards.
+This dataset has <strong>215 features</strong>. For more comfortable exploration I look at the feature cuts according the task description </p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_demograph = df.iloc[:,:</span><span style="color:#d08770;">4</span><span style="color:#c0c5ce;">]
+df_sf = df.iloc[:,</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">:</span><span style="color:#d08770;">172</span><span style="color:#c0c5ce;">]
+df_tf = df.iloc[:,</span><span style="color:#d08770;">172</span><span style="color:#c0c5ce;">:]
+</span></code></pre>
+<p>Previous data exploration shows that ADS can be a target variable. It is possible to classify participants as:</p>
+<ul>
+<li>0 - &quot;has depressive symptoms&quot;,</li>
+<li>1 - &quot;has no depressive symptoms&quot;</li>
+</ul>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df[&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;]=df[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">map</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">x</span><span style="color:#c0c5ce;">: </span><span style="color:#d08770;">1 </span><span style="color:#b48ead;">if </span><span style="color:#c0c5ce;">x&gt;</span><span style="color:#d08770;">17 </span><span style="color:#b48ead;">else </span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">)
+</span></code></pre><h2 id="data-preparation">Data preparation</h2>
+<p>Let's explore all features with NaN or 0 values</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">findNaNColumn </span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">df</span><span style="color:#c0c5ce;">):
+    nan_columns = np.</span><span style="color:#bf616a;">array</span><span style="color:#c0c5ce;">([])
+    </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">i </span><span style="color:#b48ead;">in </span><span style="color:#c0c5ce;">df.columns:
+        </span><span style="color:#b48ead;">if </span><span style="color:#c0c5ce;">df[i].</span><span style="color:#bf616a;">isnull</span><span style="color:#c0c5ce;">().values.</span><span style="color:#bf616a;">any</span><span style="color:#c0c5ce;">():
+            nan_columns = np.</span><span style="color:#bf616a;">append</span><span style="color:#c0c5ce;">(nan_columns, i)
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">nan_columns
+
+a = </span><span style="color:#bf616a;">findNaNColumn</span><span style="color:#c0c5ce;">(df)
+</span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(a)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">[</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">jitter_local_neg</span><span style="color:#c0c5ce;">&#39; &#39;</span><span style="color:#a3be8c;">jitter_absolute_neg</span><span style="color:#c0c5ce;">&#39; &#39;</span><span style="color:#a3be8c;">jitter_rap_neg</span><span style="color:#c0c5ce;">&#39;
+&#39;</span><span style="color:#a3be8c;">jitter_ppq5_neg</span><span style="color:#c0c5ce;">&#39; &#39;</span><span style="color:#a3be8c;">jitter_ddp_neg</span><span style="color:#c0c5ce;">&#39; &#39;</span><span style="color:#a3be8c;">jitter_local_pos</span><span style="color:#c0c5ce;">&#39;
+&#39;</span><span style="color:#a3be8c;">jitter_absolute_pos</span><span style="color:#c0c5ce;">&#39; &#39;</span><span style="color:#a3be8c;">jitter_rap_pos</span><span style="color:#c0c5ce;">&#39; &#39;</span><span style="color:#a3be8c;">jitter_ppq5_pos</span><span style="color:#c0c5ce;">&#39; &#39;</span><span style="color:#a3be8c;">jitter_ddp_pos</span><span style="color:#c0c5ce;">&#39;]
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">nan_amount</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">df</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">a</span><span style="color:#c0c5ce;">):
+</span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">i </span><span style="color:#b48ead;">in </span><span style="color:#c0c5ce;">a:
+    percent = </span><span style="color:#bf616a;">str</span><span style="color:#c0c5ce;">(</span><span style="color:#96b5b4;">round</span><span style="color:#c0c5ce;">(df[i].</span><span style="color:#bf616a;">isnull</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">sum</span><span style="color:#c0c5ce;">()*</span><span style="color:#d08770;">100</span><span style="color:#c0c5ce;">/df[i].</span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">()))        
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">f</span><span style="color:#c0c5ce;">&quot;{i}</span><span style="color:#a3be8c;">: </span><span style="color:#c0c5ce;">{percent}</span><span style="color:#a3be8c;">%</span><span style="color:#c0c5ce;">&quot;)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;"># Amount of NaN data in columns
+</span><span style="color:#bf616a;">nan_amount</span><span style="color:#c0c5ce;">(df,a)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">jitter_local_neg:</span><span style="color:#c0c5ce;"> 9%
+</span><span style="color:#bf616a;">jitter_absolute_neg:</span><span style="color:#c0c5ce;"> 9%
+</span><span style="color:#bf616a;">jitter_rap_neg:</span><span style="color:#c0c5ce;"> 9%
+</span><span style="color:#bf616a;">jitter_ppq5_neg:</span><span style="color:#c0c5ce;"> 9%
+</span><span style="color:#bf616a;">jitter_ddp_neg:</span><span style="color:#c0c5ce;"> 9%
+</span><span style="color:#bf616a;">jitter_local_pos:</span><span style="color:#c0c5ce;"> 11%
+</span><span style="color:#bf616a;">jitter_absolute_pos:</span><span style="color:#c0c5ce;"> 11%
+</span><span style="color:#bf616a;">jitter_rap_pos:</span><span style="color:#c0c5ce;"> 11%
+</span><span style="color:#bf616a;">jitter_ppq5_pos:</span><span style="color:#c0c5ce;"> 11%
+</span><span style="color:#bf616a;">jitter_ddp_pos:</span><span style="color:#c0c5ce;"> 11% 
+</span></code></pre>
+<p>NaN data here takes just near 10%, so it can be replaced by median values</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">replaceNanOnMedian</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">a</span><span style="color:#c0c5ce;">):
+    </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">i </span><span style="color:#b48ead;">in </span><span style="color:#c0c5ce;">a:
+        df[i] = df[i].</span><span style="color:#bf616a;">fillna</span><span style="color:#c0c5ce;">(df[i].</span><span style="color:#bf616a;">median</span><span style="color:#c0c5ce;">())
+
+</span><span style="color:#bf616a;">replaceNanOnMedian</span><span style="color:#c0c5ce;">(a)
+</span></code></pre>
+<p>Columns with all zero values can be deleted </p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">i </span><span style="color:#b48ead;">in </span><span style="color:#c0c5ce;">df.columns:
+    </span><span style="color:#b48ead;">if </span><span style="color:#c0c5ce;">df[i].</span><span style="color:#bf616a;">mean</span><span style="color:#c0c5ce;">() == </span><span style="color:#d08770;">0.0</span><span style="color:#c0c5ce;">:
+        </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(i+&quot;</span><span style="color:#a3be8c;">: </span><span style="color:#c0c5ce;">&quot;+</span><span style="color:#bf616a;">str</span><span style="color:#c0c5ce;">(df[i].</span><span style="color:#bf616a;">mean</span><span style="color:#c0c5ce;">()))
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">espinola_zero_crossing_metric_pos:</span><span style="color:#c0c5ce;"> 0.0
+</span><span style="color:#bf616a;">mean_number_subordinate_clauses_neg:</span><span style="color:#c0c5ce;"> 0.0
+</span><span style="color:#bf616a;">mean_number_subordinate_clauses_pos:</span><span style="color:#c0c5ce;"> 0.0
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df =df.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">espinola_zero_crossing_metric_pos</span><span style="color:#c0c5ce;">&#39;, \
+    &#39;</span><span style="color:#a3be8c;">mean_number_subordinate_clauses_neg</span><span style="color:#c0c5ce;">&#39;, \
+    &#39;</span><span style="color:#a3be8c;">mean_number_subordinate_clauses_pos</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">axis </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+</span></code></pre><h2 id="outliers-influence-elimination">Outliers influence elimination</h2>
+<p>For more accurate results feature sets should be normally distributed.</p>
+<h3 id="demographical-features">Demographical features</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">scipy.stats </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">norm
+sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">fit </span><span style="color:#c0c5ce;">= norm)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;0a6ba4037c7e2dbe00.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">skew</span><span style="color:#c0c5ce;">()
+</span><span style="color:#d08770;">1.2106132338523006
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">kurtosis</span><span style="color:#c0c5ce;">()
+</span><span style="color:#d08770;">2.8349770036934183
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">sns.</span><span style="color:#bf616a;">boxplot</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;])
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;334292ce5e325de800.png" />
+<p>We can see that ADS has outliers, that is why it has right skew and quite big kurtosis</p>
+<p>Let's try to normalise this feature set.</p>
+<h3 id="ads-normality-exploration">ADS Normality Exploration</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#calculate lower and upper limit values for a sample
+
+</span><span style="color:#c0c5ce;">feature = &#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">boundary_values </span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">feature</span><span style="color:#c0c5ce;">):
+    feature_q25,feature_q75 = np.</span><span style="color:#bf616a;">percentile</span><span style="color:#c0c5ce;">(df[feature], </span><span style="color:#d08770;">25</span><span style="color:#c0c5ce;">), np.</span><span style="color:#bf616a;">percentile</span><span style="color:#c0c5ce;">(df[feature], </span><span style="color:#d08770;">75</span><span style="color:#c0c5ce;">)
+    feature_IQR = feature_q75 - feature_q25
+    Threshold = feature_IQR * </span><span style="color:#d08770;">1.5 </span><span style="color:#65737e;">#interquartile range (IQR)
+    </span><span style="color:#c0c5ce;">feature_lower, feature_upper = feature_q25 - Threshold, feature_q75 + Threshold
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">f</span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">Lower limit of </span><span style="color:#c0c5ce;">{feature}</span><span style="color:#a3be8c;"> distribution: </span><span style="color:#c0c5ce;">{feature_lower}&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">f</span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">Upper limit of </span><span style="color:#c0c5ce;">{feature}</span><span style="color:#a3be8c;"> distribution: </span><span style="color:#c0c5ce;">{feature_upper}&quot;)
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">feature_lower,feature_upper;
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#calculate limits
+</span><span style="color:#c0c5ce;">x,y = </span><span style="color:#bf616a;">boundary_values</span><span style="color:#c0c5ce;">(feature)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Lower</span><span style="color:#c0c5ce;"> limit of ADS distribution: 5.0
+</span><span style="color:#bf616a;">Upper</span><span style="color:#c0c5ce;"> limit of ADS distribution: 29.0
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">manage_outliers</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">df</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">feature_lower</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">feature_upper</span><span style="color:#c0c5ce;">):
+    df_copy = df.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+    df_copy.loc[(df_copy[feature] &gt; feature_upper),feature] = np.nan
+    df_copy[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">fillna</span><span style="color:#c0c5ce;">(feature_upper, </span><span style="color:#bf616a;">inplace</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">)
+    df_copy.loc[(df_copy[feature] &lt; feature_lower),feature] = np.nan
+    df_copy[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">fillna</span><span style="color:#c0c5ce;">(feature_lower, </span><span style="color:#bf616a;">inplace</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">)
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">df_copy;
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df = </span><span style="color:#bf616a;">manage_outliers</span><span style="color:#c0c5ce;">(df,x,y)
+df.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">().loc[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;]
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">skew</span><span style="color:#c0c5ce;">        0.553851
+</span><span style="color:#bf616a;">kurtosis   -0</span><span style="color:#c0c5ce;">.036457
+</span><span style="color:#bf616a;">Name:</span><span style="color:#c0c5ce;"> ADS, dtype: float64
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">fit </span><span style="color:#c0c5ce;">= norm)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;e27d60871ede866f00.png" />
+<p>These transformations helped to decrease outlier influences as we see on the graph and by skew/kurtosis indexes.</p>
+<h3 id="age-normality-exploration">Age Normality Exploration</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">fit </span><span style="color:#c0c5ce;">= norm)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;0fbc76b93bbc546b00.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#calculate limits
+</span><span style="color:#c0c5ce;">feature=&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;
+x,y = </span><span style="color:#bf616a;">boundary_values</span><span style="color:#c0c5ce;">(feature)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Lower</span><span style="color:#c0c5ce;"> limit of age distribution: 13.5
+</span><span style="color:#bf616a;">Upper</span><span style="color:#c0c5ce;"> limit of age distribution: 33.5
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">n = df[df[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;]&gt;</span><span style="color:#d08770;">33.5</span><span style="color:#c0c5ce;">][&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">()
+</span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">Age outliers amount: </span><span style="color:#c0c5ce;">&quot;+</span><span style="color:#bf616a;">str</span><span style="color:#c0c5ce;">(n))
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Age</span><span style="color:#c0c5ce;"> outliers amount: 5
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">str</span><span style="color:#c0c5ce;">(n*</span><span style="color:#d08770;">100</span><span style="color:#c0c5ce;">/df[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;].shape)+&quot;</span><span style="color:#a3be8c;">%</span><span style="color:#c0c5ce;">&quot;)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">[4.1322314]</span><span style="color:#c0c5ce;">%
+</span></code></pre><h3 id="gender-normality-exploration">Gender Normality Exploration</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">sns.displot(df[&#39;gender&#39;])
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;8119f881e201b51700.png" />
+<p>Women in test appear ~ 3 times more than men. It can influence the training quality further.</p>
+<h3 id="education-normality-exploration">Education Normality Exploration</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">education</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">fit </span><span style="color:#c0c5ce;">= norm)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;055b00b9a365f58300.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">().loc[&#39;</span><span style="color:#a3be8c;">education</span><span style="color:#c0c5ce;">&#39;]
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">skew</span><span style="color:#c0c5ce;">        0.007860
+</span><span style="color:#bf616a;">kurtosis   -0</span><span style="color:#c0c5ce;">.137656
+</span><span style="color:#bf616a;">Name:</span><span style="color:#c0c5ce;"> education, dtype: float64
+</span></code></pre>
+<p>Education is more-less normally distributed. It can be fixed by standardisation on the next step. </p>
+<h3 id="speech-features-transcript-features-normality-exploration">Speech Features / Transcript Features Normality Exploration</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_sf= df.iloc[:,</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">:</span><span style="color:#d08770;">172</span><span style="color:#c0c5ce;">]
+df_sf
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;bec2a6d9defbe86900.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_sf.shape[</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">]
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">167
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_sf.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">().loc[df_sf.columns].</span><span style="color:#bf616a;">sort_values</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">by</span><span style="color:#c0c5ce;">=[&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;,&#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;])
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;99dde3fa6955269a00.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">remove_zeros</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">dataframe</span><span style="color:#c0c5ce;">):  
+    drop_cols = dataframe.columns[(dataframe == </span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">).</span><span style="color:#bf616a;">sum</span><span style="color:#c0c5ce;">() &gt; </span><span style="color:#d08770;">0.25 </span><span style="color:#c0c5ce;">* dataframe.shape[</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">]]
+    dataframe.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(drop_cols, </span><span style="color:#bf616a;">axis </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">inplace </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">)
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">dataframe
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_sf = </span><span style="color:#bf616a;">remove_zeros</span><span style="color:#c0c5ce;">(df_sf)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_sf.shape
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">121,</span><span style="color:#c0c5ce;"> 162)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_tf= df.iloc[:,</span><span style="color:#d08770;">172</span><span style="color:#c0c5ce;">:]
+df_tf
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_tf = </span><span style="color:#bf616a;">remove_zeros</span><span style="color:#c0c5ce;">(df_tf)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_sf.shape
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">121,</span><span style="color:#c0c5ce;"> 162)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">scipy </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">stats
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">shapiro_test</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">feature</span><span style="color:#c0c5ce;">):
+    p_value = stats.</span><span style="color:#bf616a;">shapiro</span><span style="color:#c0c5ce;">(df[feature])[</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">]
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">f</span><span style="color:#c0c5ce;">&quot;{feature}</span><span style="color:#a3be8c;">: </span><span style="color:#c0c5ce;">&quot;)
+    </span><span style="color:#b48ead;">if </span><span style="color:#c0c5ce;">p_value &lt;=</span><span style="color:#d08770;">0.05</span><span style="color:#c0c5ce;">:
+        </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">  distribution is non-normal</span><span style="color:#c0c5ce;">&quot;)
+    </span><span style="color:#b48ead;">else</span><span style="color:#c0c5ce;">:
+        </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">  distribution is normal</span><span style="color:#c0c5ce;">&quot;)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">i </span><span style="color:#b48ead;">in </span><span style="color:#c0c5ce;">df_sf.columns:
+    </span><span style="color:#bf616a;">shapiro_test</span><span style="color:#c0c5ce;">(i)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">speech_ratio_neg:
+distribution is normal
+speech_ratio_pos:
+distribution is normal
+harmonics_to_noise_ratio_neg:
+distribution is normal
+...
+...
+...
+distribution is normal
+jitter_ppq5_pos:
+distribution is normal
+jitter_ddp_pos:
+distribution is normal
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">i </span><span style="color:#b48ead;">in </span><span style="color:#c0c5ce;">df_tf.columns:
+    </span><span style="color:#bf616a;">shapiro_test</span><span style="color:#c0c5ce;">(i)
+</span></code></pre>
+<p>Both groups of features are normally distributed</p>
+<h3 id="standardisation">Standardisation</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn.preprocessing </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">StandardScaler
+num_cols = df.iloc[:,</span><span style="color:#d08770;">3</span><span style="color:#c0c5ce;">:df.shape[</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">]-</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">].columns
+</span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(num_cols)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;"># apply standardisation on numerical features
+
+</span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">i </span><span style="color:#b48ead;">in </span><span style="color:#c0c5ce;">num_cols:
+    scale = </span><span style="color:#bf616a;">StandardScaler</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">fit</span><span style="color:#c0c5ce;">(df[[i]])
+    </span><span style="color:#65737e;"># transform the training data column
+    </span><span style="color:#c0c5ce;">df[i] = scale.</span><span style="color:#bf616a;">transform</span><span style="color:#c0c5ce;">(df[[i]])
+
+scale = </span><span style="color:#bf616a;">StandardScaler</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">fit</span><span style="color:#c0c5ce;">(df[[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;]])
+df[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;] = scale.</span><span style="color:#bf616a;">transform</span><span style="color:#c0c5ce;">(df[[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;]])
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Index</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">education</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">speech_ratio_neg</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">speech_ratio_pos</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">harmonics_to_noise_ratio_neg</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">harmonics_to_noise_ratio_pos</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">sound_to_noise_ratio_neg</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">sound_to_noise_ratio_pos</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">mean_f0_neg</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">mean_f0_pos</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">,
+...
+</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">mean_cluster_density_neg</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">mean_cluster_density_pos</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">biggest_cluster_density_neg</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">biggest_cluster_density_pos</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">number_cluster_switches_neg</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">number_cluster_switches_pos</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">tangentiality_score_neg</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">tangentiality_score_pos</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">coherence_metric_neg</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">coherence_metric_pos</span><span style="color:#c0c5ce;">&#39;],
+</span><span style="color:#bf616a;">dtype</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">object</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">, </span><span style="color:#bf616a;">length</span><span style="color:#c0c5ce;">=</span><span style="color:#a3be8c;">209</span><span style="color:#c0c5ce;">)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">id</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+</span></code></pre><h1 id="modeling">Modeling</h1>
+<p>Based on the type of target column we can see that we can apply binary classifiers. Logistic regression is obvious choice for that</p>
+<h3 id="logistic-regression">Logistic regression</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn.linear_model </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">LogisticRegression
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn.metrics </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">classification_report, confusion_matrix
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn.metrics </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">mean_squared_error
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn.model_selection </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">train_test_split
+
+X = df.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+y = df[&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;]
+
+X_train, X_test, y_train, y_test = </span><span style="color:#bf616a;">train_test_split</span><span style="color:#c0c5ce;">(X,y,</span><span style="color:#bf616a;">test_size</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">0.2</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">random_state</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">27</span><span style="color:#c0c5ce;">)
+
+model = </span><span style="color:#bf616a;">LogisticRegression</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">solver</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">liblinear</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">random_state</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">)
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">train_test_model</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">model</span><span style="color:#c0c5ce;">):
+    model.</span><span style="color:#bf616a;">fit</span><span style="color:#c0c5ce;">(X_train, y_train)
+    pred = model.</span><span style="color:#bf616a;">predict</span><span style="color:#c0c5ce;">(X_train)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">f</span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">Predicted : </span><span style="color:#c0c5ce;">{pred}&quot;)
+    score = model.</span><span style="color:#bf616a;">score</span><span style="color:#c0c5ce;">(X_test, y_test)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">f</span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">Score: </span><span style="color:#c0c5ce;">{score}&quot;)
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">score
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">score = </span><span style="color:#bf616a;">train_test_model</span><span style="color:#c0c5ce;">(model)
+score_set = pd.</span><span style="color:#bf616a;">DataFrame</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">data </span><span style="color:#c0c5ce;">= [score], </span><span style="color:#bf616a;">columns </span><span style="color:#c0c5ce;">= [&#39;</span><span style="color:#a3be8c;">LR_score</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">index </span><span style="color:#c0c5ce;">= [&#39;</span><span style="color:#a3be8c;">all_set</span><span style="color:#c0c5ce;">&#39;])
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Predicted</span><span style="color:#c0c5ce;"> : [1 0 0 1 1 1 0 0 0 0 1 0 1 1 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 1
+</span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;"> 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 0 0 1 1 1 1 0 0 1 1 1 1 1 0 0 0 1 0 0 0 1
+</span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;"> 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 0 0 1 0 1 1]
+</span><span style="color:#bf616a;">Score:</span><span style="color:#c0c5ce;"> 0.6
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">score_set
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;1a1412fa9490fe0a00.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">conf_matrix</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">model</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">X_test</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">y_test</span><span style="color:#c0c5ce;">):
+    cm = </span><span style="color:#bf616a;">confusion_matrix</span><span style="color:#c0c5ce;">(y_test, model.</span><span style="color:#bf616a;">predict</span><span style="color:#c0c5ce;">(X_test))
+    fig, ax = plt.</span><span style="color:#bf616a;">subplots</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">figsize</span><span style="color:#c0c5ce;">=(</span><span style="color:#d08770;">3</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">3</span><span style="color:#c0c5ce;">))
+    ax.</span><span style="color:#bf616a;">imshow</span><span style="color:#c0c5ce;">(cm)
+    ax.</span><span style="color:#bf616a;">grid</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">False</span><span style="color:#c0c5ce;">)
+    ax.xaxis.</span><span style="color:#bf616a;">set</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">ticks</span><span style="color:#c0c5ce;">=(</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">), </span><span style="color:#bf616a;">ticklabels</span><span style="color:#c0c5ce;">=(&#39;</span><span style="color:#a3be8c;">Predicted 0s</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">Predicted 1s</span><span style="color:#c0c5ce;">&#39;))
+    ax.yaxis.</span><span style="color:#bf616a;">set</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">ticks</span><span style="color:#c0c5ce;">=(</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">), </span><span style="color:#bf616a;">ticklabels</span><span style="color:#c0c5ce;">=(&#39;</span><span style="color:#a3be8c;">Actual 0s</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">Actual 1s</span><span style="color:#c0c5ce;">&#39;))
+    ax.</span><span style="color:#bf616a;">set_ylim</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">1.5</span><span style="color:#c0c5ce;">, -</span><span style="color:#d08770;">0.5</span><span style="color:#c0c5ce;">)
+    </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">i </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">):
+        </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">j </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">):
+            ax.</span><span style="color:#bf616a;">text</span><span style="color:#c0c5ce;">(j, i, cm[i, j], </span><span style="color:#bf616a;">ha</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">center</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">va</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">center</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">color</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">red</span><span style="color:#c0c5ce;">&#39;)
+    plt.</span><span style="color:#bf616a;">show</span><span style="color:#c0c5ce;">()
+
+</span><span style="color:#bf616a;">conf_matrix</span><span style="color:#c0c5ce;">(model, X_test, y_test)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;83d6760263a61b5700.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">classification_report</span><span style="color:#c0c5ce;">(y_test, model.</span><span style="color:#bf616a;">predict</span><span style="color:#c0c5ce;">(X_test)))
+
+             precision    recall  f1-score   support
+
+           </span><span style="color:#d08770;">0       0.50      0.60      0.55        10
+           1       0.69      0.60      0.64        15
+
+    </span><span style="color:#c0c5ce;">accuracy                           </span><span style="color:#d08770;">0.60        25
+   </span><span style="color:#c0c5ce;">macro avg       </span><span style="color:#d08770;">0.60      0.60      0.59        25
+</span><span style="color:#c0c5ce;">weighted avg       </span><span style="color:#d08770;">0.62      0.60      0.60        25
+</span></code></pre>
+<p>Accuracy value is not good enough. Let's try other binary classifiers.</p>
+<h3 id="support-vector-machine">Support vector machine</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">svm
+model = svm.</span><span style="color:#bf616a;">SVC</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">kernel</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">linear</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">C</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">gamma</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">auto</span><span style="color:#c0c5ce;">&#39;)
+score_set[&#39;</span><span style="color:#a3be8c;">SVM_score</span><span style="color:#c0c5ce;">&#39;] = </span><span style="color:#bf616a;">train_test_model</span><span style="color:#c0c5ce;">(model)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Predicted</span><span style="color:#c0c5ce;"> : [1 0 0 1 1 1 0 0 0 0 1 0 1 1 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 1
+</span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;"> 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 0 0 1 1 1 1 0 0 1 1 1 1 1 0 0 0 1 0 0 0 1
+</span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;"> 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 0 0 1 0 1 1]
+</span><span style="color:#bf616a;">Score:</span><span style="color:#c0c5ce;"> 0.64
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">conf_matrix</span><span style="color:#c0c5ce;">(model, X_test, y_test)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;b4f057d2d90a414500.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">print</span><span style="color:#c0c5ce;">(classification_report(y_test, model.predict(X_test)))
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">
+              </span><span style="color:#bf616a;">precision</span><span style="color:#c0c5ce;">    recall  f1-score   support
+
+           </span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;">       0.55      0.60      0.57        10
+           </span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;">       0.71      0.67      0.69        15
+
+    </span><span style="color:#bf616a;">accuracy</span><span style="color:#c0c5ce;">                           0.64        25
+   </span><span style="color:#bf616a;">macro</span><span style="color:#c0c5ce;"> avg       0.63      0.63      0.63        25
+</span><span style="color:#bf616a;">weighted</span><span style="color:#c0c5ce;"> avg       0.65      0.64      0.64        25
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">score_set
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;fa5f4890a38d05f200.png" />
+<h3 id="decission-tree">Decission Tree</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn.tree </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">DecisionTreeClassifier
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">metrics
+</span><span style="color:#65737e;"># Create Decision Tree classifier object
+</span><span style="color:#c0c5ce;">model = </span><span style="color:#bf616a;">DecisionTreeClassifier</span><span style="color:#c0c5ce;">()
+score_set[&#39;</span><span style="color:#a3be8c;">DTree_score</span><span style="color:#c0c5ce;">&#39;] = </span><span style="color:#bf616a;">train_test_model</span><span style="color:#c0c5ce;">(model)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Predicted</span><span style="color:#c0c5ce;"> : [1 0 0 1 1 1 0 0 0 0 1 0 1 1 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 1
+</span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;"> 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 0 0 1 1 1 1 0 0 1 1 1 1 1 0 0 0 1 0 0 0 1
+</span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;"> 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 0 0 1 0 1 1]
+</span><span style="color:#bf616a;">Score:</span><span style="color:#c0c5ce;"> 0.44
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">conf_matrix</span><span style="color:#c0c5ce;">(model, X_test, y_test)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;511394c9f097bf7500.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">classification_report</span><span style="color:#c0c5ce;">(y_test, model.</span><span style="color:#bf616a;">predict</span><span style="color:#c0c5ce;">(X_test)))
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">             </span><span style="color:#bf616a;">precision</span><span style="color:#c0c5ce;">    recall  f1-score   support
+
+           </span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;">       0.33      0.40      0.36        10
+           </span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;">       0.54      0.47      0.50        15
+
+    </span><span style="color:#bf616a;">accuracy</span><span style="color:#c0c5ce;">                           0.44        25
+   </span><span style="color:#bf616a;">macro</span><span style="color:#c0c5ce;"> avg       0.44      0.43      0.43        25
+</span><span style="color:#bf616a;">weighted</span><span style="color:#c0c5ce;"> avg       0.46      0.44      0.45        25
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">score_set
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;f2198a38b4dfa1bd00.png" />
+<h3 id="random-forest">Random Forest</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn.ensemble </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">RandomForestClassifier
+</span><span style="color:#65737e;"># Instantiate model with 100 decision trees
+</span><span style="color:#c0c5ce;">model = </span><span style="color:#bf616a;">RandomForestClassifier</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">n_estimators</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">100</span><span style="color:#c0c5ce;">)
+
+score_set[&#39;</span><span style="color:#a3be8c;">RForest_score</span><span style="color:#c0c5ce;">&#39;] = </span><span style="color:#bf616a;">train_test_model</span><span style="color:#c0c5ce;">(model)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Predicted</span><span style="color:#c0c5ce;"> : [1 0 0 1 1 1 0 0 0 0 1 0 1 1 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 1
+</span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;"> 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 0 0 1 1 1 1 0 0 1 1 1 1 1 0 0 0 1 0 0 0 1
+</span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;"> 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 0 0 1 0 1 1]
+</span><span style="color:#bf616a;">Score:</span><span style="color:#c0c5ce;"> 0.4
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">conf_matrix</span><span style="color:#c0c5ce;">(model, X_test, y_test)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">classification_report</span><span style="color:#c0c5ce;">(y_test, model.</span><span style="color:#bf616a;">predict</span><span style="color:#c0c5ce;">(X_test)))
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;70865a7e3e085a4f00.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">             </span><span style="color:#bf616a;">precision</span><span style="color:#c0c5ce;">    recall  f1-score   support
+
+           </span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;">       0.35      0.60      0.44        10
+           </span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;">       0.50      0.27      0.35        15
+
+    </span><span style="color:#bf616a;">accuracy</span><span style="color:#c0c5ce;">                           0.40        25
+   </span><span style="color:#bf616a;">macro</span><span style="color:#c0c5ce;"> avg       0.43      0.43      0.40        25
+</span><span style="color:#bf616a;">weighted</span><span style="color:#c0c5ce;"> avg       0.44      0.40      0.39        25
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">score_set
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;42f512b93642049000.png" />
+<h3 id="naive-bayes">Naive Bayes</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn.naive_bayes </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">GaussianNB
+</span><span style="color:#65737e;">#Create a Gaussian Classifier
+</span><span style="color:#c0c5ce;">model = </span><span style="color:#bf616a;">GaussianNB</span><span style="color:#c0c5ce;">()
+score_set[&#39;</span><span style="color:#a3be8c;">NB_score</span><span style="color:#c0c5ce;">&#39;] = </span><span style="color:#bf616a;">train_test_model</span><span style="color:#c0c5ce;">(model)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Predicted</span><span style="color:#c0c5ce;"> : [1 0 0 1 0 1 0 0 0 0 0 1 0 1 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 1
+</span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;"> 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 1 0 1 1 0 0 0 1 0 0 0 0
+</span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;"> 1 0 1 0 0 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 0]
+</span><span style="color:#bf616a;">Score:</span><span style="color:#c0c5ce;"> 0.44
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">conf_matrix</span><span style="color:#c0c5ce;">(model, X_test, y_test)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;2e2c7b17ce9c68da00.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">classification_report</span><span style="color:#c0c5ce;">(y_test, model.</span><span style="color:#bf616a;">predict</span><span style="color:#c0c5ce;">(X_test)))
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">score_set
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;f26b3ebbf2cc93c100.png" />
+<h3 id="knn">KNN</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn.neighbors </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">KNeighborsClassifier
+
+model = </span><span style="color:#bf616a;">KNeighborsClassifier</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">n_neighbors</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">3</span><span style="color:#c0c5ce;">)
+score_set[&#39;</span><span style="color:#a3be8c;">KNN_score</span><span style="color:#c0c5ce;">&#39;] = </span><span style="color:#bf616a;">train_test_model</span><span style="color:#c0c5ce;">(model)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Predicted</span><span style="color:#c0c5ce;"> : [1 0 0 1 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 1 1 1 0 0 1 0 1 0 0 0 1 1 0 1
+</span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;"> 0 0 1 1 1 1 0 1 0 1 0 0 0 1 0 0 0 1 1 0 1 0 0 1 1 0 0 0 0 0 0 1 1 0 1 1
+</span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;"> 0 0 1 0 1 0 1 0 1 1 0 1 0 0 1 0 0 1 0 0 1]
+</span><span style="color:#bf616a;">Score:</span><span style="color:#c0c5ce;"> 0.48
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">conf_matrix</span><span style="color:#c0c5ce;">(model, X_test, y_test)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;f6e19bb8deafe99a00.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">classification_report</span><span style="color:#c0c5ce;">(y_test, model.</span><span style="color:#bf616a;">predict</span><span style="color:#c0c5ce;">(X_test)))
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">             </span><span style="color:#bf616a;">precision</span><span style="color:#c0c5ce;">    recall  f1-score   support
+
+           </span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;">       0.38      0.50      0.43        10
+           </span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;">       0.58      0.47      0.52        15
+
+    </span><span style="color:#bf616a;">accuracy</span><span style="color:#c0c5ce;">                           0.48        25
+   </span><span style="color:#bf616a;">macro</span><span style="color:#c0c5ce;"> avg       0.48      0.48      0.48        25
+</span><span style="color:#bf616a;">weighted</span><span style="color:#c0c5ce;"> avg       0.50      0.48      0.49        25
+
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">score_set
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;0bacfd40f82c298e00.png" />
+<p>Logistic Regression and SVM got the best results, but not enough good.</p>
+<h2 id="correlation-exploration">Correlation exploration</h2>
+<p>To increase model scores, it make sense to decrease amount of features.
+For that, we need to find more correlated ones with ADS.</p>
+<p>It is too many features to visualise correlation, so I am dividing them into chunks:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#correlation matrix
+</span><span style="color:#c0c5ce;">df_demograph = df.iloc[:,</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">:</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">]
+corrmat = df_demograph.</span><span style="color:#bf616a;">corr</span><span style="color:#c0c5ce;">()
+f, ax = plt.</span><span style="color:#bf616a;">subplots</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">figsize</span><span style="color:#c0c5ce;">=(</span><span style="color:#d08770;">12</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">9</span><span style="color:#c0c5ce;">))
+sns.</span><span style="color:#bf616a;">heatmap</span><span style="color:#c0c5ce;">(corrmat, </span><span style="color:#bf616a;">vmax</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">.8</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">square</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">);
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;4f489f6de03e110900.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#correlation matrix
+</span><span style="color:#c0c5ce;">df_sf= df.iloc[:,</span><span style="color:#d08770;">6</span><span style="color:#c0c5ce;">:</span><span style="color:#d08770;">50</span><span style="color:#c0c5ce;">]
+df_sf[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;] = df[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;]
+corrmat = df_sf.</span><span style="color:#bf616a;">corr</span><span style="color:#c0c5ce;">()
+f, ax = plt.</span><span style="color:#bf616a;">subplots</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">figsize</span><span style="color:#c0c5ce;">=(</span><span style="color:#d08770;">12</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">9</span><span style="color:#c0c5ce;">))
+sns.</span><span style="color:#bf616a;">heatmap</span><span style="color:#c0c5ce;">(corrmat, </span><span style="color:#bf616a;">vmax</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">.8</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">square</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">);
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;1806007b4a098c9700.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_sf= df.iloc[:,</span><span style="color:#d08770;">50</span><span style="color:#c0c5ce;">:</span><span style="color:#d08770;">100</span><span style="color:#c0c5ce;">]
+df_sf[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;] = df[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;]
+corrmat = df_sf.</span><span style="color:#bf616a;">corr</span><span style="color:#c0c5ce;">()
+f, ax = plt.</span><span style="color:#bf616a;">subplots</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">figsize</span><span style="color:#c0c5ce;">=(</span><span style="color:#d08770;">12</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">9</span><span style="color:#c0c5ce;">))
+sns.</span><span style="color:#bf616a;">heatmap</span><span style="color:#c0c5ce;">(corrmat, </span><span style="color:#bf616a;">vmax</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">.8</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">square</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">);
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;a3777ef862910fa500.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_sf= df.iloc[:,</span><span style="color:#d08770;">100</span><span style="color:#c0c5ce;">:</span><span style="color:#d08770;">172</span><span style="color:#c0c5ce;">]
+df_sf[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;] = df[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;]
+corrmat = df_sf.</span><span style="color:#bf616a;">corr</span><span style="color:#c0c5ce;">()
+f, ax = plt.</span><span style="color:#bf616a;">subplots</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">figsize</span><span style="color:#c0c5ce;">=(</span><span style="color:#d08770;">12</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">9</span><span style="color:#c0c5ce;">))
+sns.</span><span style="color:#bf616a;">heatmap</span><span style="color:#c0c5ce;">(corrmat, </span><span style="color:#bf616a;">vmax</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">.8</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">square</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">);
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;16bd8ebcc93d66a600.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_tf= df.iloc[:,</span><span style="color:#d08770;">172</span><span style="color:#c0c5ce;">:]
+df_tf[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;] = df[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;]
+corrmat = df_sf.</span><span style="color:#bf616a;">corr</span><span style="color:#c0c5ce;">()
+f, ax = plt.</span><span style="color:#bf616a;">subplots</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">figsize</span><span style="color:#c0c5ce;">=(</span><span style="color:#d08770;">12</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">9</span><span style="color:#c0c5ce;">))
+sns.</span><span style="color:#bf616a;">heatmap</span><span style="color:#c0c5ce;">(corrmat, </span><span style="color:#bf616a;">vmax</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">.8</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">square</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">);
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;f4ed100b6b93bca400.png" />
+<p>There is no strong correlation between ADS and other features.
+Extract all features which have at least absolute <code>correlation &gt; 0.2</code>:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">short_df = df.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+short_df = short_df.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">id</span><span style="color:#c0c5ce;">&#39;],</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+corrmat = short_df.</span><span style="color:#bf616a;">corr</span><span style="color:#c0c5ce;">()
+
+new_feature_set = corrmat[</span><span style="color:#96b5b4;">abs</span><span style="color:#c0c5ce;">(corrmat[&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;]&gt;=</span><span style="color:#d08770;">0.2</span><span style="color:#c0c5ce;">)].index
+</span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">New feature set indeses: </span><span style="color:#c0c5ce;">&quot;)
+</span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(new_feature_set)
+selected_columns = short_df[new_feature_set]
+
+short_df = selected_columns.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+
+short_df = short_df.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">New</span><span style="color:#c0c5ce;"> feature set indexes:
+</span><span style="color:#bf616a;">Index</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">total_phonation_time_pos</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">average_amplitude_change_pos</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">average_mfccs_12_neg</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">average_mfccs_14_neg</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">average_mfccs_15_neg</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">average_mfccs_19_neg</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">average_mfccs_12_pos</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">average_mfccs_13_pos</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">average_mfccs_14_pos</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">average_mfccs_15_pos</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">delta_deltas_7_pos</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">delta_deltas_9_pos</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">verb_rate_pos</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">avg_dep_distance_neg</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">total_dep_distance_neg</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">avg_dependencies_neg</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">avg_dependencies_pos</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">mean_cluster_size_neg</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">mean_cluster_density_neg</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">mean_cluster_density_pos</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">biggest_cluster_density_neg</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">biggest_cluster_density_pos</span><span style="color:#c0c5ce;">&#39;,
+&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">],
+dtype</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">object</span><span style="color:#c0c5ce;">&#39;)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">short_df[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;] = df[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;]
+short_df[&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;] = df[&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;]
+short_df[&#39;</span><span style="color:#a3be8c;">education</span><span style="color:#c0c5ce;">&#39;] = df[&#39;</span><span style="color:#a3be8c;">education</span><span style="color:#c0c5ce;">&#39;]
+</span></code></pre>
+<p>Trying to train/validate model with less features for <code>LR</code> and <code>SVM</code> for the first approach:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">X = short_df.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+y = short_df[&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;]
+
+X_train, X_test, y_train, y_test = </span><span style="color:#bf616a;">train_test_split</span><span style="color:#c0c5ce;">(X,y,</span><span style="color:#bf616a;">test_size</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">0.2</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">random_state</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">27</span><span style="color:#c0c5ce;">)
+
+model = </span><span style="color:#bf616a;">LogisticRegression</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">solver</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">liblinear</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">random_state</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">)
+score = </span><span style="color:#bf616a;">train_test_model</span><span style="color:#c0c5ce;">(model)
+
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Predicted</span><span style="color:#c0c5ce;"> : [1 0 1 0 1 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 0 1 1 0
+</span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;"> 0 0 1 0 0 0 0 0 1 1 0 0 0 0 1 1 0 0 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 0
+</span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;"> 0 0 1 0 1 0 1 0 1 1 0 1 0 0 1 0 0 0 0 1 0]
+</span><span style="color:#bf616a;">Score:</span><span style="color:#c0c5ce;"> 0.48
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">model = svm.</span><span style="color:#bf616a;">SVC</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">kernel</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">linear</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">C</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">gamma</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">auto</span><span style="color:#c0c5ce;">&#39;)
+score_set[&#39;</span><span style="color:#a3be8c;">SVM_score</span><span style="color:#c0c5ce;">&#39;] = </span><span style="color:#bf616a;">train_test_model</span><span style="color:#c0c5ce;">(model)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Predicted</span><span style="color:#c0c5ce;"> : [1 0 1 0 1 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 1 1 1
+</span><span style="color:#bf616a;">0</span><span style="color:#c0c5ce;"> 0 0 1 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 0
+</span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;"> 0 0 1 0 1 0 1 0 1 1 0 1 0 0 1 0 0 0 0 1 0]
+</span><span style="color:#bf616a;">Score:</span><span style="color:#c0c5ce;"> 0.52
+</span></code></pre>
+<p>Accuracy of algorithms reduced due to decreasing number of features.</p>
+<h1 id="exploration-by-gender">Exploration by Gender</h1>
+<h3 id="divide-data-by-gender">Divide data by gender</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_male = df[df[&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">male</span><span style="color:#c0c5ce;">&#39;]
+df.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">axis </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+df_female = df[df[&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">female</span><span style="color:#c0c5ce;">&#39;]
+df.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">axis </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+
+df_male.shape
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">0,</span><span style="color:#c0c5ce;"> 213)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_female.shape
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">0,</span><span style="color:#c0c5ce;"> 213)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_male = df.loc[df[&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;]==</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">]
+df_male = df_male.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+df_female = df.loc[df[&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;]==</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">]
+df_female = df_female.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">gender</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+df_female
+</span></code></pre>
+<p>Let's try the male/female datasets for two algorithms with the best accuracy for the whole dataset: SVM and Logistic Regression</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">X = df_male.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+y = df_male[&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;]
+
+X_train, X_test, y_train, y_test = </span><span style="color:#bf616a;">train_test_split</span><span style="color:#c0c5ce;">(X,y,</span><span style="color:#bf616a;">test_size</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">0.2</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">random_state</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">27</span><span style="color:#c0c5ce;">)
+model = </span><span style="color:#bf616a;">LogisticRegression</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">solver</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">liblinear</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">random_state</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">)
+score = </span><span style="color:#bf616a;">train_test_model</span><span style="color:#c0c5ce;">(model)
+gender_score_set =  pd.</span><span style="color:#bf616a;">DataFrame</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">data </span><span style="color:#c0c5ce;">= [score] ,</span><span style="color:#bf616a;">columns </span><span style="color:#c0c5ce;">=[&#39;</span><span style="color:#a3be8c;">LR_score</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">index </span><span style="color:#c0c5ce;">= [&#39;</span><span style="color:#a3be8c;">male</span><span style="color:#c0c5ce;">&#39;])
+
+X = df_female.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+y = df_female[&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;]
+
+X_train, X_test, y_train, y_test = </span><span style="color:#bf616a;">train_test_split</span><span style="color:#c0c5ce;">(X,y,</span><span style="color:#bf616a;">test_size</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">0.2</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">random_state</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">27</span><span style="color:#c0c5ce;">)
+model = </span><span style="color:#bf616a;">LogisticRegression</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">solver</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">liblinear</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">random_state</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">)
+gender_score_set.loc[&#39;</span><span style="color:#a3be8c;">female</span><span style="color:#c0c5ce;">&#39;]  = </span><span style="color:#bf616a;">train_test_model</span><span style="color:#c0c5ce;">(model)
+
+gender_score_set.loc[&#39;</span><span style="color:#a3be8c;">all_set</span><span style="color:#c0c5ce;">&#39;]  = score_set[&#39;</span><span style="color:#a3be8c;">LR_score</span><span style="color:#c0c5ce;">&#39;].loc[&#39;</span><span style="color:#a3be8c;">all_set</span><span style="color:#c0c5ce;">&#39;]
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Predicted</span><span style="color:#c0c5ce;"> : </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">1 1 0 0 1 0 0 0 0 0 1 0 0 0 1 0 1 0 1 1 0</span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">Score:</span><span style="color:#c0c5ce;"> 0.6666666666666666
+</span><span style="color:#bf616a;">Predicted</span><span style="color:#c0c5ce;"> : [0 1 1 0 1 0 1 1 0 1 0 0 0 1 1 0 0 0 1 1 0 1 1 0 0 1 0 0 1 1 1 0 1 1 0 0 1
+</span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;"> 0 0 0 0 0 1 0 1 1 0 0 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0
+</span><span style="color:#bf616a;">0]
+Score:</span><span style="color:#c0c5ce;"> 0.5263157894736842
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">gender_score_set
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;92f9af61cf83319f00.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">X = df_male.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+y = df_male[&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;]
+
+X_train, X_test, y_train, y_test = </span><span style="color:#bf616a;">train_test_split</span><span style="color:#c0c5ce;">(X,y,</span><span style="color:#bf616a;">test_size</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">0.2</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">random_state</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">27</span><span style="color:#c0c5ce;">)
+
+model = svm.</span><span style="color:#bf616a;">SVC</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">kernel</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">linear</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">C</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">gamma</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">auto</span><span style="color:#c0c5ce;">&#39;)
+
+score = </span><span style="color:#bf616a;">train_test_model</span><span style="color:#c0c5ce;">(model)
+gender_score_set =  pd.</span><span style="color:#bf616a;">DataFrame</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">data </span><span style="color:#c0c5ce;">= [score] ,</span><span style="color:#bf616a;">columns </span><span style="color:#c0c5ce;">=[&#39;</span><span style="color:#a3be8c;">SVM_score</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">index </span><span style="color:#c0c5ce;">= [&#39;</span><span style="color:#a3be8c;">male</span><span style="color:#c0c5ce;">&#39;])
+
+X = df_female.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+y = df_female[&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;]
+
+X_train, X_test, y_train, y_test = </span><span style="color:#bf616a;">train_test_split</span><span style="color:#c0c5ce;">(X,y,</span><span style="color:#bf616a;">test_size</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">0.2</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">random_state</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">27</span><span style="color:#c0c5ce;">)
+model = svm.</span><span style="color:#bf616a;">SVC</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">kernel</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">linear</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">C</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">gamma</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">auto</span><span style="color:#c0c5ce;">&#39;)
+gender_score_set.loc[&#39;</span><span style="color:#a3be8c;">female</span><span style="color:#c0c5ce;">&#39;]  = </span><span style="color:#bf616a;">train_test_model</span><span style="color:#c0c5ce;">(model)
+
+gender_score_set.loc[&#39;</span><span style="color:#a3be8c;">all_set</span><span style="color:#c0c5ce;">&#39;]  = score_set[&#39;</span><span style="color:#a3be8c;">SVM_score</span><span style="color:#c0c5ce;">&#39;].loc[&#39;</span><span style="color:#a3be8c;">all_set</span><span style="color:#c0c5ce;">&#39;]
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Predicted</span><span style="color:#c0c5ce;"> : </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">1 1 0 0 1 0 0 0 0 0 1 0 0 0 1 0 1 0 1 1 0</span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">Score:</span><span style="color:#c0c5ce;"> 0.6666666666666666
+</span><span style="color:#bf616a;">Predicted</span><span style="color:#c0c5ce;"> : [0 1 1 0 1 0 1 1 0 1 0 0 0 1 1 0 0 0 1 1 0 1 1 0 0 1 0 0 1 1 1 0 1 1 0 0 1
+</span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;"> 0 0 0 0 0 1 0 1 1 0 0 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0
+</span><span style="color:#bf616a;">0]
+Score:</span><span style="color:#c0c5ce;"> 0.631578947368421
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">gender_score_set
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;92f9af61cf83319f00.png" />
+<p>Dividing on subsets gives higher classification accuracy just in male gender group, and lower for female.</p>
+<h2 id="cross-validation-as-classification-improvement-approach">Cross Validation as classification improvement approach</h2>
+<p>Cross validation may help to improve training.</p>
+<h3 id="initial-set">Initial Set</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn.model_selection </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">cross_val_score, cross_val_predict
+
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">scoring</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">df</span><span style="color:#c0c5ce;">):    
+    X = df.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+    X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+    X = X.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ADS</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">axis</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+    y = df[&#39;</span><span style="color:#a3be8c;">ADS_cat</span><span style="color:#c0c5ce;">&#39;]
+    </span><span style="color:#65737e;">#----------------------------------------------------------------
+    </span><span style="color:#c0c5ce;">model = </span><span style="color:#bf616a;">LogisticRegression</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">solver</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">liblinear</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">random_state</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">)
+    scores = </span><span style="color:#bf616a;">cross_val_score</span><span style="color:#c0c5ce;">(model, df, y, </span><span style="color:#bf616a;">cv</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">Logistic Regression: </span><span style="color:#c0c5ce;">&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">f</span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">Score: </span><span style="color:#c0c5ce;">{scores}&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">The best fold score: </span><span style="color:#c0c5ce;">&quot;, scores.</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">())
+
+    score_set_cv = pd.</span><span style="color:#bf616a;">DataFrame</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">data </span><span style="color:#c0c5ce;">= [scores.</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">()] ,</span><span style="color:#bf616a;">columns </span><span style="color:#c0c5ce;">=[&#39;</span><span style="color:#a3be8c;">LR_score</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">index </span><span style="color:#c0c5ce;">= [&#39;</span><span style="color:#a3be8c;">all_set_CV</span><span style="color:#c0c5ce;">&#39;])
+    </span><span style="color:#65737e;">#----------------------------------------------------------------
+    </span><span style="color:#c0c5ce;">model = svm.</span><span style="color:#bf616a;">SVC</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">kernel</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">linear</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">C</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">gamma</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">auto</span><span style="color:#c0c5ce;">&#39;)
+    scores = </span><span style="color:#bf616a;">cross_val_score</span><span style="color:#c0c5ce;">(model, df, y, </span><span style="color:#bf616a;">cv</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">SVM: </span><span style="color:#c0c5ce;">&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">f</span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">Score: </span><span style="color:#c0c5ce;">{scores}&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">The best fold score: </span><span style="color:#c0c5ce;">&quot;, scores.</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">())
+
+    score_set_cv[&#39;</span><span style="color:#a3be8c;">SVM_score</span><span style="color:#c0c5ce;">&#39;]=scores.</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">()
+    </span><span style="color:#65737e;">#----------------------------------------------------------------
+    </span><span style="color:#c0c5ce;">model = </span><span style="color:#bf616a;">DecisionTreeClassifier</span><span style="color:#c0c5ce;">()
+    scores = </span><span style="color:#bf616a;">cross_val_score</span><span style="color:#c0c5ce;">(model, df, y, </span><span style="color:#bf616a;">cv</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">DTree: </span><span style="color:#c0c5ce;">&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">f</span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">Score: </span><span style="color:#c0c5ce;">{scores}&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">The best fold score: </span><span style="color:#c0c5ce;">&quot;, scores.</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">())
+
+    score_set_cv[&#39;</span><span style="color:#a3be8c;">DTree_score</span><span style="color:#c0c5ce;">&#39;]=scores.</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">()
+    </span><span style="color:#65737e;">#----------------------------------------------------------------
+    </span><span style="color:#c0c5ce;">model = </span><span style="color:#bf616a;">RandomForestClassifier</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">n_estimators</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">100</span><span style="color:#c0c5ce;">)
+    scores = </span><span style="color:#bf616a;">cross_val_score</span><span style="color:#c0c5ce;">(model, df, y, </span><span style="color:#bf616a;">cv</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">RForest: </span><span style="color:#c0c5ce;">&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">f</span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">Score: </span><span style="color:#c0c5ce;">{scores}&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">The best fold score: </span><span style="color:#c0c5ce;">&quot;, scores.</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">())
+
+    score_set_cv[&#39;</span><span style="color:#a3be8c;">RForest_score</span><span style="color:#c0c5ce;">&#39;]=scores.</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">()
+    </span><span style="color:#65737e;">#----------------------------------------------------------------
+    </span><span style="color:#c0c5ce;">model = </span><span style="color:#bf616a;">GaussianNB</span><span style="color:#c0c5ce;">()
+    scores = </span><span style="color:#bf616a;">cross_val_score</span><span style="color:#c0c5ce;">(model, df, y, </span><span style="color:#bf616a;">cv</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">Naive Bayes: </span><span style="color:#c0c5ce;">&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">f</span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">Score: </span><span style="color:#c0c5ce;">{scores}&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">The best fold score: </span><span style="color:#c0c5ce;">&quot;, scores.</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">())
+
+    score_set_cv[&#39;</span><span style="color:#a3be8c;">NB_score</span><span style="color:#c0c5ce;">&#39;]=scores.</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">()
+    </span><span style="color:#65737e;">#----------------------------------------------------------------
+    </span><span style="color:#c0c5ce;">model = </span><span style="color:#bf616a;">KNeighborsClassifier</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">n_neighbors</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">3</span><span style="color:#c0c5ce;">)
+    scores = </span><span style="color:#bf616a;">cross_val_score</span><span style="color:#c0c5ce;">(model, df, y, </span><span style="color:#bf616a;">cv</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">KNN: </span><span style="color:#c0c5ce;">&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">f</span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">Score: </span><span style="color:#c0c5ce;">{scores}&quot;)
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">The best fold score: </span><span style="color:#c0c5ce;">&quot;, scores.</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">())
+
+    score_set_cv[&#39;</span><span style="color:#a3be8c;">KNN_score</span><span style="color:#c0c5ce;">&#39;]=scores.</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">()
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">score_set_cv
+    </span><span style="color:#65737e;">#----------------------------------------------------------------
+
+</span><span style="color:#c0c5ce;">score = </span><span style="color:#bf616a;">scoring</span><span style="color:#c0c5ce;">(df)
+</span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(score)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Logistic</span><span style="color:#c0c5ce;"> Regression:
+</span><span style="color:#bf616a;">Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">0.92       0.83333333 0.91666667 0.83333333 0.91666667</span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  0.92
+</span><span style="color:#bf616a;">SVM:
+Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">0.92       0.91666667 0.875      0.83333333 0.875     </span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  0.92
+</span><span style="color:#bf616a;">DTree:
+Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">1. 1. 1. 1. 1.</span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  1.0
+</span><span style="color:#bf616a;">RForest:
+Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">0.96       0.95833333 1.         1.         1.        </span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  1.0
+</span><span style="color:#bf616a;">Naive</span><span style="color:#c0c5ce;"> Bayes:
+</span><span style="color:#bf616a;">Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">1.         1.         0.95833333 1.         1.        </span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  1.0
+</span><span style="color:#bf616a;">KNN:
+Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">0.52       0.45833333 0.33333333 0.625      0.45833333</span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  0.625
+</span><span style="color:#bf616a;">LR_score</span><span style="color:#c0c5ce;">  SVM_score  DTree_score  RForest_score  NB_score  \
+all_set_CV      0.92       0.92          1.0            1.0       1.0
+
+            </span><span style="color:#bf616a;">KNN_score  
+all_set_CV</span><span style="color:#c0c5ce;">      0.625  
+</span></code></pre><h3 id="for-male-female-subsets">For Male/Female Subsets</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">score_set_cv_male = </span><span style="color:#bf616a;">scoring</span><span style="color:#c0c5ce;">(df_male)
+</span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(score_set_cv_male)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Logistic</span><span style="color:#c0c5ce;"> Regression:
+</span><span style="color:#bf616a;">Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">0.66666667 0.66666667 0.4        0.8        0.8       </span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  0.8
+</span><span style="color:#bf616a;">SVM:
+Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">0.66666667 0.66666667 0.6        0.8        0.6       </span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  0.8
+</span><span style="color:#bf616a;">DTree:
+Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">1. 1. 1. 1. 1.</span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  1.0
+</span><span style="color:#bf616a;">RForest:
+Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">0.66666667 0.66666667 0.8        1.         1.        </span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  1.0
+</span><span style="color:#bf616a;">Naive</span><span style="color:#c0c5ce;"> Bayes:
+</span><span style="color:#bf616a;">Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">1.  1.  0.8 1.  1. </span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  1.0
+</span><span style="color:#bf616a;">KNN:
+Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">0.66666667 0.5        0.4        0.2        0.6       </span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  0.6666666666666666
+</span><span style="color:#bf616a;">LR_score</span><span style="color:#c0c5ce;">  SVM_score  DTree_score  RForest_score  NB_score  \
+all_set_CV       0.8        0.8          1.0            1.0       1.0
+
+            </span><span style="color:#bf616a;">KNN_score  
+all_set_CV</span><span style="color:#c0c5ce;">   0.666667  
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">score_set_cv_female = </span><span style="color:#bf616a;">scoring</span><span style="color:#c0c5ce;">(df_female)
+</span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(score_set_cv_female)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Logistic</span><span style="color:#c0c5ce;"> Regression:
+</span><span style="color:#bf616a;">Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">0.94736842 0.68421053 0.94736842 0.89473684 0.94444444</span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  0.9473684210526315
+</span><span style="color:#bf616a;">SVM:
+Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">0.89473684 0.68421053 0.84210526 0.84210526 0.83333333</span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  0.8947368421052632
+</span><span style="color:#bf616a;">DTree:
+Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">1. 1. 1. 1. 1.</span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  1.0
+</span><span style="color:#bf616a;">RForest:
+Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">1.         0.78947368 1.         1.         0.88888889</span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  1.0
+</span><span style="color:#bf616a;">Naive</span><span style="color:#c0c5ce;"> Bayes:
+</span><span style="color:#bf616a;">Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">1. 1. 1. 1. 1.</span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  1.0
+</span><span style="color:#bf616a;">KNN:
+Score: </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">0.47368421 0.31578947 0.26315789 0.68421053 0.5       </span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">The</span><span style="color:#c0c5ce;"> best fold score:  0.6842105263157895
+</span><span style="color:#bf616a;">LR_score</span><span style="color:#c0c5ce;">  SVM_score  DTree_score  RForest_score  NB_score  \
+all_set_CV  0.947368   0.894737          1.0            1.0       1.0
+
+            </span><span style="color:#bf616a;">KNN_score  
+all_set_CV</span><span style="color:#c0c5ce;">   0.684211  
+</span></code></pre><h2 id="results">RESULTS</h2>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">result = pd.</span><span style="color:#bf616a;">concat</span><span style="color:#c0c5ce;">([score_set_cv , score_set_cv_male, score_set_cv_female])
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;1e6d699d17ba79a500.png" />
+<h1 id="summary">Summary</h1>
+<ol>
+<li>Logistic regression gives the best results on all subsets after cross-validation.</li>
+<li>SVM has very close (good) results.</li>
+<li>Decision Tree, Random Forest, Naive Bayes look like overfitting.</li>
+<li>KNN is not good enough comparing to the first a couple of models.</li>
+<li>There is a probability that overall modelling results would be better, if having bigger dataset.</li>
+</ol>
+
+          </div>
+        </article>
+      </div>
+      
+      <div class="column is-2 is-hidden-mobile">
+        <aside class="menu" style="position: sticky; top: 48px">
+          <p class="heading has-text-weight-bold">Contents</p>
+          <ul class="menu-list">
+            
+            <li>
+              <a id="link-data-preparation" class="toc is-size-7 is-active" href="https://nnovakova.github.io/ads-analysis/#data-preparation">
+                Data preparation
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-outliers-influence-elimination" class="toc is-size-7 " href="https://nnovakova.github.io/ads-analysis/#outliers-influence-elimination">
+                Outliers influence elimination
+              </a>
+              
+              <ul>
+                
+                <li>
+                  <a id="link-demographical-features" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#demographical-features">
+                    Demographical features
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-ads-normality-exploration" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#ads-normality-exploration">
+                    ADS Normality Exploration
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-age-normality-exploration" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#age-normality-exploration">
+                    Age Normality Exploration
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-gender-normality-exploration" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#gender-normality-exploration">
+                    Gender Normality Exploration
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-education-normality-exploration" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#education-normality-exploration">
+                    Education Normality Exploration
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-speech-features-transcript-features-normality-exploration" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#speech-features-transcript-features-normality-exploration">
+                    Speech Features &#x2F; Transcript Features Normality Exploration
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-standardisation" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#standardisation">
+                    Standardisation
+                  </a>
+                </li>
+                
+              </ul>
+              
+            </li>
+            
+            <li>
+              <a id="link-modeling" class="toc is-size-7 " href="https://nnovakova.github.io/ads-analysis/#modeling">
+                Modeling
+              </a>
+              
+              <ul>
+                
+                <li>
+                  <a id="link-logistic-regression" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#logistic-regression">
+                    Logistic regression
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-support-vector-machine" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#support-vector-machine">
+                    Support vector machine
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-decission-tree" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#decission-tree">
+                    Decission Tree
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-random-forest" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#random-forest">
+                    Random Forest
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-naive-bayes" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#naive-bayes">
+                    Naive Bayes
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-knn" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#knn">
+                    KNN
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-correlation-exploration" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#correlation-exploration">
+                    Correlation exploration
+                  </a>
+                </li>
+                
+              </ul>
+              
+            </li>
+            
+            <li>
+              <a id="link-exploration-by-gender" class="toc is-size-7 " href="https://nnovakova.github.io/ads-analysis/#exploration-by-gender">
+                Exploration by Gender
+              </a>
+              
+              <ul>
+                
+                <li>
+                  <a id="link-divide-data-by-gender" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#divide-data-by-gender">
+                    Divide data by gender
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-cross-validation-as-classification-improvement-approach" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#cross-validation-as-classification-improvement-approach">
+                    Cross Validation as classification improvement approach
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-results" class="toc is-size-7" href="https://nnovakova.github.io/ads-analysis/#results">
+                    RESULTS
+                  </a>
+                </li>
+                
+              </ul>
+              
+            </li>
+            
+            <li>
+              <a id="link-summary" class="toc is-size-7 " href="https://nnovakova.github.io/ads-analysis/#summary">
+                Summary
+              </a>
+              
+            </li>
+            
+          </ul>
+        </aside>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="field">
+        <p class="control has-icons-right">
+          <input class="input" id="search" placeholder="Search this website." type="search" />
+          <span class="icon is-small is-right">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+      <div class="search-results">
+        <div class="search-results__items"></div>
+      </div>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;data-transformation&#x2F;">
+              Basic Feature Engineering Techniques for ML<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+            
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="py-4 has-background-light">
+    <p class="has-text-centered">
+      Built with
+      <span class="icon is-small">
+        <i class="fas fa-code fa-xs"></i>
+      </span>
+      code and
+      <span class="icon is-small">
+        <i class="fas fa-heart fa-xs"></i>
+      </span>
+      love <br /> Powered By
+      <span class="icon is-small">
+        <i class="fas fa-power-off fa-xs"></i>
+      </span>
+      Zola
+    </p>
+  </footer>
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;search_index.en.js'></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;js&#x2F;site.js'></script>
+
+  
+
+<script type="text/javascript">
+  const menuBarHeight = $("nav.navbar").height();
+  const tocItems = $('.toc');
+  const navSections = new Array($('.toc').length);
+
+  tocItems.each(function (i) {
+    let id = $(this).attr("id").substring(5);
+    navSections[i] = document.getElementById(id);
+  })
+
+  function isVisible(tocIndex) {
+    const current = navSections[tocIndex];
+    const next = tocIndex < tocItems.length - 1 ? navSections[tocIndex+1] : $("section.section").get(1);
+    
+    const c = current.getBoundingClientRect();
+    const n = next.getBoundingClientRect();
+    const h = (window.innerHeight || document.documentElement.clientHeight);
+
+    return (c.top <= h) && (c.top + (n.top - c.top) - menuBarHeight >= 0);
+  }
+
+  function activateIfVisible() {
+    for (b = true, i = 0; i < tocItems.length; i++) {
+      if (b && isVisible(i)) {
+        tocItems[i].classList.add('is-active');
+        b = false;
+      } else
+        tocItems[i].classList.remove('is-active');
+    }
+  }
+
+  var isTicking = null;
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        activateIfVisible();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }, false);
+</script>
+
+
+
+
+</body>
+
+</html>

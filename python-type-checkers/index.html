@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  
+  
+  
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css"
+    rel="stylesheet" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <link href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;site.css' rel="stylesheet" />
+
+  
+  
+
+  <title>
+    
+Nadiia Novakova | Python Type Checkers
+
+  </title>
+
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/201b8d5e05.js"></script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYPZQFCYHT"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-RYPZQFCYHT");
+  </script>
+  
+</head>
+
+<body class="has-background-white">
+  
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="https:&#x2F;&#x2F;nnovakova.github.io">Nadiia Novakova</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;'>
+            Blog
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;cv'>
+            CV
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags'>
+            Tags
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories'>
+            Categories
+          </a>
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title is-1">
+            Python Type Checkers
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="fas fa-user"></i>
+    </span>
+    Nadiia Novakova published on
+    <span class="icon">
+      <i class="far fa-calendar-alt"></i>
+    </span>
+    <time datetime='2020-11-07'>November 07, 2020</time>
+  </p>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="far fa-clock"></i>
+    </span>
+    7 min,
+    <span class="icon">
+      <i class="fas fa-pencil-alt"></i>
+    </span>
+    1251 words
+  </p>
+
+            </div>
+            <div class="column">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Categories:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;programming&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Programming
+      </a>
+    
+  </p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Tags:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;python&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        python
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;static-typing&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        static typing
+      </a>
+    
+  </p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>As I am working with Java code, I also find static types in my project as a useful thing. They help me to reason about my code
+and avoid simple bugs, for example if I pass incorrect argument to some method or function. </p>
+<span id="continue-reading"></span>
+<p><a href="https://en.wikipedia.org/wiki/Python_%28programming_language%29">Python</a> is a dynamically-typed language. 
+This property makes it faster to write code, but NOT necessarily easier to read. Type annotations and type checkers appeared in Python not so long time ago. Today, there are several type checkers in Python eco-system:</p>
+<ul>
+<li><a href="http://mypy-lang.org/"><strong>Mypy</strong></a> - first static type checker for Python, initiated in 2012 and still in active development. Uses type annotations to check program correctness.</li>
+<li><a href="https://pyre-check.org/docs/getting-started"><strong>Pyre</strong></a> - created by Facebook, uses type annotations. User can switch on the &quot;strict mode&quot; to raise errors on missing type annotations.</li>
+<li><a href="https://google.github.io/pytype/"><strong>Pytype</strong></a> - created by Google. Uses type inference technique, instead of only using type annotations.</li>
+</ul>
+<p>There are might be other type checkers, but I mainly looked into those. In this blog-post, I only discuss <strong>Mypy</strong> type checker. </p>
+<h2 id="mypy">Mypy</h2>
+<p>All type checkers in Python are based on the successful work being done in PEPs (Python Enhancement Proposal):</p>
+<ul>
+<li><a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a> - Type Hints</li>
+<li><a href="https://www.python.org/dev/peps/pep-0526/">PEP 526</a> - Syntax for Variable Annotations</li>
+<li><a href="https://www.python.org/dev/peps/pep-0612/">PEP 612</a> - Parameter Specification Variables</li>
+</ul>
+<p>Type annotations can be used for variables, method arguments and return types. 
+There are many other type features like generics, but I will skip that in this blog-post.</p>
+<p>Mypy comes as command line tool plus several other tools for typing, library stubs and more. Let's install it and try on a simple program.</p>
+<h3 id="installation">Installation</h3>
+<p>Mypy requires Python version &gt;= 3.5. You can install it using <a href="https://pip.pypa.io/en/stable/installing/">pip</a>:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">python3 -m</span><span style="color:#c0c5ce;"> pip install mypy
+</span></code></pre><h3 id="usage">Usage</h3>
+<p>Once Mypy is in your environment, you can run it via command line interface to type check you Python source file, module or entire workspace.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">mypy </span><span style="color:#c0c5ce;">&lt;myfile&gt;.py
+</span></code></pre>
+<p>Below example has two lines where we have bugs:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;"># pizza.py
+
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">Pizza</span><span style="color:#eff1f5;">:
+    </span><span style="color:#b48ead;">def </span><span style="color:#96b5b4;">__init__</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">self</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">: str, </span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">: int):
+        </span><span style="color:#bf616a;">self</span><span style="color:#c0c5ce;">.name = name
+        </span><span style="color:#bf616a;">self</span><span style="color:#c0c5ce;">.count = count
+
+
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">order_pizza</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">: str, </span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">: int) -&gt; Pizza:
+    </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">Pizza</span><span style="color:#c0c5ce;">(count, name) </span><span style="color:#65737e;"># bug: count and name swapped
+
+</span><span style="color:#bf616a;">order_pizza</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">, &quot;</span><span style="color:#a3be8c;">spinacci</span><span style="color:#c0c5ce;">&quot;) </span><span style="color:#65737e;"># bug: count and name swapped
+</span></code></pre>
+<p>Let's run Mypy to catch these bugs:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">mypy</span><span style="color:#c0c5ce;"> pizza.py
+</span><span style="color:#bf616a;">pizza.py:8:</span><span style="color:#c0c5ce;"> error: Argument 1 to &quot;</span><span style="color:#a3be8c;">Pizza</span><span style="color:#c0c5ce;">&quot; has incompatible type &quot;</span><span style="color:#a3be8c;">int</span><span style="color:#c0c5ce;">&quot;; </span><span style="color:#bf616a;">expected </span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">str</span><span style="color:#c0c5ce;">&quot;
+</span><span style="color:#bf616a;">pizza.py:8:</span><span style="color:#c0c5ce;"> error: Argument 2 to &quot;</span><span style="color:#a3be8c;">Pizza</span><span style="color:#c0c5ce;">&quot; has incompatible type &quot;</span><span style="color:#a3be8c;">str</span><span style="color:#c0c5ce;">&quot;; </span><span style="color:#bf616a;">expected </span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">int</span><span style="color:#c0c5ce;">&quot;
+</span><span style="color:#bf616a;">pizza.py:11:</span><span style="color:#c0c5ce;"> error: Argument 1 to &quot;</span><span style="color:#a3be8c;">order_pizza</span><span style="color:#c0c5ce;">&quot; has incompatible type &quot;</span><span style="color:#a3be8c;">int</span><span style="color:#c0c5ce;">&quot;; </span><span style="color:#bf616a;">expected </span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">str</span><span style="color:#c0c5ce;">&quot;
+</span><span style="color:#bf616a;">pizza.py:11:</span><span style="color:#c0c5ce;"> error: Argument 2 to &quot;</span><span style="color:#a3be8c;">order_pizza</span><span style="color:#c0c5ce;">&quot; has incompatible type &quot;</span><span style="color:#a3be8c;">str</span><span style="color:#c0c5ce;">&quot;; </span><span style="color:#bf616a;">expected </span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">int</span><span style="color:#c0c5ce;">&quot;
+</span><span style="color:#bf616a;">Found</span><span style="color:#c0c5ce;"> 4 errors in 1 file (checked 1 source file)
+</span></code></pre>
+<p>As you can see, Mypy reports that we pass <code>int</code> value to a function where string value is expected and vice versa.
+Let's fix these bugs and run Mypy again:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">order_pizza</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">: str, </span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">: int) -&gt; Pizza:
+    </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">Pizza</span><span style="color:#c0c5ce;">(name, count)
+
+</span><span style="color:#bf616a;">order_pizza</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">spinacci</span><span style="color:#c0c5ce;">&quot;, </span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">mypy</span><span style="color:#c0c5ce;"> pizza.py
+</span><span style="color:#bf616a;">Success:</span><span style="color:#c0c5ce;"> no issues found in 1 source file
+</span></code></pre>
+<p>If we miss function argument(s), Mypy reports it as well:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">order_pizza</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">: str, </span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">: int) -&gt; Pizza:
+    </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">Pizza</span><span style="color:#c0c5ce;">(name, count)
+
+</span><span style="color:#bf616a;">order_pizza</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">spinacci</span><span style="color:#c0c5ce;">&quot;)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;"> </span><span style="color:#bf616a;">mypy</span><span style="color:#c0c5ce;"> pizza.py
+</span><span style="color:#bf616a;">pizza.py:10:</span><span style="color:#c0c5ce;"> error: Too few arguments for &quot;</span><span style="color:#a3be8c;">order_pizza</span><span style="color:#c0c5ce;">&quot;
+</span><span style="color:#bf616a;">Found</span><span style="color:#c0c5ce;"> 1 error in 1 file (checked 1 source file)
+</span></code></pre>
+<p>In case we put wrong return value, then we get an error as well:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">order_pizza</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">: str, </span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">: int) -&gt; Pizza:
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">Pizza(name, count)</span><span style="color:#c0c5ce;">&quot;
+
+</span><span style="color:#bf616a;">order_pizza</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">spinacci</span><span style="color:#c0c5ce;">&quot;, </span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">mypy</span><span style="color:#c0c5ce;"> pizza.py
+</span><span style="color:#bf616a;">pizza.py:8:</span><span style="color:#c0c5ce;"> error: Incompatible return value type (got &quot;</span><span style="color:#a3be8c;">str</span><span style="color:#c0c5ce;">&quot;, expected &quot;</span><span style="color:#a3be8c;">Pizza</span><span style="color:#c0c5ce;">&quot;)
+</span><span style="color:#bf616a;">Found</span><span style="color:#c0c5ce;"> 1 error in 1 file (checked 1 source file)
+</span></code></pre>
+<p>Mypy can also type check Python 2 code.</p>
+<h3 id="3rd-party-libraries">3rd party libraries</h3>
+<p>Mypy provides type definitions via the <a href="https://github.com/python/typeshed">typeshed repository</a>, 
+which contains library stubs for the Python builtins, the standard library, and selected third-party packages.
+Type stub is python code that contains only class, function definitions with types. 
+Mypy can automatically find type stubs for a library if it has a type stub. 
+Otherwise, Mypy will report an error that types are missing for a specific module:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;"># test.py
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">pyspark.sql </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">DataFrame
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">mypy</span><span style="color:#c0c5ce;"> test.py
+</span><span style="color:#bf616a;">test.py:1:</span><span style="color:#c0c5ce;"> error: Skipping analyzing &#39;</span><span style="color:#a3be8c;">pyspark</span><span style="color:#c0c5ce;">&#39;: found module but no type hints or library stubs
+</span><span style="color:#bf616a;">test.py:1:</span><span style="color:#c0c5ce;"> note: See https://mypy.readthedocs.io/en/latest/running_mypy.html#missing-imports
+</span><span style="color:#bf616a;">Found</span><span style="color:#c0c5ce;"> 1 error in 1 file (checked 1 source file)
+</span></code></pre>
+<p>As you can see above, <code>pyspark</code> package does not provide type stubs on its own. However, there is open-source package 
+<a href="https://pypi.org/project/pyspark-stubs/">pyspark-stubs</a>, which we need to install to add Mypy type stubs for PySpark to our environment:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">pip</span><span style="color:#c0c5ce;"> install pyspark-stubs
+</span></code></pre>
+<p>Once it is installed, we can successfully run Mypy and use PySpark types in our code.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">mypy</span><span style="color:#c0c5ce;"> test.py
+</span><span style="color:#bf616a;">Success:</span><span style="color:#c0c5ce;"> no issues found in 1 source file
+</span></code></pre><h4 id="configuration">Configuration</h4>
+<p>Mypy can read user-defined configuration from <code>mypy.ini</code> file. One the convenient use case is to disable type checking for a specific library or
+its module:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;"># mypy.ini
+</span><span style="color:#b48ead;">[mypy]
+
+[mypy-pyspark.sql.*]
+</span><span style="color:#bf616a;">ignore_missing_imports </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">True
+</span></code></pre>
+<p>Above config sections ignore missing imports for <code>pyspark.sql</code> module of pyspark library.</p>
+<h4 id="type-stubs-for-an-external-library">Type Stubs for an external library</h4>
+<p>There are a lot of libraries which do not have type stubs as of today, neither in <code>typeshed</code> repository nor as separate <code>pip</code> package. 
+In this case, one can create own type stubs using Mypy and keep in own project repository. </p>
+<p>There are a couple examples how to create your stubs and install them, so that Mypy can see your own stubs for specific library:</p>
+<ul>
+<li><a href="https://github.com/python/mypy/wiki/Creating-Stubs-For-Python-Modules">Mypy wiki</a></li>
+<li><a href="https://www.jetbrains.com/help/pycharm/stubs.html#create-stub-external">PyCharm - Create a stub file</a></li>
+</ul>
+<p>Let's try to provide type stub for one of the <a href="https://plotly.com/python/getting-started/">Plotly</a> module.</p>
+<ol>
+<li>Create local hierarchy that mirrors python file naming convention:</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">|</span><span style="color:#bf616a;">myproject
+├──</span><span style="color:#c0c5ce;"> stubs
+</span><span style="color:#bf616a;">│</span><span style="color:#c0c5ce;">   └── plotly
+</span><span style="color:#bf616a;">│</span><span style="color:#c0c5ce;">       ├── __init__.pyi
+</span><span style="color:#bf616a;">│</span><span style="color:#c0c5ce;">       └── graph_objs
+</span><span style="color:#bf616a;">│</span><span style="color:#c0c5ce;">           └── __init__.pyi
+</span><span style="color:#bf616a;">└──</span><span style="color:#c0c5ce;"> test.py
+</span></code></pre>
+<ol start="2">
+<li>We put only one class constuctor definition as an example:</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;"># stubs/plotly/graph_objs/__init__.pyi
+
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">typing </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">Any
+
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">Scatter</span><span style="color:#eff1f5;">:
+    </span><span style="color:#b48ead;">def </span><span style="color:#96b5b4;">__init__</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">self</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">x</span><span style="color:#c0c5ce;">: Any, </span><span style="color:#bf616a;">y</span><span style="color:#c0c5ce;">: Any, </span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">: str, </span><span style="color:#bf616a;">text</span><span style="color:#c0c5ce;">: Any): </span><span style="color:#d08770;">...
+</span></code></pre>
+<ol start="3">
+<li>In a caller script <code>test.py</code> we instantiate <code>Scatter</code> class:</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;"># test.py
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">plotly.graph_objs </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">go
+
+plot = go.</span><span style="color:#bf616a;">Scatter</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">, &quot;&quot;, </span><span style="color:#d08770;">3</span><span style="color:#c0c5ce;">)
+</span></code></pre>
+<ol start="4">
+<li>Define environment variable to point <code>stubs</code> directory:</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">export </span><span style="color:#bf616a;">MYPYPATH</span><span style="color:#c0c5ce;">=</span><span style="color:#bf616a;">~</span><span style="color:#a3be8c;">/myproject/stubs
+</span></code></pre>
+<ol start="5">
+<li>Finally, we run type checker:</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">mypy</span><span style="color:#c0c5ce;"> test.pyt
+</span><span style="color:#bf616a;">Success:</span><span style="color:#c0c5ce;"> no issues found in 1 source file
+</span></code></pre>
+<p><code>Scatter</code> constructor definition was provided from our own type stubs.</p>
+<h3 id="stubgen">Stubgen</h3>
+<p>Above example is based on manual type stub creation, however Mypy project also provides <a href="https://mypy.readthedocs.io/en/stable/stubgen.html">stubgen</a> tool to create a stub draft automatically.
+Auto-generated stub requires then manual updates to get rid of <code>Any</code> types, which are inferred in many cases.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>As a Data Scientist I do not really define new types, but rather using a lot of Python libraries to write a sequence of steps as a script.
+I do not really write complex systems with a lot of own libraries. So Type Checkers are not really critical to me, however it is nice to
+have such tool around. Type annotations are great, especially if the help IDEs to provide better development experience via auto-completion 
+and type hints. Sometimes I can annotate my own functions, this serves me as a documentation. 
+It is quite useful, when I am reading my code in a couple of months in future.</p>
+
+          </div>
+        </article>
+      </div>
+      
+      <div class="column is-2 is-hidden-mobile">
+        <aside class="menu" style="position: sticky; top: 48px">
+          <p class="heading has-text-weight-bold">Contents</p>
+          <ul class="menu-list">
+            
+            <li>
+              <a id="link-mypy" class="toc is-size-7 is-active" href="https://nnovakova.github.io/python-type-checkers/#mypy">
+                Mypy
+              </a>
+              
+              <ul>
+                
+                <li>
+                  <a id="link-installation" class="toc is-size-7" href="https://nnovakova.github.io/python-type-checkers/#installation">
+                    Installation
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-usage" class="toc is-size-7" href="https://nnovakova.github.io/python-type-checkers/#usage">
+                    Usage
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-3rd-party-libraries" class="toc is-size-7" href="https://nnovakova.github.io/python-type-checkers/#3rd-party-libraries">
+                    3rd party libraries
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-stubgen" class="toc is-size-7" href="https://nnovakova.github.io/python-type-checkers/#stubgen">
+                    Stubgen
+                  </a>
+                </li>
+                
+              </ul>
+              
+            </li>
+            
+            <li>
+              <a id="link-conclusion" class="toc is-size-7 " href="https://nnovakova.github.io/python-type-checkers/#conclusion">
+                Conclusion
+              </a>
+              
+            </li>
+            
+          </ul>
+        </aside>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="field">
+        <p class="control has-icons-right">
+          <input class="input" id="search" placeholder="Search this website." type="search" />
+          <span class="icon is-small is-right">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+      <div class="search-results">
+        <div class="search-results__items"></div>
+      </div>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+          
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;opennlp-ner-annotaton&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              NER using OpenNLP. Data Preparation.
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;pyspark-plotly&#x2F;">
+              PySpark &amp; Plotly<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+            
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="py-4 has-background-light">
+    <p class="has-text-centered">
+      Built with
+      <span class="icon is-small">
+        <i class="fas fa-code fa-xs"></i>
+      </span>
+      code and
+      <span class="icon is-small">
+        <i class="fas fa-heart fa-xs"></i>
+      </span>
+      love <br /> Powered By
+      <span class="icon is-small">
+        <i class="fas fa-power-off fa-xs"></i>
+      </span>
+      Zola
+    </p>
+  </footer>
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;search_index.en.js'></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;js&#x2F;site.js'></script>
+
+  
+
+<script type="text/javascript">
+  const menuBarHeight = $("nav.navbar").height();
+  const tocItems = $('.toc');
+  const navSections = new Array($('.toc').length);
+
+  tocItems.each(function (i) {
+    let id = $(this).attr("id").substring(5);
+    navSections[i] = document.getElementById(id);
+  })
+
+  function isVisible(tocIndex) {
+    const current = navSections[tocIndex];
+    const next = tocIndex < tocItems.length - 1 ? navSections[tocIndex+1] : $("section.section").get(1);
+    
+    const c = current.getBoundingClientRect();
+    const n = next.getBoundingClientRect();
+    const h = (window.innerHeight || document.documentElement.clientHeight);
+
+    return (c.top <= h) && (c.top + (n.top - c.top) - menuBarHeight >= 0);
+  }
+
+  function activateIfVisible() {
+    for (b = true, i = 0; i < tocItems.length; i++) {
+      if (b && isVisible(i)) {
+        tocItems[i].classList.add('is-active');
+        b = false;
+      } else
+        tocItems[i].classList.remove('is-active');
+    }
+  }
+
+  var isTicking = null;
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        activateIfVisible();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }, false);
+</script>
+
+
+
+
+</body>
+
+</html>

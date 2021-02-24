@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://nnovakova.github.io/sitemap.xml

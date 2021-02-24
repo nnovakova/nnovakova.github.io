@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  
+  
+  
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css"
+    rel="stylesheet" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <link href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;site.css' rel="stylesheet" />
+
+  
+  
+
+  <title>
+    
+Nadiia Novakova | NER using OpenNLP. Data Preparation.
+
+  </title>
+
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/201b8d5e05.js"></script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYPZQFCYHT"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-RYPZQFCYHT");
+  </script>
+  
+</head>
+
+<body class="has-background-white">
+  
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="https:&#x2F;&#x2F;nnovakova.github.io">Nadiia Novakova</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;'>
+            Blog
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;cv'>
+            CV
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags'>
+            Tags
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories'>
+            Categories
+          </a>
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title is-1">
+            NER using OpenNLP. Data Preparation.
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="fas fa-user"></i>
+    </span>
+    Nadiia Novakova published on
+    <span class="icon">
+      <i class="far fa-calendar-alt"></i>
+    </span>
+    <time datetime='2020-11-10'>November 10, 2020</time>
+  </p>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="far fa-clock"></i>
+    </span>
+    3 min,
+    <span class="icon">
+      <i class="fas fa-pencil-alt"></i>
+    </span>
+    485 words
+  </p>
+
+            </div>
+            <div class="column">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Categories:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;nlp&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        NLP
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;data-science&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Data Science
+      </a>
+    
+  </p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Tags:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;opennlp&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        opennlp
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;corpus-annotation&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        corpus annotation
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;model-customization&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        model customization
+      </a>
+    
+  </p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <h2 id="why-nlp">Why NLP?</h2>
+<p>Natural language processing is a component of Text Mining that performs a special kind of linguistic analysis that essentially helps a machine
+to <strong>read</strong> text. So this part of Data Science provides methods and approaches to mining patterns in texts. Thus NER is just one in the list of NLP tasks.</p>
+<span id="continue-reading"></span>
+<p>NER has a lot of synonyms, such as Entity Identification, Entity Chunking and Entity Extraction. </p>
+<p><strong>Named Entity Recognition</strong> is a process of finding named-entities (entities, valuable for some special domain) in the text.</p>
+<p>Standard kinds of entities looking for (using NER) in texts are:</p>
+<ul>
+<li>Person.</li>
+<li>Organization.</li>
+<li>Location.</li>
+</ul>
+<p><strong>Let's clarify some common terms used in NLP:</strong></p>
+<ul>
+<li>Gazetteers (List of Seeds, Seeds, Named Entity Lists): list of domain entities. </li>
+<li>Corpus (Corpora): a huge natural language text representing special domain.</li>
+<li>Annotation (Markup process): process of entities marking-up in a corpus.</li>
+<li>Learning process: training/testing process using annotated corpus.</li>
+</ul>
+<h1 id="ner-via-opennlp-library">NER via OpenNLP library</h1>
+<p>We can use <a href="https://opennlp.apache.org/">Apache OpenNLP</a> library to implement above process.</p>
+<p><strong>Apache OpenNLP has a standard pipeline for NLP learning process:</strong></p>
+<ol>
+<li>Preparing List of Entities</li>
+<li>Annotating corpus / Use OpenNLP corpus</li>
+<li>Training OpenNLP Parameters</li>
+<li>Training own model / Use pre-trained models for corresponding corpus</li>
+<li>Testing model with relevant data</li>
+</ol>
+<h2 id="1-named-entity-list-preparations">1. Named-entity list preparations</h2>
+<p>There are a lot of examples how to use Apache OpenNLP standard domain with models by default. I would like to make the task more complex. In this case, let us
+customize NER for medical domain and allow model to find medical entities in text documents.
+We will try to learn model to find special entities in German language. There are no pretrained German models for Apache OpenNLP.</p>
+<p>For the construction of a list of medical entities,  I used <a href="https://www.dimdi.de/dynamic/de/klassifikationen/weitere-klassifikationen-und-standards/mesh/index.html">MeSH open-sourced database</a>.
+Medical Subject Headings (MeSH) DB – is a poly-hierarchical, concept-based thesaurus for the cataloging of book and media collections, indexing of databases and creation of search profiles in medical domain. Terms are extracted in the separate file where each line contains just one seed.</p>
+<h2 id="2-corpus-preparation">2. Corpus preparation</h2>
+<p>Corpus is important step of NER. Let us prepare an unlabelled corpus. Apache OpenNLP has a strict syntax for that. </p>
+<p>Corpus requirements:</p>
+<ul>
+<li>have lots of data. In OpenNLP documentation, it is recommended a minimum of 15000 sentences.</li>
+<li>entities should be surrounded by tags in format &lt;START:entity-name&gt; Entity &lt;END&gt;.  Entity name is a label of entities your learning model is going to look for.</li>
+<li>add spaces between tags (START/END) and labeled data.</li>
+<li>if possible, use one label per model. Multiple labels are possible, but it is not recommended.</li>
+<li>each line contains just one sentence. </li>
+<li>empty lines delimit documents.</li>
+</ul>
+<p>Next steps 3-5 will be described in the next article.</p>
+<p>Project source code using OpenNLP you can found here: <a href="https://github.com/nnovakova/opennlp-annotator">https://github.com/nnovakova/opennlp-annotator</a></p>
+
+          </div>
+        </article>
+      </div>
+      
+      <div class="column is-2 is-hidden-mobile">
+        <aside class="menu" style="position: sticky; top: 48px">
+          <p class="heading has-text-weight-bold">Contents</p>
+          <ul class="menu-list">
+            
+            <li>
+              <a id="link-why-nlp" class="toc is-size-7 is-active" href="https://nnovakova.github.io/opennlp-ner-annotaton/#why-nlp">
+                Why NLP?
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-ner-via-opennlp-library" class="toc is-size-7 " href="https://nnovakova.github.io/opennlp-ner-annotaton/#ner-via-opennlp-library">
+                NER via OpenNLP library
+              </a>
+              
+              <ul>
+                
+                <li>
+                  <a id="link-1-named-entity-list-preparations" class="toc is-size-7" href="https://nnovakova.github.io/opennlp-ner-annotaton/#1-named-entity-list-preparations">
+                    1. Named-entity list preparations
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-2-corpus-preparation" class="toc is-size-7" href="https://nnovakova.github.io/opennlp-ner-annotaton/#2-corpus-preparation">
+                    2. Corpus preparation
+                  </a>
+                </li>
+                
+              </ul>
+              
+            </li>
+            
+          </ul>
+        </aside>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="field">
+        <p class="control has-icons-right">
+          <input class="input" id="search" placeholder="Search this website." type="search" />
+          <span class="icon is-small is-right">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+      <div class="search-results">
+        <div class="search-results__items"></div>
+      </div>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+          
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;mlflow&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              Tracking ML experiments with MLFlow
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;python-type-checkers&#x2F;">
+              Python Type Checkers<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+            
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="py-4 has-background-light">
+    <p class="has-text-centered">
+      Built with
+      <span class="icon is-small">
+        <i class="fas fa-code fa-xs"></i>
+      </span>
+      code and
+      <span class="icon is-small">
+        <i class="fas fa-heart fa-xs"></i>
+      </span>
+      love <br /> Powered By
+      <span class="icon is-small">
+        <i class="fas fa-power-off fa-xs"></i>
+      </span>
+      Zola
+    </p>
+  </footer>
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;search_index.en.js'></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;js&#x2F;site.js'></script>
+
+  
+
+<script type="text/javascript">
+  const menuBarHeight = $("nav.navbar").height();
+  const tocItems = $('.toc');
+  const navSections = new Array($('.toc').length);
+
+  tocItems.each(function (i) {
+    let id = $(this).attr("id").substring(5);
+    navSections[i] = document.getElementById(id);
+  })
+
+  function isVisible(tocIndex) {
+    const current = navSections[tocIndex];
+    const next = tocIndex < tocItems.length - 1 ? navSections[tocIndex+1] : $("section.section").get(1);
+    
+    const c = current.getBoundingClientRect();
+    const n = next.getBoundingClientRect();
+    const h = (window.innerHeight || document.documentElement.clientHeight);
+
+    return (c.top <= h) && (c.top + (n.top - c.top) - menuBarHeight >= 0);
+  }
+
+  function activateIfVisible() {
+    for (b = true, i = 0; i < tocItems.length; i++) {
+      if (b && isVisible(i)) {
+        tocItems[i].classList.add('is-active');
+        b = false;
+      } else
+        tocItems[i].classList.remove('is-active');
+    }
+  }
+
+  var isTicking = null;
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        activateIfVisible();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }, false);
+</script>
+
+
+
+
+</body>
+
+</html>

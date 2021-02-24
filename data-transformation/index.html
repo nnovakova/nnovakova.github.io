@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  
+  
+  
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css"
+    rel="stylesheet" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <link href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;site.css' rel="stylesheet" />
+
+  
+  
+
+  <title>
+    
+Nadiia Novakova | Basic Feature Engineering Techniques for ML
+
+  </title>
+
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/201b8d5e05.js"></script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYPZQFCYHT"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-RYPZQFCYHT");
+  </script>
+  
+</head>
+
+<body class="has-background-white">
+  
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="https:&#x2F;&#x2F;nnovakova.github.io">Nadiia Novakova</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;'>
+            Blog
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;cv'>
+            CV
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags'>
+            Tags
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories'>
+            Categories
+          </a>
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title is-1">
+            Basic Feature Engineering Techniques for ML
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="fas fa-user"></i>
+    </span>
+    Nadiia Novakova published on
+    <span class="icon">
+      <i class="far fa-calendar-alt"></i>
+    </span>
+    <time datetime='2021-01-22'>January 22, 2021</time>
+  </p>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="far fa-clock"></i>
+    </span>
+    17 min,
+    <span class="icon">
+      <i class="fas fa-pencil-alt"></i>
+    </span>
+    3268 words
+  </p>
+
+            </div>
+            <div class="column">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Categories:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;data-science&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Data Science
+      </a>
+    
+  </p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Tags:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;python&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        python
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;data-transformation&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        data-transformation
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;feature-engineering&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        feature-engineering
+      </a>
+    
+  </p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>In this topic I want to describe some basic data transformation and analysing techniques to prepare data for modelling.
+For demonstration I took Medical Cost Personal Datasets from Kaggle.</p>
+<span id="continue-reading"></span>
+<p><a href="https://www.kaggle.com/mirichoi0218/insurance">Medical Cost Personal Datasets Insurance Forecast by using Linear Regression</a></p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">pandas </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">pd
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">matplotlib </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">pyplot </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">plt
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">os
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">numpy </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">np
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">seaborn </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">sns
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">sklearn.preprocessing </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">LabelEncoder
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">scipy.stats </span><span style="color:#b48ead;">import  </span><span style="color:#c0c5ce;">ttest_ind
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">scipy.stats </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">stats 
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">warnings
+warnings.</span><span style="color:#bf616a;">filterwarnings</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">ignore</span><span style="color:#c0c5ce;">&#39;)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">os.</span><span style="color:#bf616a;">chdir</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">/python/insurence/</span><span style="color:#c0c5ce;">&#39;)
+df = pd.</span><span style="color:#bf616a;">read_csv</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">insurance.csv</span><span style="color:#c0c5ce;">&quot;)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+</span></code></pre><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre style="background-color:#2b303b;">
+<code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre></style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>sex</th>
+      <th>bmi</th>
+      <th>children</th>
+      <th>smoker</th>
+      <th>region</th>
+      <th>charges</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>19</td>
+      <td>female</td>
+      <td>27.900</td>
+      <td>0</td>
+      <td>yes</td>
+      <td>southwest</td>
+      <td>16884.92400</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>18</td>
+      <td>male</td>
+      <td>33.770</td>
+      <td>1</td>
+      <td>no</td>
+      <td>southeast</td>
+      <td>1725.55230</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>28</td>
+      <td>male</td>
+      <td>33.000</td>
+      <td>3</td>
+      <td>no</td>
+      <td>southeast</td>
+      <td>4449.46200</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>33</td>
+      <td>male</td>
+      <td>22.705</td>
+      <td>0</td>
+      <td>no</td>
+      <td>northwest</td>
+      <td>21984.47061</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>32</td>
+      <td>male</td>
+      <td>28.880</td>
+      <td>0</td>
+      <td>no</td>
+      <td>northwest</td>
+      <td>3866.85520</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h1 id="numerical">Numerical</h1>
+<ul>
+<li>
+<p>age: age of primary beneficiary</p>
+</li>
+<li>
+<p>bmi: body mass index, providing an understanding of a body, weights that are relatively high or low relative to height,
+objective index of body weight (kg / m ^ 2) using the ratio of height to weight, ideally 18.5 to 24.9</p>
+</li>
+<li>
+<p>charges: individual medical costs billed by health insurance</p>
+</li>
+<li>
+<p>children: number of children covered by health insurance / number of dependents</p>
+</li>
+</ul>
+<h1 id="categorical">Categorical</h1>
+<ul>
+<li>
+<p>sex: insurance contractor gender, female, male</p>
+</li>
+<li>
+<p>smoker: smoking or not</p>
+</li>
+<li>
+<p>region: the beneficiary's residential area in the US, northeast, southeast, southwest, northwest.</p>
+</li>
+</ul>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">describe</span><span style="color:#c0c5ce;">()
+</span></code></pre><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre style="background-color:#2b303b;">
+<code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre></style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>bmi</th>
+      <th>children</th>
+      <th>charges</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1338.000000</td>
+      <td>1338.000000</td>
+      <td>1338.000000</td>
+      <td>1338.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>39.207025</td>
+      <td>30.663397</td>
+      <td>1.094918</td>
+      <td>13270.422265</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>14.049960</td>
+      <td>6.098187</td>
+      <td>1.205493</td>
+      <td>12110.011237</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>18.000000</td>
+      <td>15.960000</td>
+      <td>0.000000</td>
+      <td>1121.873900</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>27.000000</td>
+      <td>26.296250</td>
+      <td>0.000000</td>
+      <td>4740.287150</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>39.000000</td>
+      <td>30.400000</td>
+      <td>1.000000</td>
+      <td>9382.033000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>51.000000</td>
+      <td>34.693750</td>
+      <td>2.000000</td>
+      <td>16639.912515</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>64.000000</td>
+      <td>53.130000</td>
+      <td>5.000000</td>
+      <td>63770.428010</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br/>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">info</span><span style="color:#c0c5ce;">()
+
+
+&lt;</span><span style="background-color:#bf616a;color:#2b303b;">class</span><span style="color:#c0c5ce;"> &#39;</span><span style="color:#a3be8c;">pandas.core.frame.DataFrame</span><span style="color:#c0c5ce;">&#39;&gt;
+RangeIndex: </span><span style="color:#d08770;">1338 </span><span style="color:#c0c5ce;">entries, </span><span style="color:#d08770;">0 </span><span style="color:#c0c5ce;">to </span><span style="color:#d08770;">1337
+</span><span style="color:#c0c5ce;">Data </span><span style="color:#bf616a;">columns </span><span style="color:#c0c5ce;">(total </span><span style="color:#d08770;">7 </span><span style="color:#c0c5ce;">columns):
+  </span><span style="color:#65737e;">#   Column    Non-Null Count  Dtype  
+</span><span style="color:#c0c5ce;">---  ------    --------------  -----  
+  </span><span style="color:#d08770;">0   </span><span style="color:#c0c5ce;">age       </span><span style="color:#d08770;">1338 </span><span style="color:#c0c5ce;">non-null   int64  
+  </span><span style="color:#d08770;">1   </span><span style="color:#c0c5ce;">sex       </span><span style="color:#d08770;">1338 </span><span style="color:#c0c5ce;">non-null   object 
+  </span><span style="color:#d08770;">2   </span><span style="color:#c0c5ce;">bmi       </span><span style="color:#d08770;">1338 </span><span style="color:#c0c5ce;">non-null   float64
+  </span><span style="color:#d08770;">3   </span><span style="color:#c0c5ce;">children  </span><span style="color:#d08770;">1338 </span><span style="color:#c0c5ce;">non-null   int64  
+  </span><span style="color:#d08770;">4   </span><span style="color:#c0c5ce;">smoker    </span><span style="color:#d08770;">1338 </span><span style="color:#c0c5ce;">non-null   object 
+  </span><span style="color:#d08770;">5   </span><span style="color:#c0c5ce;">region    </span><span style="color:#d08770;">1338 </span><span style="color:#c0c5ce;">non-null   object 
+  </span><span style="color:#d08770;">6   </span><span style="color:#c0c5ce;">charges   </span><span style="color:#d08770;">1338 </span><span style="color:#c0c5ce;">non-null   float64
+dtypes: </span><span style="color:#bf616a;">float64</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">), </span><span style="color:#bf616a;">int64</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">), </span><span style="color:#bf616a;">object</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">3</span><span style="color:#c0c5ce;">)
+memory usage: </span><span style="color:#d08770;">73.3</span><span style="color:#c0c5ce;">+ </span><span style="color:#bf616a;">KB
+</span></code></pre><h1 id="charges-distribution">Charges distribution</h1>
+<p>Let's research the distributions for numerical features of the set.
+Start with charges and analyse its distribution.
+Our goal is to make normal distribution for each feature before starting using this data in modelling.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#Charges distribution
+</span><span style="color:#c0c5ce;">sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;])
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;a29a43ee660041a000.png" />
+<p>We can see that <code>charges</code> normal distribution is asymmetrical.
+Task of the data scientist during the feature preparation is to achieve data uniformity.
+There are some techniques for that to apply <a href="https://www.analyticsvidhya.com/blog/2020/10/7-feature-engineering-techniques-machine-learning/">see more here</a> or <a href="https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114#1c08">here</a>.</p>
+<ul>
+<li>Imputation</li>
+<li>Handling Outliers</li>
+<li>Binning</li>
+<li>Log Transform</li>
+<li>Feature Encoding </li>
+<li>Grouping Operations</li>
+<li>Scaling</li>
+</ul>
+<p>We will apply some of them depends on what behaviour we will have in feature samples.</p>
+<h2 id="outliers-in-charges">Outliers in charges</h2>
+<p>Let's check how much outliers in <code>charges</code> distribution.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">sns.</span><span style="color:#bf616a;">boxplot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">x</span><span style="color:#c0c5ce;">=df[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;])
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;7b9483f4d8cd3cf300.png" />
+<p>There are a lot of outliers from the right side. 
+Tere are some imputation approaches for that. I'll try to delete outliers or replace outliers by median value and compare results.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#Set feature
+</span><span style="color:#c0c5ce;">feature = &#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;
+</span></code></pre><h3 id="imputation-and-handling-outliers">Imputation and Handling outliers</h3>
+<p>Below I am calculating limit the lower and upper values for a sample. 
+Values outside of this range (lover limit, upper limit) are outliers.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#calculate lower and upper limit values for a sample
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">boundary_values </span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">feature</span><span style="color:#c0c5ce;">):
+    feature_q25,feature_q75 = np.</span><span style="color:#bf616a;">percentile</span><span style="color:#c0c5ce;">(df[feature], </span><span style="color:#d08770;">25</span><span style="color:#c0c5ce;">), np.</span><span style="color:#bf616a;">percentile</span><span style="color:#c0c5ce;">(df[feature], </span><span style="color:#d08770;">75</span><span style="color:#c0c5ce;">)
+    feature_IQR = feature_q75 - feature_q25
+    Threshold = feature_IQR * </span><span style="color:#d08770;">1.5 </span><span style="color:#65737e;">#interquartile range (IQR)
+    </span><span style="color:#c0c5ce;">feature_lower, feature_upper = feature_q25-Threshold, feature_q75 + Threshold
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">Lower limit of </span><span style="color:#c0c5ce;">&quot; + feature + &quot;</span><span style="color:#a3be8c;"> distribution: </span><span style="color:#c0c5ce;">&quot; + </span><span style="color:#bf616a;">str</span><span style="color:#c0c5ce;">(feature_lower))
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">Upper limit of </span><span style="color:#c0c5ce;">&quot; + feature + &quot;</span><span style="color:#a3be8c;"> distribution: </span><span style="color:#c0c5ce;">&quot; + </span><span style="color:#bf616a;">str</span><span style="color:#c0c5ce;">(feature_upper))
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">feature_lower,feature_upper;
+    
+
+</span><span style="color:#65737e;">#create two new DF with transformed/deleted outliers
+#1st - outliers changed on sample median 
+#2nd - deleting outliers 
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">manage_outliers</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">df</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">feature_lower</span><span style="color:#c0c5ce;">,</span><span style="color:#bf616a;">feature_upper</span><span style="color:#c0c5ce;">):
+    df_del = df.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+    df_median = df.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+    
+    median = df_del.loc[(df_del[feature] &lt; feature_upper) &amp; \
+      (df_del[feature] &gt; feature_lower), feature].</span><span style="color:#bf616a;">median</span><span style="color:#c0c5ce;">()
+
+    df_del.loc[(df_del[feature] &gt; feature_upper)] = np.nan
+    df_del.loc[(df_del[feature] &lt; feature_lower)] = np.nan
+
+    df_del.</span><span style="color:#bf616a;">fillna</span><span style="color:#c0c5ce;">(median, </span><span style="color:#bf616a;">inplace</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">)
+   
+    df_median.loc[(df_median[feature] &gt; charges_upper)] = np.nan
+    df_median.loc[(df_median[feature] &lt; charges_lower)] = np.nan
+    df_median.</span><span style="color:#bf616a;">dropna</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">subset </span><span style="color:#c0c5ce;">= [feature], </span><span style="color:#bf616a;">inplace</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">)
+
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">df_del, df_median;
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#calculate limits
+</span><span style="color:#c0c5ce;">x,y = </span><span style="color:#bf616a;">boundary_values</span><span style="color:#c0c5ce;">(feature)
+
+</span><span style="color:#65737e;">#samples with modified outliers
+</span><span style="color:#c0c5ce;">df_median, df_del = </span><span style="color:#bf616a;">manage_outliers</span><span style="color:#c0c5ce;">(df,x,y)
+</span></code></pre>
+<p>Lower limit of charges distribution: -13109.1508975</p>
+<p>Upper limit of charges distribution: 34489.350562499996</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_median[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">mean</span><span style="color:#c0c5ce;">()
+</span></code></pre>
+<p>9770.084335798923</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_agg = pd.</span><span style="color:#bf616a;">DataFrame</span><span style="color:#c0c5ce;">(
+    {&#39;</span><span style="color:#a3be8c;">df</span><span style="color:#c0c5ce;">&#39;: [
+        df[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">mean</span><span style="color:#c0c5ce;">(),
+        df[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">(),
+        df[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">min</span><span style="color:#c0c5ce;">(),
+        df[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">std</span><span style="color:#c0c5ce;">(),
+        df[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">()]
+     }, </span><span style="color:#bf616a;">columns</span><span style="color:#c0c5ce;">=[&#39;</span><span style="color:#a3be8c;">df</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">index</span><span style="color:#c0c5ce;">=[&#39;</span><span style="color:#a3be8c;">mean</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">max</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">min</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">std</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;])
+
+df_agg[&#39;</span><span style="color:#a3be8c;">df_mean</span><span style="color:#c0c5ce;">&#39;] = pd.</span><span style="color:#bf616a;">DataFrame</span><span style="color:#c0c5ce;">(
+    {&#39;</span><span style="color:#a3be8c;">df_median</span><span style="color:#c0c5ce;">&#39;: [
+        df_median[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">mean</span><span style="color:#c0c5ce;">(),
+        df_median[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">(),
+        df_median[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">min</span><span style="color:#c0c5ce;">(),
+        df_median[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">std</span><span style="color:#c0c5ce;">(),
+        df_median[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">()]
+     }, </span><span style="color:#bf616a;">columns</span><span style="color:#c0c5ce;">=[&#39;</span><span style="color:#a3be8c;">df_median</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">index</span><span style="color:#c0c5ce;">=[&#39;</span><span style="color:#a3be8c;">mean</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">max</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">min</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">std</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;])
+
+df_agg[&#39;</span><span style="color:#a3be8c;">df_del</span><span style="color:#c0c5ce;">&#39;] = pd.</span><span style="color:#bf616a;">DataFrame</span><span style="color:#c0c5ce;">(
+    {&#39;</span><span style="color:#a3be8c;">df_del</span><span style="color:#c0c5ce;">&#39;: [
+        df_del[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">mean</span><span style="color:#c0c5ce;">(),
+        df_del[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">(),
+        df_del[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">min</span><span style="color:#c0c5ce;">(),
+        df_del[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">std</span><span style="color:#c0c5ce;">(),
+        df_del[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">()]
+     }, </span><span style="color:#bf616a;">columns</span><span style="color:#c0c5ce;">=[&#39;</span><span style="color:#a3be8c;">df_del</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">index</span><span style="color:#c0c5ce;">=[&#39;</span><span style="color:#a3be8c;">mean</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">max</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">min</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">std</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;])
+
+df_agg
+</span></code></pre><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre style="background-color:#2b303b;">
+<code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre></style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>df</th>
+      <th>df_mean</th>
+      <th>df_del</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>13270.422265</td>
+      <td>9770.084336</td>
+      <td>9927.753402</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>63770.428010</td>
+      <td>34472.841000</td>
+      <td>34472.841000</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1121.873900</td>
+      <td>1121.873900</td>
+      <td>1121.873900</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>12110.011237</td>
+      <td>6870.056585</td>
+      <td>7241.158309</td>
+    </tr>
+    <tr>
+      <th>count</th>
+      <td>1338.000000</td>
+      <td>1338.000000</td>
+      <td>1199.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br/>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#the sample after sample modification
+
+</span><span style="color:#c0c5ce;">fig, ax = plt.</span><span style="color:#bf616a;">subplots</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">,</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">figsize</span><span style="color:#c0c5ce;">=(</span><span style="color:#d08770;">15</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">))
+
+sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">ax </span><span style="color:#c0c5ce;">= ax[</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">,</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">], </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= df[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;])
+sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">ax </span><span style="color:#c0c5ce;">= ax[</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">,</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">], </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= df_median[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;])
+sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">ax </span><span style="color:#c0c5ce;">= ax[</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">,</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">], </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= df_del[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;])
+plt.</span><span style="color:#bf616a;">show</span><span style="color:#c0c5ce;">()
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;6fb89e144bd3402e00.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_shape = df.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()
+df_shape.</span><span style="color:#bf616a;">rename</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">columns </span><span style="color:#c0c5ce;">= {&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;:&#39;</span><span style="color:#a3be8c;">skew_df</span><span style="color:#c0c5ce;">&#39;,&#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;:&#39;</span><span style="color:#a3be8c;">kurtosis_df</span><span style="color:#c0c5ce;">&#39;}, </span><span style="color:#bf616a;">inplace </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">)
+df_shape[&#39;</span><span style="color:#a3be8c;">skew_median</span><span style="color:#c0c5ce;">&#39;] = df_median.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;]
+df_shape[&#39;</span><span style="color:#a3be8c;">kurtosis_median</span><span style="color:#c0c5ce;">&#39;] = df_median.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]
+df_shape[&#39;</span><span style="color:#a3be8c;">skew_del</span><span style="color:#c0c5ce;">&#39;] = df_del.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;]
+df_shape[&#39;</span><span style="color:#a3be8c;">kurtosis_del</span><span style="color:#c0c5ce;">&#39;] = df_del.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]
+df_shape
+</span></code></pre><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre style="background-color:#2b303b;">
+<code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre></style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>skew_df</th>
+      <th>kurtosis_df</th>
+      <th>skew_median</th>
+      <th>kurtosis_median</th>
+      <th>skew_del</th>
+      <th>kurtosis_del</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>age</th>
+      <td>0.055673</td>
+      <td>-1.245088</td>
+      <td>2.599285</td>
+      <td>4.763691</td>
+      <td>0.067588</td>
+      <td>-1.255101</td>
+    </tr>
+    <tr>
+      <th>bmi</th>
+      <td>0.284047</td>
+      <td>-0.050732</td>
+      <td>2.599394</td>
+      <td>4.764021</td>
+      <td>0.366750</td>
+      <td>0.011529</td>
+    </tr>
+    <tr>
+      <th>children</th>
+      <td>0.938380</td>
+      <td>0.202454</td>
+      <td>2.599417</td>
+      <td>4.764092</td>
+      <td>0.987108</td>
+      <td>0.318218</td>
+    </tr>
+    <tr>
+      <th>charges</th>
+      <td>1.515880</td>
+      <td>1.606299</td>
+      <td>1.304122</td>
+      <td>1.565420</td>
+      <td>1.178483</td>
+      <td>1.022970</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br/>
+<p>Let's look at the charges row. Here is some positive changes: skew and kurtosis decreased, but still not significantly. So charges still need additional improvements.</p>
+<p>There are a few data transformation methods solving abnormality. We will try two of them (Square Root and Log) and choose better for the dataset.</p>
+<h3 id="square-root-transformation">Square Root transformation</h3>
+<p>Square root method is typically used when your data is moderately skewed, <a href="https://www.marsja.se/transform-skewed-data-using-square-root-log-box-cox-methods-in-python/">see more here</a>.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">insert</span><span style="color:#c0c5ce;">(</span><span style="color:#96b5b4;">len</span><span style="color:#c0c5ce;">(df.columns), &#39;</span><span style="color:#a3be8c;">charges_Sqrt</span><span style="color:#c0c5ce;">&#39;,np.</span><span style="color:#bf616a;">sqrt</span><span style="color:#c0c5ce;">(df.iloc[:,</span><span style="color:#d08770;">6</span><span style="color:#c0c5ce;">]))
+df_median.</span><span style="color:#bf616a;">insert</span><span style="color:#c0c5ce;">(</span><span style="color:#96b5b4;">len</span><span style="color:#c0c5ce;">(df_median.columns), &#39;</span><span style="color:#a3be8c;">charges_Sqrt</span><span style="color:#c0c5ce;">&#39;,np.</span><span style="color:#bf616a;">sqrt</span><span style="color:#c0c5ce;">(df_median.iloc[:,</span><span style="color:#d08770;">6</span><span style="color:#c0c5ce;">]))
+df_del.</span><span style="color:#bf616a;">insert</span><span style="color:#c0c5ce;">(</span><span style="color:#96b5b4;">len</span><span style="color:#c0c5ce;">(df_del.columns), &#39;</span><span style="color:#a3be8c;">charges_Sqrt</span><span style="color:#c0c5ce;">&#39;,np.</span><span style="color:#bf616a;">sqrt</span><span style="color:#c0c5ce;">(df_del.iloc[:,</span><span style="color:#d08770;">6</span><span style="color:#c0c5ce;">]))
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">fig, ax = plt.</span><span style="color:#bf616a;">subplots</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">,</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">figsize</span><span style="color:#c0c5ce;">=(</span><span style="color:#d08770;">15</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">))
+
+sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">ax </span><span style="color:#c0c5ce;">= ax[</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">,</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">], </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= df[&#39;</span><span style="color:#a3be8c;">charges_Sqrt</span><span style="color:#c0c5ce;">&#39;])
+sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">ax </span><span style="color:#c0c5ce;">= ax[</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">,</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">], </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= df_median[&#39;</span><span style="color:#a3be8c;">charges_Sqrt</span><span style="color:#c0c5ce;">&#39;])
+sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">ax </span><span style="color:#c0c5ce;">= ax[</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">,</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">], </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= df_del[&#39;</span><span style="color:#a3be8c;">charges_Sqrt</span><span style="color:#c0c5ce;">&#39;])
+plt.</span><span style="color:#bf616a;">show</span><span style="color:#c0c5ce;">()
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;fde3a2c9b3a4855500.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_shape_sqrt = df.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()
+df_shape_sqrt.</span><span style="color:#bf616a;">rename</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">columns </span><span style="color:#c0c5ce;">= {&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;:&#39;</span><span style="color:#a3be8c;">skew_df</span><span style="color:#c0c5ce;">&#39;,&#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;:&#39;</span><span style="color:#a3be8c;">kurtosis_df</span><span style="color:#c0c5ce;">&#39;}, </span><span style="color:#bf616a;">inplace </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">)
+df_shape_sqrt[&#39;</span><span style="color:#a3be8c;">skew_median</span><span style="color:#c0c5ce;">&#39;] = df_median.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;]
+df_shape_sqrt[&#39;</span><span style="color:#a3be8c;">kurtosis_median</span><span style="color:#c0c5ce;">&#39;] = df_median.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]
+df_shape_sqrt[&#39;</span><span style="color:#a3be8c;">skew_del</span><span style="color:#c0c5ce;">&#39;] = df_del.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;]
+df_shape_sqrt[&#39;</span><span style="color:#a3be8c;">kurtosis_del</span><span style="color:#c0c5ce;">&#39;] = df_del.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]
+df_shape_sqrt
+</span></code></pre><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre style="background-color:#2b303b;">
+<code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre></style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>skew_df</th>
+      <th>kurtosis_df</th>
+      <th>skew_median</th>
+      <th>kurtosis_median</th>
+      <th>skew_del</th>
+      <th>kurtosis_del</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>age</th>
+      <td>0.055673</td>
+      <td>-1.245088</td>
+      <td>2.599285</td>
+      <td>4.763691</td>
+      <td>0.067588</td>
+      <td>-1.255101</td>
+    </tr>
+    <tr>
+      <th>bmi</th>
+      <td>0.284047</td>
+      <td>-0.050732</td>
+      <td>2.599394</td>
+      <td>4.764021</td>
+      <td>0.366750</td>
+      <td>0.011529</td>
+    </tr>
+    <tr>
+      <th>children</th>
+      <td>0.938380</td>
+      <td>0.202454</td>
+      <td>2.599417</td>
+      <td>4.764092</td>
+      <td>0.987108</td>
+      <td>0.318218</td>
+    </tr>
+    <tr>
+      <th>charges</th>
+      <td>1.515880</td>
+      <td>1.606299</td>
+      <td>1.304122</td>
+      <td>1.565420</td>
+      <td>1.178483</td>
+      <td>1.022970</td>
+    </tr>
+    <tr>
+      <th>charges_Sqrt</th>
+      <td>0.795863</td>
+      <td>-0.073061</td>
+      <td>0.479111</td>
+      <td>-0.089718</td>
+      <td>0.440043</td>
+      <td>-0.399537</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br/>
+<h3 id="log-transformation">Log transformation</h3>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;"># Python log transform
+</span><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">insert</span><span style="color:#c0c5ce;">(</span><span style="color:#96b5b4;">len</span><span style="color:#c0c5ce;">(df.columns), &#39;</span><span style="color:#a3be8c;">charges_log</span><span style="color:#c0c5ce;">&#39;,np.</span><span style="color:#bf616a;">log</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;]))
+df_median.</span><span style="color:#bf616a;">insert</span><span style="color:#c0c5ce;">(</span><span style="color:#96b5b4;">len</span><span style="color:#c0c5ce;">(df_median.columns), &#39;</span><span style="color:#a3be8c;">charges_log</span><span style="color:#c0c5ce;">&#39;,np.</span><span style="color:#bf616a;">log</span><span style="color:#c0c5ce;">(df_median[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;]))
+df_del.</span><span style="color:#bf616a;">insert</span><span style="color:#c0c5ce;">(</span><span style="color:#96b5b4;">len</span><span style="color:#c0c5ce;">(df_del.columns), &#39;</span><span style="color:#a3be8c;">charges_log</span><span style="color:#c0c5ce;">&#39;,np.</span><span style="color:#bf616a;">log</span><span style="color:#c0c5ce;">(df_del[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;]))
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df_shape_log = df.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()
+df_shape_log.</span><span style="color:#bf616a;">rename</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">columns </span><span style="color:#c0c5ce;">= {&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;:&#39;</span><span style="color:#a3be8c;">skew_df</span><span style="color:#c0c5ce;">&#39;,&#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;:&#39;</span><span style="color:#a3be8c;">kurtosis_df</span><span style="color:#c0c5ce;">&#39;}, </span><span style="color:#bf616a;">inplace </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">)
+df_shape_log[&#39;</span><span style="color:#a3be8c;">skew_median</span><span style="color:#c0c5ce;">&#39;] = df_median.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;]
+df_shape_log[&#39;</span><span style="color:#a3be8c;">kurtosis_median</span><span style="color:#c0c5ce;">&#39;] = df_median.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]
+df_shape_log[&#39;</span><span style="color:#a3be8c;">skew_del</span><span style="color:#c0c5ce;">&#39;] = df_del.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;]
+df_shape_log[&#39;</span><span style="color:#a3be8c;">kurtosis_del</span><span style="color:#c0c5ce;">&#39;] = df_del.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]).</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;]
+df_shape_log
+</span></code></pre><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre style="background-color:#2b303b;">
+<code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre></style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>skew_df</th>
+      <th>kurtosis_df</th>
+      <th>skew_median</th>
+      <th>kurtosis_median</th>
+      <th>skew_del</th>
+      <th>kurtosis_del</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>age</th>
+      <td>0.055673</td>
+      <td>-1.245088</td>
+      <td>2.599285</td>
+      <td>4.763691</td>
+      <td>0.067588</td>
+      <td>-1.255101</td>
+    </tr>
+    <tr>
+      <th>bmi</th>
+      <td>0.284047</td>
+      <td>-0.050732</td>
+      <td>2.599394</td>
+      <td>4.764021</td>
+      <td>0.366750</td>
+      <td>0.011529</td>
+    </tr>
+    <tr>
+      <th>children</th>
+      <td>0.938380</td>
+      <td>0.202454</td>
+      <td>2.599417</td>
+      <td>4.764092</td>
+      <td>0.987108</td>
+      <td>0.318218</td>
+    </tr>
+    <tr>
+      <th>charges</th>
+      <td>1.515880</td>
+      <td>1.606299</td>
+      <td>1.304122</td>
+      <td>1.565420</td>
+      <td>1.178483</td>
+      <td>1.022970</td>
+    </tr>
+    <tr>
+      <th>charges_Sqrt</th>
+      <td>0.795863</td>
+      <td>-0.073061</td>
+      <td>0.479111</td>
+      <td>-0.089718</td>
+      <td>0.440043</td>
+      <td>-0.399537</td>
+    </tr>
+    <tr>
+      <th>charges_log</th>
+      <td>-0.090098</td>
+      <td>-0.636667</td>
+      <td>-0.393856</td>
+      <td>-0.319703</td>
+      <td>-0.328473</td>
+      <td>-0.609327</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br/>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">fig, ax = plt.</span><span style="color:#bf616a;">subplots</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">,</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">figsize</span><span style="color:#c0c5ce;">=(</span><span style="color:#d08770;">15</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">))
+
+sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">ax </span><span style="color:#c0c5ce;">= ax[</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">,</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">], </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= df[&#39;</span><span style="color:#a3be8c;">charges_log</span><span style="color:#c0c5ce;">&#39;])
+sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">ax </span><span style="color:#c0c5ce;">= ax[</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">,</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">], </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= df_median[&#39;</span><span style="color:#a3be8c;">charges_log</span><span style="color:#c0c5ce;">&#39;])
+sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">ax </span><span style="color:#c0c5ce;">= ax[</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">,</span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">], </span><span style="color:#bf616a;">x</span><span style="color:#c0c5ce;">= df_del[&#39;</span><span style="color:#a3be8c;">charges_log</span><span style="color:#c0c5ce;">&#39;])
+plt.</span><span style="color:#bf616a;">show</span><span style="color:#c0c5ce;">()
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;0a78d1c72b1ee12200.png" />
+<p>Here in table we can compare pairs skew-kurtosis for three DF: unmodified, with outliers changed on mean and with deleted outliers.
+The first three pare for <code>charges</code> DF looks non-normal, because both in pair are enough far from 0.
+After Square-Root transformations the best pair is a <code>mediand_df</code> pair with lower skew and kurtosis in the same time.
+If compare with Log-transformation, the best values for normal distribution is in the initial DF.
+For <code>df_del</code> there are a good result in solving skewness issue.
+Log-transformation works good with asymmetrical data.
+If we compare shapes on the graphs, we see there that initial DF is more symmetrical.</p>
+<blockquote>
+<p>Interim conclusions: Distribution is still non-normal. But anyway the previous transformations get us some enough good results and allow to work with data further. For a modelling it makes sense to use log-transformed charges or square-root-transformed charges and outliers replaced by medians. Deleting outliers helps partly only with kurtosis issue.</p>
+</blockquote>
+<h3 id="addition">Addition</h3>
+<p>The Box-Cox transformation is a technique to transform non-normal data into normal shape.
+Box-cox transformation attempts to transform a set of data to a normal distribution by finding the value of λ that minimises the variation, <a href="https://medium.com/@ronakchhatbar/box-cox-transformation-cba8263c5206">see more here</a></p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">skewed_box_cox, lmda = stats.</span><span style="color:#bf616a;">boxcox</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">charges</span><span style="color:#c0c5ce;">&#39;])
+sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(skewed_box_cox)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;34e2d75bf9bb76ac00.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df[&#39;</span><span style="color:#a3be8c;">boxcox</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">skew</span><span style="color:#c0c5ce;">()
+</span></code></pre>
+<p>-0.008734097133920404</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df[&#39;</span><span style="color:#a3be8c;">boxcox</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">kurtosis</span><span style="color:#c0c5ce;">()
+</span></code></pre>
+<p>-0.6502935539475279</p>
+<blockquote>
+<p>Box-cox gives good results and can be used for 'charges' as Log-transformation</p>
+</blockquote>
+<h1 id="bmi-distribution">BMI Distribution</h1>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">bmi</span><span style="color:#c0c5ce;">&#39;])
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;41406cb87159aa4700.png" />
+<p>At first glance, the distribution looks normal.</p>
+<h2 id="shapiro-normality-test">Shapiro Normality test</h2>
+<p>There is one more test allows to check normality of distribution. It is Shapiro test. For this spicy library can be use</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">scipy </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">stats
+p_value = stats.</span><span style="color:#bf616a;">shapiro</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">bmi</span><span style="color:#c0c5ce;">&#39;])[</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">]
+</span><span style="color:#b48ead;">if </span><span style="color:#c0c5ce;">p_value &lt;=</span><span style="color:#d08770;">0.05</span><span style="color:#c0c5ce;">:
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">Distribution is non-normal</span><span style="color:#c0c5ce;">&quot;)
+</span><span style="color:#b48ead;">else</span><span style="color:#c0c5ce;">:
+    </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">Distribution is normal</span><span style="color:#c0c5ce;">&#39;)
+</span></code></pre>
+<p>Distribution is normal</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;])[&#39;</span><span style="color:#a3be8c;">bmi</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()
+</span></code></pre>
+<p>skew        0.284047
+kurtosis   -0.050732
+Name: bmi, dtype: float64</p>
+<blockquote>
+<p>Interim conclusions: BMI index distributed normally</p>
+</blockquote>
+<h1 id="age-distribution">Age Distribution</h1>
+<p>As we see on the plot, ages density is quite equal, except age near 20. Let's take a look deeper</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;])
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;55c14db89539a07c00.png" />
+<h2 id="outliers-for-age">Outliers for Age</h2>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">sns.</span><span style="color:#bf616a;">boxplot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">x</span><span style="color:#c0c5ce;">=df[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;])
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;c417dd3c82d5043200.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;])[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()
+</span></code></pre>
+<p>skew        0.055673
+kurtosis   -1.245088
+Name: age, dtype: float64</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">describe</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;]
+
+count    </span><span style="color:#d08770;">1338.000000
+</span><span style="color:#c0c5ce;">mean       </span><span style="color:#d08770;">39.207025
+</span><span style="color:#c0c5ce;">std        </span><span style="color:#d08770;">14.049960
+</span><span style="color:#96b5b4;">min        </span><span style="color:#d08770;">18.000000
+25</span><span style="color:#c0c5ce;">%        </span><span style="color:#d08770;">27.000000
+50</span><span style="color:#c0c5ce;">%        </span><span style="color:#d08770;">39.000000
+75</span><span style="color:#c0c5ce;">%        </span><span style="color:#d08770;">51.000000
+</span><span style="color:#96b5b4;">max        </span><span style="color:#d08770;">64.000000
+</span><span style="color:#c0c5ce;">Name: age, dtype: float64
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">describe</span><span style="color:#c0c5ce;">()
+</span></code></pre><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre style="background-color:#2b303b;">
+<code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre></style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>bmi</th>
+      <th>children</th>
+      <th>charges</th>
+      <th>charges_Sqrt</th>
+      <th>charges_log</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1338.000000</td>
+      <td>1338.000000</td>
+      <td>1338.000000</td>
+      <td>1338.000000</td>
+      <td>1338.000000</td>
+      <td>1338.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>39.207025</td>
+      <td>30.663397</td>
+      <td>1.094918</td>
+      <td>13270.422265</td>
+      <td>104.833605</td>
+      <td>9.098659</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>14.049960</td>
+      <td>6.098187</td>
+      <td>1.205493</td>
+      <td>12110.011237</td>
+      <td>47.770734</td>
+      <td>0.919527</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>18.000000</td>
+      <td>15.960000</td>
+      <td>0.000000</td>
+      <td>1121.873900</td>
+      <td>33.494386</td>
+      <td>7.022756</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>27.000000</td>
+      <td>26.296250</td>
+      <td>0.000000</td>
+      <td>4740.287150</td>
+      <td>68.849739</td>
+      <td>8.463853</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>39.000000</td>
+      <td>30.400000</td>
+      <td>1.000000</td>
+      <td>9382.033000</td>
+      <td>96.860893</td>
+      <td>9.146552</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>51.000000</td>
+      <td>34.693750</td>
+      <td>2.000000</td>
+      <td>16639.912515</td>
+      <td>128.995729</td>
+      <td>9.719558</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>64.000000</td>
+      <td>53.130000</td>
+      <td>5.000000</td>
+      <td>63770.428010</td>
+      <td>252.528074</td>
+      <td>11.063045</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br/>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#samples with modified outliers
+#calculate limits
+</span><span style="color:#c0c5ce;">feature = &#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;
+x,y = </span><span style="color:#bf616a;">boundary_values</span><span style="color:#c0c5ce;">(feature)
+
+Lower limit of age distribution: -</span><span style="color:#d08770;">9.0
+</span><span style="color:#c0c5ce;">Upper limit of age distribution: </span><span style="color:#d08770;">87.0
+
+</span></code></pre>
+<p>So we see that there are no outliers in this distribution. Let's look at the &quot;left side&quot; counts by ages:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">groupby</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;])[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">10</span><span style="color:#c0c5ce;">)
+
+age
+</span><span style="color:#d08770;">18    69
+19    68
+20    29
+21    28
+22    28
+23    28
+24    28
+25    28
+26    28
+27    28
+</span><span style="color:#c0c5ce;">Name: age, dtype: int64
+</span></code></pre>
+<p>As we see from the histogram and last output that it is near 2 times more data near 20 years, and it should be corrected.
+I want to find median value count for age and decrease diapasons of 18-19 years old till this median.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">n = </span><span style="color:#bf616a;">int</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">value_counts</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">median</span><span style="color:#c0c5ce;">())
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df1 = df.</span><span style="color:#bf616a;">copy</span><span style="color:#c0c5ce;">()
+
+df_19 = df1[(df1[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;]==</span><span style="color:#d08770;">19</span><span style="color:#c0c5ce;">)]
+df_18 = df1[(df1[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;]==</span><span style="color:#d08770;">18</span><span style="color:#c0c5ce;">)]
+df_19.</span><span style="color:#bf616a;">describe</span><span style="color:#c0c5ce;">()
+df_18.iloc[n:df_18.size,:].index
+df_19.iloc[n:df_19.size,:].index
+df = df.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(df_18.iloc[n:df_18.size,:].index)
+df = df.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">(df_19.iloc[n:df_19.size,:].index)
+
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">describe</span><span style="color:#c0c5ce;">()[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;]
+
+count    </span><span style="color:#d08770;">1255.000000
+</span><span style="color:#c0c5ce;">mean       </span><span style="color:#d08770;">40.576892
+</span><span style="color:#c0c5ce;">std        </span><span style="color:#d08770;">13.422954
+</span><span style="color:#96b5b4;">min        </span><span style="color:#d08770;">18.000000
+25</span><span style="color:#c0c5ce;">%        </span><span style="color:#d08770;">29.000000
+50</span><span style="color:#c0c5ce;">%        </span><span style="color:#d08770;">41.000000
+75</span><span style="color:#c0c5ce;">%        </span><span style="color:#d08770;">52.000000
+</span><span style="color:#96b5b4;">max        </span><span style="color:#d08770;">64.000000
+</span><span style="color:#c0c5ce;">Name: age, dtype: float64
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">sns.</span><span style="color:#bf616a;">distplot</span><span style="color:#c0c5ce;">(df[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;])
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;40b823ef5c4fe9e300.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">df.</span><span style="color:#bf616a;">agg</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">skew</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">kurtosis</span><span style="color:#c0c5ce;">&#39;])[&#39;</span><span style="color:#a3be8c;">age</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()
+
+skew        </span><span style="color:#d08770;">0.004377
+</span><span style="color:#c0c5ce;">kurtosis   -</span><span style="color:#d08770;">1.195052
+</span><span style="color:#c0c5ce;">Name: age, dtype: float64
+</span></code></pre>
+<p>We have reduced skewness and kurtosis a little bit.</p>
+<blockquote>
+<p>Interim conclusions: It make sense here to leave this distribution as it is because it shows all ages more-less equally and doesn't need to be more normal distributed.</p>
+</blockquote>
+<h1 id="conclusions">Conclusions</h1>
+<ul>
+<li>In this article I described the most typical, often used and effective transformation approaches to get normal distribution. This transformations are important for the further modelling applying. Some model are sensitive for the data view and data scientist has to investigate more in a data preparation.</li>
+<li>As a result we can see, that Log-transformation is the most universal and effective technique. It solves most of the skewness and kurtosis problems. Box-Cox transformations are also effective and flexible.</li>
+<li>It can happen that data looks non-normal, but in the same time it doesn't have some outliers or very high kurtosis. In this situation it make sense to analyse such data locally and adjust it manually, for example deleting data or replacing it for a median/mean/max/min/random etc. values.</li>
+</ul>
+
+          </div>
+        </article>
+      </div>
+      
+      <div class="column is-2 is-hidden-mobile">
+        <aside class="menu" style="position: sticky; top: 48px">
+          <p class="heading has-text-weight-bold">Contents</p>
+          <ul class="menu-list">
+            
+            <li>
+              <a id="link-numerical" class="toc is-size-7 is-active" href="https://nnovakova.github.io/data-transformation/#numerical">
+                Numerical
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-categorical" class="toc is-size-7 " href="https://nnovakova.github.io/data-transformation/#categorical">
+                Categorical
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-charges-distribution" class="toc is-size-7 " href="https://nnovakova.github.io/data-transformation/#charges-distribution">
+                Charges distribution
+              </a>
+              
+              <ul>
+                
+                <li>
+                  <a id="link-outliers-in-charges" class="toc is-size-7" href="https://nnovakova.github.io/data-transformation/#outliers-in-charges">
+                    Outliers in charges
+                  </a>
+                </li>
+                
+              </ul>
+              
+            </li>
+            
+            <li>
+              <a id="link-bmi-distribution" class="toc is-size-7 " href="https://nnovakova.github.io/data-transformation/#bmi-distribution">
+                BMI Distribution
+              </a>
+              
+              <ul>
+                
+                <li>
+                  <a id="link-shapiro-normality-test" class="toc is-size-7" href="https://nnovakova.github.io/data-transformation/#shapiro-normality-test">
+                    Shapiro Normality test
+                  </a>
+                </li>
+                
+              </ul>
+              
+            </li>
+            
+            <li>
+              <a id="link-age-distribution" class="toc is-size-7 " href="https://nnovakova.github.io/data-transformation/#age-distribution">
+                Age Distribution
+              </a>
+              
+              <ul>
+                
+                <li>
+                  <a id="link-outliers-for-age" class="toc is-size-7" href="https://nnovakova.github.io/data-transformation/#outliers-for-age">
+                    Outliers for Age
+                  </a>
+                </li>
+                
+              </ul>
+              
+            </li>
+            
+            <li>
+              <a id="link-conclusions" class="toc is-size-7 " href="https://nnovakova.github.io/data-transformation/#conclusions">
+                Conclusions
+              </a>
+              
+            </li>
+            
+          </ul>
+        </aside>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="field">
+        <p class="control has-icons-right">
+          <input class="input" id="search" placeholder="Search this website." type="search" />
+          <span class="icon is-small is-right">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+      <div class="search-results">
+        <div class="search-results__items"></div>
+      </div>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+          
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;ads-analysis&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              Depression detection based on speech data 
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;cars-analysis&#x2F;">
+              Car Market Trends - Data Exploration<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+            
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="py-4 has-background-light">
+    <p class="has-text-centered">
+      Built with
+      <span class="icon is-small">
+        <i class="fas fa-code fa-xs"></i>
+      </span>
+      code and
+      <span class="icon is-small">
+        <i class="fas fa-heart fa-xs"></i>
+      </span>
+      love <br /> Powered By
+      <span class="icon is-small">
+        <i class="fas fa-power-off fa-xs"></i>
+      </span>
+      Zola
+    </p>
+  </footer>
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;search_index.en.js'></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;js&#x2F;site.js'></script>
+
+  
+
+<script type="text/javascript">
+  const menuBarHeight = $("nav.navbar").height();
+  const tocItems = $('.toc');
+  const navSections = new Array($('.toc').length);
+
+  tocItems.each(function (i) {
+    let id = $(this).attr("id").substring(5);
+    navSections[i] = document.getElementById(id);
+  })
+
+  function isVisible(tocIndex) {
+    const current = navSections[tocIndex];
+    const next = tocIndex < tocItems.length - 1 ? navSections[tocIndex+1] : $("section.section").get(1);
+    
+    const c = current.getBoundingClientRect();
+    const n = next.getBoundingClientRect();
+    const h = (window.innerHeight || document.documentElement.clientHeight);
+
+    return (c.top <= h) && (c.top + (n.top - c.top) - menuBarHeight >= 0);
+  }
+
+  function activateIfVisible() {
+    for (b = true, i = 0; i < tocItems.length; i++) {
+      if (b && isVisible(i)) {
+        tocItems[i].classList.add('is-active');
+        b = false;
+      } else
+        tocItems[i].classList.remove('is-active');
+    }
+  }
+
+  var isTicking = null;
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        activateIfVisible();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }, false);
+</script>
+
+
+
+
+</body>
+
+</html>

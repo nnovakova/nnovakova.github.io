@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  
+  
+  
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css"
+    rel="stylesheet" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <link href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;site.css' rel="stylesheet" />
+
+  
+  
+
+  <title>
+    
+Nadiia Novakova | Car Market Trends - Data Exploration
+
+  </title>
+
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/201b8d5e05.js"></script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYPZQFCYHT"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-RYPZQFCYHT");
+  </script>
+  
+</head>
+
+<body class="has-background-white">
+  
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="https:&#x2F;&#x2F;nnovakova.github.io">Nadiia Novakova</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;'>
+            Blog
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;cv'>
+            CV
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags'>
+            Tags
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories'>
+            Categories
+          </a>
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title is-1">
+            Car Market Trends - Data Exploration
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="fas fa-user"></i>
+    </span>
+    Nadiia Novakova published on
+    <span class="icon">
+      <i class="far fa-calendar-alt"></i>
+    </span>
+    <time datetime='2020-12-18'>December 18, 2020</time>
+  </p>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="far fa-clock"></i>
+    </span>
+    12 min,
+    <span class="icon">
+      <i class="fas fa-pencil-alt"></i>
+    </span>
+    2270 words
+  </p>
+
+            </div>
+            <div class="column">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Categories:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;python&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Python
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;data-science&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Data Science
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;data-analysis&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Data Analysis
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;data-preparation&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Data Preparation
+      </a>
+    
+  </p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Tags:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;data-analysis&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        data analysis
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;data-preparation&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        data preparation
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;plotly&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        plotly
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;pandas&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        pandas
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;numpy&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        numpy
+      </a>
+    
+  </p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>In this article I want to show some basic data preparation and analytics tasks. Also I want to shown Plotly library for data visualisation.</p>
+<p>I have been looking for some datasets that I can easily manipulate to demonstrate the first pre-step of the  Machine Learning - 
+data preparation and cleaning. So I started to surf the Internet for datasets I can somehow explain and easily interpret based on my experience. </p>
+<span id="continue-reading"></span>
+<p>For this tasks I used two Kaggle datasets:</p>
+<ul>
+<li><a href="https://www.kaggle.com/dimakyn/vehicles-price-2020-ukraine">UA Cars dataset</a></li>
+<li><a href="https://www.kaggle.com/doaaalsenani/usa-cers-dataset">US Cars dataset</a></li>
+</ul>
+<p>I think it is going to be fascinating to work with these datasets because of their visibility and simplicity.</p>
+<p>The goal of this research is to show the common trends in the totaly different car markets as well as people preferences in different societies, but not to estimate total sales and so on. I believe this research is representative enough for this, but is not enough to assess this market.</p>
+<p>The full source code you can find here: <a href="https://github.com/nnovakova/cars">GitHub</a></p>
+<h1 id="ukrainian-cars">Ukrainian Cars</h1>
+<p>Let’s start with Ukrainian cars dataset. </p>
+<p>We will use Pandas and Numpy libraries in this research.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">pandas </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">pd
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">numpy </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">np
+
+ua_cars=pd.</span><span style="color:#bf616a;">read_csv</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">cars/ua_vehicle_price.csv</span><span style="color:#c0c5ce;">&quot;)
+</span></code></pre>
+<p>Let's look deeper into the columns:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">ua_cars.columns
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Index</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">model</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">year</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">body</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">price$</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">car_mileage</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">fuel</span><span style="color:#c0c5ce;">&#39;,
+       &#39;</span><span style="color:#a3be8c;">power</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#bf616a;">, </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">transmission</span><span style="color:#c0c5ce;">&#39;],
+      </span><span style="color:#bf616a;">dtype</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">object</span><span style="color:#c0c5ce;">&#39;)
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">ua_cars.</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">10</span><span style="color:#c0c5ce;">)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;9c4e49b0746a53d400.png" />
+<p>Calculate total amount of cars by brand.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#Total count cars by brands
+</span><span style="color:#c0c5ce;">ua_cars[&quot;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&quot;].</span><span style="color:#bf616a;">value_counts</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">10</span><span style="color:#c0c5ce;">).</span><span style="color:#bf616a;">plot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">kind</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">bar</span><span style="color:#c0c5ce;">&#39;)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;e57dd4980d64fe6400.png" />
+<p>Here we see that Volkswagen is a top brand in UA. It make sense to me either, because there are a lot of VW models available for majority of car users in Ukraine.</p>
+<p>Next let’s describe numeric and categorical variables in the dataset:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#Statistic for numerical features
+</span><span style="color:#c0c5ce;">ua_cars.</span><span style="color:#bf616a;">describe</span><span style="color:#c0c5ce;">()
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;3a75ee841b84313100.png" />
+<p>In this table we can see that data has some strange behaviour and the reason for that can be the outliers. 
+For example the <code>max power</code> = 35, when <code>mean</code> = 2.125 and <code>min</code> = 0.1. So this dataset needs more transformations.
+Car mileage looks better and we can accurately say that average car mileage is 215 176 km.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#Statistic for categorical features
+</span><span style="color:#c0c5ce;">ua_cars.</span><span style="color:#bf616a;">astype</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">object</span><span style="color:#c0c5ce;">&#39;).</span><span style="color:#bf616a;">describe</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">transpose</span><span style="color:#c0c5ce;">()
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;ba433d82c3d1e0b700.png" />
+<p>Here we see again that top brand is VW, and top model is “Passat”. The top </p>
+<p>Very interesting observation is that the most  popular body type in Ukraine is a sedan. It is one more point to my assumption. Actually my guess is that in general Ukrainian drivers prefer cheap economical sedans, probably with manual transmission and diesel fuel. This is a perfect description of &quot;People's car&quot; (Volkswagen).</p>
+<p>I would like to see all possible types of cars:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;"># All possible transmission types in ua_cars DataFrame
+</span><span style="color:#c0c5ce;">ua_cars[&quot;</span><span style="color:#a3be8c;">transmission</span><span style="color:#c0c5ce;">&quot;].</span><span style="color:#bf616a;">unique</span><span style="color:#c0c5ce;">()
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">array</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">manual</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">automatic</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">other</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">typtronik</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">adaptive</span><span style="color:#c0c5ce;">&#39;, nan</span><span style="color:#b48ead;">]</span><span style="color:#c0c5ce;">,
+      </span><span style="color:#bf616a;">dtype</span><span style="color:#c0c5ce;">=</span><span style="color:#a3be8c;">object</span><span style="color:#c0c5ce;">)
+</span></code></pre>
+<p>There is some strange type like 'typtronik'. Nevertheless, I am interested more in manual and automatic types as they are more common.</p>
+<p>It looks like that data in the data frame has incorrect types and should be transformed.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;"># Colums info for ua_cars DataFrame
+</span><span style="color:#c0c5ce;">ua_cars.</span><span style="color:#bf616a;">info</span><span style="color:#c0c5ce;">()
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;e04139f51ac9651200.png" />
+<p>Rename some columns for convenience:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#Rename colums in ua_cars DataFrame
+</span><span style="color:#c0c5ce;">ua_cars.</span><span style="color:#bf616a;">rename</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">columns</span><span style="color:#c0c5ce;">={&quot;</span><span style="color:#a3be8c;">price$</span><span style="color:#c0c5ce;">&quot;:&quot;</span><span style="color:#a3be8c;">price</span><span style="color:#c0c5ce;">&quot;,&quot;</span><span style="color:#a3be8c;">car_mileage</span><span style="color:#c0c5ce;">&quot;:&quot;</span><span style="color:#a3be8c;">mileage</span><span style="color:#c0c5ce;">&quot;},</span><span style="color:#bf616a;">inplace </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">)
+</span></code></pre>
+<p>Here we see that price has object type, but it has to be a numeric. To fix that, we need to apply data type transformation.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#As we see in the REPL output, some of the colums should have another type than they have 
+#Price is object, but should be integer or float
+#Change price column type
+</span><span style="color:#c0c5ce;">ua_cars[[&quot;</span><span style="color:#a3be8c;">price</span><span style="color:#c0c5ce;">&quot;]] = ua_cars[[&quot;</span><span style="color:#a3be8c;">price</span><span style="color:#c0c5ce;">&quot;]].</span><span style="color:#bf616a;">apply</span><span style="color:#c0c5ce;">(pd.to_numeric,</span><span style="color:#bf616a;">errors</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">coerce</span><span style="color:#c0c5ce;">&#39;) 
+ua_cars.</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+ua_cars.</span><span style="color:#bf616a;">info</span><span style="color:#c0c5ce;">()
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;fabc5739c1fe5b3e00.png" />
+<p>So now it is time for some analytics. I would like to group data by some important, in my opinion, features and then compare them. </p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#Group cars by transmission and years and calculate their counts
+</span><span style="color:#c0c5ce;">ua_transmission = ua_cars.</span><span style="color:#bf616a;">groupby</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">transmission</span><span style="color:#c0c5ce;">&#39;,&#39;</span><span style="color:#a3be8c;">year</span><span style="color:#c0c5ce;">&#39;])[&#39;</span><span style="color:#a3be8c;">year</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">reset_index</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;)
+</span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(ua_transmission)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;fabc5739c1fe5b3e00.png" />
+<p>Here I calculate the amount of cars sold each year and group by transmission type for each year.</p>
+<p>It will be good to see how it looks like in the graph. I am prefer use Plotly library for visualisation.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#import plotly lib for the further visualisation
+</span><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">plotly.offline </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">download_plotlyjs, init_notebook_mode, plot, iplot
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">plotly.graph_objs </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">go
+</span></code></pre>
+<p>Save grouped transmission type into separate dataframes.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#Extract main transmission types in separate dataframes 
+</span><span style="color:#c0c5ce;">ua_adaptive_transmission=ua_transmission[ua_transmission[&#39;</span><span style="color:#a3be8c;">transmission</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">adaptive</span><span style="color:#c0c5ce;">&#39;]
+
+ua_automatic_transmission=ua_transmission[ua_transmission[&#39;</span><span style="color:#a3be8c;">transmission</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">automatic</span><span style="color:#c0c5ce;">&#39;]
+
+ua_manual_transmission=ua_transmission[ua_transmission[&#39;</span><span style="color:#a3be8c;">transmission</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">manual</span><span style="color:#c0c5ce;">&#39;]
+</span></code></pre>
+<p>Now it is time to draw:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">adaptive_trace = go.</span><span style="color:#bf616a;">Bar</span><span style="color:#c0c5ce;">(
+    </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= ua_adaptive_transmission.year,
+    </span><span style="color:#bf616a;">y </span><span style="color:#c0c5ce;">= ua_adaptive_transmission[&#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;],
+    </span><span style="color:#bf616a;">name </span><span style="color:#c0c5ce;">= &quot;</span><span style="color:#a3be8c;">adaptive transmission</span><span style="color:#c0c5ce;">&quot;
+)
+automatic_trace = go.</span><span style="color:#bf616a;">Bar</span><span style="color:#c0c5ce;">(
+    </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= ua_automatic_transmission.year,
+    </span><span style="color:#bf616a;">y </span><span style="color:#c0c5ce;">= ua_automatic_transmission[&#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;],
+    </span><span style="color:#bf616a;">name </span><span style="color:#c0c5ce;">= &quot;</span><span style="color:#a3be8c;">automatic transmission</span><span style="color:#c0c5ce;">&quot;
+)
+manual_trace = go.</span><span style="color:#bf616a;">Bar</span><span style="color:#c0c5ce;">(
+    </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= ua_manual_transmission.year,
+    </span><span style="color:#bf616a;">y </span><span style="color:#c0c5ce;">= ua_manual_transmission[&#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;],
+    </span><span style="color:#bf616a;">name </span><span style="color:#c0c5ce;">= &quot;</span><span style="color:#a3be8c;">manual transmission</span><span style="color:#c0c5ce;">&quot;
+)
+layout = go.</span><span style="color:#bf616a;">Layout</span><span style="color:#c0c5ce;">(
+    </span><span style="color:#bf616a;">title</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">Amount of cars sold during a year by transmission types</span><span style="color:#c0c5ce;">&#39;,\
+    </span><span style="color:#bf616a;">xaxis</span><span style="color:#c0c5ce;">= {&#39;</span><span style="color:#a3be8c;">title</span><span style="color:#c0c5ce;">&#39;:&quot;</span><span style="color:#a3be8c;">years</span><span style="color:#c0c5ce;">&quot;},</span><span style="color:#bf616a;">yaxis </span><span style="color:#c0c5ce;">= {&#39;</span><span style="color:#a3be8c;">title</span><span style="color:#c0c5ce;">&#39;:&quot;</span><span style="color:#a3be8c;">total amount of cars</span><span style="color:#c0c5ce;">&quot;},)
+
+
+fig = go.</span><span style="color:#bf616a;">Figure</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">data </span><span style="color:#c0c5ce;">= [adaptive_trace,automatic_trace,manual_trace], </span><span style="color:#bf616a;">layout </span><span style="color:#c0c5ce;">= layout)
+</span><span style="color:#bf616a;">iplot</span><span style="color:#c0c5ce;">(fig)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;8ff88dc306202e0d00.png" />
+<p>From this graph we can see:</p>
+<ul>
+<li>that manual transmission cars were super popular in Ukraine till 2012. </li>
+<li>Last years we saw the trend that automatic transmission became more and more popular. We can affirm that automatic transmission will become an absolute lead on Ukrainian market next years.</li>
+<li>Total amount of sales for both transmission types in UA are going down. Perhaps, it is due to economical reason.</li>
+<li>The top sale years for manual transmission are 2007-2008 and for automatic are 2015-2016.</li>
+</ul>
+<p>Further I would like to compare two of the most popular brands (Toyota nad Volkswagen) in time.</p>
+<p>Group data by brand, year and compare the max price for each.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;">#Total Toyota/VolksWagen sales by year
+</span><span style="color:#c0c5ce;">max_price = ua_cars.</span><span style="color:#bf616a;">groupby</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">year</span><span style="color:#c0c5ce;">&#39;])[&#39;</span><span style="color:#a3be8c;">price</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">() \
+  .</span><span style="color:#bf616a;">reset_index</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">price</span><span style="color:#c0c5ce;">&#39;).</span><span style="color:#bf616a;">sort_values</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">year</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">ascending</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">False</span><span style="color:#c0c5ce;">) 
+
+toyota_price=max_price[max_price[&#39;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">toyota</span><span style="color:#c0c5ce;">&#39;]
+vw_price=max_price[max_price[&#39;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">volkswagen</span><span style="color:#c0c5ce;">&#39;]
+</span></code></pre>
+<p>Use scatterplot to visualise this data:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">toyota_trace = go.Scatter(
+    x = toyota_price.year,
+    y = toyota_price[&#39;price&#39;],
+    name = &#39;Toyota&#39;
+)
+vw_trace = go.Scatter(
+    x = vw_price.year,
+    y = vw_price[&#39;price&#39;],
+    name= &#39;VolksWagen&#39;
+)
+layout = go.Layout(
+    title=&#39;Total sales by year&#39;,\
+    xaxis= {&#39;title&#39;:&quot;years&quot;},yaxis = {&#39;title&#39;:&quot;total sales,K$&quot;}
+)
+
+fig = go.Figure(data = [toyota_trace,vw_trace], layout = layout)
+iplot(fig)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;0f7a5ff86f9653df00.png" />
+<p>Here we can see that both top brands have a good sales growth. 
+Volkswagen has more stable sales, but Toyota has more tricky trend. Some last years are more lucky for Toyota and the growth is 
+extremely sharp (in 2015 and 2019). It is a point for additional research.</p>
+<hr />
+<h1 id="usa-cars">USA Cars</h1>
+<p>Now it is time to analyse another dataset - the dataset of US cars. It will be interesting to compare these two markets at the end.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">us_cars = pd.</span><span style="color:#bf616a;">read_csv</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">cars/usa_vehicles_price.csv</span><span style="color:#c0c5ce;">&quot;)
+</span></code></pre>
+<p>I’ll skip some code blocks, because they are similar to UA cars. I will just describe some results.
+US cars dataset have next columns:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">Index</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">Unnamed: 0</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">price</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">model</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">year</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">title_status</span><span style="color:#c0c5ce;">&#39;,
+       &#39;</span><span style="color:#a3be8c;">mileage</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">color</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">vin</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">lot</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">state</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">country</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">condition</span><span style="color:#c0c5ce;">&#39;],
+      </span><span style="color:#bf616a;">dtype</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">object</span><span style="color:#c0c5ce;">&#39;)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;a52adec332a3a99200.png" />
+This dataset is wider by features and that is great. So maybe we can extract more interesting information here.
+<p><code>us_cars[&quot;country&quot;].unique() </code> says to us this dataset collects info about Canada cars sold in US. 
+I want to delete them, because now I am not sure how to interpret them in the future. 
+Additionally lets delete <code>vin</code> numbers - official car id number: they can’t give us more useful info.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">us_cars = us_cars.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">Unnamed: 0</span><span style="color:#c0c5ce;">&#39;,&#39;</span><span style="color:#a3be8c;">vin</span><span style="color:#c0c5ce;">&#39;,&quot;</span><span style="color:#a3be8c;">condition</span><span style="color:#c0c5ce;">&quot;,&quot;</span><span style="color:#a3be8c;">lot</span><span style="color:#c0c5ce;">&quot;,&quot;</span><span style="color:#a3be8c;">title_status</span><span style="color:#c0c5ce;">&quot;],</span><span style="color:#bf616a;">axis </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+us_cars= us_cars[us_cars[&#39;</span><span style="color:#a3be8c;">country</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;"> usa</span><span style="color:#c0c5ce;">&#39;]
+us_cars = us_cars.</span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">([&quot;</span><span style="color:#a3be8c;">country</span><span style="color:#c0c5ce;">&quot;],</span><span style="color:#bf616a;">axis </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;1797283881fcbafd00.png" />
+<p>The first thing I noticed when I downloaded the dataset that mile units are used for US cars. Europeans “likes” American measures :-) </p>
+<p>So let’s transform miles into kilometres:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">us_cars[&#39;</span><span style="color:#a3be8c;">mileage</span><span style="color:#c0c5ce;">&#39;]=(us_cars[&#39;</span><span style="color:#a3be8c;">mileage</span><span style="color:#c0c5ce;">&#39;]*</span><span style="color:#d08770;">1.60934</span><span style="color:#c0c5ce;">/</span><span style="color:#d08770;">1000</span><span style="color:#c0c5ce;">).</span><span style="color:#bf616a;">round</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">).</span><span style="color:#bf616a;">astype</span><span style="color:#c0c5ce;">(int)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;9f493f69f895fe5000.png" />
+<p>Let’s find top 10 popular brands in US:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">us_cars[&quot;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&quot;].</span><span style="color:#bf616a;">value_counts</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">10</span><span style="color:#c0c5ce;">).</span><span style="color:#bf616a;">plot</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">kind</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">bar</span><span style="color:#c0c5ce;">&#39;)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;54b1bb6ce325156c00.png" />
+So in US, Ford is a leader of sales. Dodge, Nissan and Chevrolet are popular too, but Ford is absolute leader.
+<p>Also we can group data by brand and year and compare their maximal prices:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">max_price_us = us_cars.</span><span style="color:#bf616a;">groupby</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&#39;, &#39;</span><span style="color:#a3be8c;">year</span><span style="color:#c0c5ce;">&#39;])[&#39;</span><span style="color:#a3be8c;">price</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">() \
+  .</span><span style="color:#bf616a;">reset_index</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">price</span><span style="color:#c0c5ce;">&#39;).</span><span style="color:#bf616a;">sort_values</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">year</span><span style="color:#c0c5ce;">&#39;], </span><span style="color:#bf616a;">ascending</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">False</span><span style="color:#c0c5ce;">) 
+
+ford_price=max_price[max_price[&#39;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">ford</span><span style="color:#c0c5ce;">&#39;]
+dodge_price=max_price[max_price[&#39;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">dodge</span><span style="color:#c0c5ce;">&#39;]
+nissan_price=max_price[max_price[&#39;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">nissan</span><span style="color:#c0c5ce;">&#39;]
+chevrolet_price=max_price[max_price[&#39;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">chevrolet</span><span style="color:#c0c5ce;">&#39;]
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;3b55b517e9f1505600.png" />
+<p>Here we see that there is no data about car prices for brands except Ford from the 40s till the middle of the 80s. 
+I can explain that three other brands appeared in the US market just in the 80s.
+In the 70s Ford sharply grew down and then started slightly growing up with other new brands only in the middle of the 2000s. 
+It looks like some crises on the market.  Dodge shows stable growth in the last 10 years. Three other brands have a few peaks. 
+Especially significant peaks for Nisan and Chevrolet in 2011-2012. I can guess that some new popular models appeared during this time.
+Fords became a leader again on the market at 2018-2019.</p>
+<p>Next I would like to group data by the USA states, popular brands and review the trend:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">car_by_state = us_cars.</span><span style="color:#bf616a;">groupby</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">state</span><span style="color:#c0c5ce;">&#39;,&#39;</span><span style="color:#a3be8c;">brand</span><span style="color:#c0c5ce;">&#39;])[&#39;</span><span style="color:#a3be8c;">price</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">max</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">reset_index</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">price</span><span style="color:#c0c5ce;">&#39;)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;83dd798b8781974200.png" />
+<hr />
+<p>Ok, now it is time for the most “cutie” side of the dataset. This is a car colour feature. I lived and visited a lot of countries 
+and I see that each country has its own “character” also in car preferences. So I have some hypothesis about that and I want to get the proofs. </p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">car_by_colors = us_cars.</span><span style="color:#bf616a;">groupby</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">color</span><span style="color:#c0c5ce;">&#39;)[&#39;</span><span style="color:#a3be8c;">model</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">reset_index</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">sort_values</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">model</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">ascending </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">False</span><span style="color:#c0c5ce;">).</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+fig= pl.</span><span style="color:#bf616a;">bar</span><span style="color:#c0c5ce;">(car_by_colors, </span><span style="color:#bf616a;">x</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">color</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">y</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">model</span><span style="color:#c0c5ce;">&#39;)
+fig.</span><span style="color:#bf616a;">show</span><span style="color:#c0c5ce;">()
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;fdcb6f70f0d61c4e00.png" />
+<p>Ok, the colour number in US is white. Great! Less popular are black, grey/silver and red. 
+(A brief digression: in Germany, the most popular car colours are black and dark grey. You don’t need to be an analytic to understand that. 
+People explain that by cheaper prices for an insurance and subsequently such cars will be easier to sell. Other reasons are practicality and road safety).</p>
+<p>My next goal to understand is some relationship between colour preference and state. 
+I have an advice that in southern states white is more preferable than in northern and vice versa.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">car_by_colors_state = us_cars.</span><span style="color:#bf616a;">groupby</span><span style="color:#c0c5ce;">([&#39;</span><span style="color:#a3be8c;">color</span><span style="color:#c0c5ce;">&#39;,&#39;</span><span style="color:#a3be8c;">state</span><span style="color:#c0c5ce;">&#39;])[&#39;</span><span style="color:#a3be8c;">state</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">count</span><span style="color:#c0c5ce;">().</span><span style="color:#bf616a;">reset_index</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;).</span><span style="color:#bf616a;">sort_values</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;,</span><span style="color:#bf616a;">ascending </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">False</span><span style="color:#c0c5ce;">)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;78386ef6dcc978bb00.png" />
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">white_color_in_state=car_by_colors_state[car_by_colors_state[&#39;</span><span style="color:#a3be8c;">color</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">white</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+black_color_in_state=car_by_colors_state[car_by_colors_state[&#39;</span><span style="color:#a3be8c;">color</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">black</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+gray_color_in_state=car_by_colors_state[car_by_colors_state[&#39;</span><span style="color:#a3be8c;">color</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">gray</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+silver_color_in_state=car_by_colors_state[car_by_colors_state[&#39;</span><span style="color:#a3be8c;">color</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">silver</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+red_color_in_state=car_by_colors_state[car_by_colors_state[&#39;</span><span style="color:#a3be8c;">color</span><span style="color:#c0c5ce;">&#39;]==&#39;</span><span style="color:#a3be8c;">red</span><span style="color:#c0c5ce;">&#39;].</span><span style="color:#bf616a;">head</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">5</span><span style="color:#c0c5ce;">)
+
+color = {&#39;</span><span style="color:#a3be8c;">White</span><span style="color:#c0c5ce;">&#39;:&#39;</span><span style="color:#a3be8c;">white</span><span style="color:#c0c5ce;">&#39;,
+          &#39;</span><span style="color:#a3be8c;">Black</span><span style="color:#c0c5ce;">&#39;:&#39;</span><span style="color:#a3be8c;">black</span><span style="color:#c0c5ce;">&#39;,
+         &#39;</span><span style="color:#a3be8c;">Gray</span><span style="color:#c0c5ce;">&#39;:&#39;</span><span style="color:#a3be8c;">gray</span><span style="color:#c0c5ce;">&#39;,
+         &#39;</span><span style="color:#a3be8c;">Silver</span><span style="color:#c0c5ce;">&#39;:&#39;</span><span style="color:#a3be8c;">silver</span><span style="color:#c0c5ce;">&#39;,
+         &#39;</span><span style="color:#a3be8c;">Red</span><span style="color:#c0c5ce;">&#39;:&#39;</span><span style="color:#a3be8c;">red</span><span style="color:#c0c5ce;">&#39;}
+
+white_trace = go.</span><span style="color:#bf616a;">Bar</span><span style="color:#c0c5ce;">(
+    </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= white_color_in_state.state,
+    </span><span style="color:#bf616a;">y </span><span style="color:#c0c5ce;">= white_color_in_state[&#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;],
+    </span><span style="color:#bf616a;">name </span><span style="color:#c0c5ce;">= &#39;</span><span style="color:#a3be8c;">White</span><span style="color:#c0c5ce;">&#39;,
+    </span><span style="color:#bf616a;">marker_color</span><span style="color:#c0c5ce;">=color[&#39;</span><span style="color:#a3be8c;">White</span><span style="color:#c0c5ce;">&#39;]
+)
+black_trace = go.</span><span style="color:#bf616a;">Bar</span><span style="color:#c0c5ce;">(
+    </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= black_color_in_state.state,
+    </span><span style="color:#bf616a;">y </span><span style="color:#c0c5ce;">= black_color_in_state[&#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;],
+    </span><span style="color:#bf616a;">name </span><span style="color:#c0c5ce;">= &#39;</span><span style="color:#a3be8c;">Black</span><span style="color:#c0c5ce;">&#39;,
+    </span><span style="color:#bf616a;">marker_color</span><span style="color:#c0c5ce;">=color[&#39;</span><span style="color:#a3be8c;">Black</span><span style="color:#c0c5ce;">&#39;]
+)
+gray_trace = go.</span><span style="color:#bf616a;">Bar</span><span style="color:#c0c5ce;">(
+    </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= gray_color_in_state.state,
+    </span><span style="color:#bf616a;">y </span><span style="color:#c0c5ce;">= gray_color_in_state[&#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;],
+    </span><span style="color:#bf616a;">name </span><span style="color:#c0c5ce;">= &#39;</span><span style="color:#a3be8c;">Gray</span><span style="color:#c0c5ce;">&#39;,
+    </span><span style="color:#bf616a;">marker_color</span><span style="color:#c0c5ce;">=color[&#39;</span><span style="color:#a3be8c;">Gray</span><span style="color:#c0c5ce;">&#39;]
+)
+silver_trace = go.</span><span style="color:#bf616a;">Bar</span><span style="color:#c0c5ce;">(
+    </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= silver_color_in_state.state,
+    </span><span style="color:#bf616a;">y </span><span style="color:#c0c5ce;">= silver_color_in_state[&#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;],
+    </span><span style="color:#bf616a;">name </span><span style="color:#c0c5ce;">= &#39;</span><span style="color:#a3be8c;">Silver</span><span style="color:#c0c5ce;">&#39;,
+    </span><span style="color:#bf616a;">marker_color</span><span style="color:#c0c5ce;">=color[&#39;</span><span style="color:#a3be8c;">Silver</span><span style="color:#c0c5ce;">&#39;]
+)
+red_trace = go.</span><span style="color:#bf616a;">Bar</span><span style="color:#c0c5ce;">(
+    </span><span style="color:#bf616a;">x </span><span style="color:#c0c5ce;">= red_color_in_state.state,
+    </span><span style="color:#bf616a;">y </span><span style="color:#c0c5ce;">= red_color_in_state[&#39;</span><span style="color:#a3be8c;">count</span><span style="color:#c0c5ce;">&#39;],
+    </span><span style="color:#bf616a;">name </span><span style="color:#c0c5ce;">= &#39;</span><span style="color:#a3be8c;">Red</span><span style="color:#c0c5ce;">&#39;,
+    </span><span style="color:#bf616a;">marker_color</span><span style="color:#c0c5ce;">=color[&#39;</span><span style="color:#a3be8c;">Red</span><span style="color:#c0c5ce;">&#39;]
+)
+layout = go.</span><span style="color:#bf616a;">Layout</span><span style="color:#c0c5ce;">(
+    </span><span style="color:#bf616a;">title</span><span style="color:#c0c5ce;">=&#39;&#39;,\
+    </span><span style="color:#bf616a;">xaxis</span><span style="color:#c0c5ce;">= {&#39;</span><span style="color:#a3be8c;">title</span><span style="color:#c0c5ce;">&#39;:&quot; &quot;},</span><span style="color:#bf616a;">yaxis </span><span style="color:#c0c5ce;">= {&#39;</span><span style="color:#a3be8c;">title</span><span style="color:#c0c5ce;">&#39;:&quot; &quot;}
+)
+
+fig = go.</span><span style="color:#bf616a;">Figure</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">data </span><span style="color:#c0c5ce;">= [white_trace,black_trace,gray_trace,silver_trace,red_trace], </span><span style="color:#bf616a;">layout </span><span style="color:#c0c5ce;">= layout)
+</span><span style="color:#bf616a;">iplot</span><span style="color:#c0c5ce;">(fig)
+</span></code></pre><img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;600ee65f83d66ca800.png" />
+<p>As I previously guessed, the white cars are selling better in southern states such as Texas, California and by surprise in Michigan, which is northern state. 
+Black cars are popular in northern Pennsylvania. What is strange, that in southern Florida white cars are less popular than black ones. 
+At the same time other colours are also represented.</p>
+<p>In conclusion I would say that US car drivers choose domestic cars (Fords and Dodges) with practical colours depending on the state.</p>
+<h1 id="summary">Summary</h1>
+<p><strong>- UA and US markets are very different. People in Ukraine preferred small Europeans sedans such as Volkswagen or Japan Toyota. In the same time, in the US, people prefer domestic cars.</strong></p>
+<p><strong>- Ukrainian market is transforming and the automatic transmission grows in popularity.</strong></p>
+<p><strong>- My observations in car colours for US have been confirmed. White colour is the most popular in this country. However, colour preferences are changing from state to state.</strong></p>
+
+          </div>
+        </article>
+      </div>
+      
+      <div class="column is-2 is-hidden-mobile">
+        <aside class="menu" style="position: sticky; top: 48px">
+          <p class="heading has-text-weight-bold">Contents</p>
+          <ul class="menu-list">
+            
+            <li>
+              <a id="link-ukrainian-cars" class="toc is-size-7 is-active" href="https://nnovakova.github.io/cars-analysis/#ukrainian-cars">
+                Ukrainian Cars
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-usa-cars" class="toc is-size-7 " href="https://nnovakova.github.io/cars-analysis/#usa-cars">
+                USA Cars
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-summary" class="toc is-size-7 " href="https://nnovakova.github.io/cars-analysis/#summary">
+                Summary
+              </a>
+              
+            </li>
+            
+          </ul>
+        </aside>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="field">
+        <p class="control has-icons-right">
+          <input class="input" id="search" placeholder="Search this website." type="search" />
+          <span class="icon is-small is-right">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+      <div class="search-results">
+        <div class="search-results__items"></div>
+      </div>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+          
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;data-transformation&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              Basic Feature Engineering Techniques for ML
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;opennlp-ner-train-test&#x2F;">
+              NER using OpenNLP. Model Training and Validation.<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+            
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="py-4 has-background-light">
+    <p class="has-text-centered">
+      Built with
+      <span class="icon is-small">
+        <i class="fas fa-code fa-xs"></i>
+      </span>
+      code and
+      <span class="icon is-small">
+        <i class="fas fa-heart fa-xs"></i>
+      </span>
+      love <br /> Powered By
+      <span class="icon is-small">
+        <i class="fas fa-power-off fa-xs"></i>
+      </span>
+      Zola
+    </p>
+  </footer>
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;search_index.en.js'></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;js&#x2F;site.js'></script>
+
+  
+
+<script type="text/javascript">
+  const menuBarHeight = $("nav.navbar").height();
+  const tocItems = $('.toc');
+  const navSections = new Array($('.toc').length);
+
+  tocItems.each(function (i) {
+    let id = $(this).attr("id").substring(5);
+    navSections[i] = document.getElementById(id);
+  })
+
+  function isVisible(tocIndex) {
+    const current = navSections[tocIndex];
+    const next = tocIndex < tocItems.length - 1 ? navSections[tocIndex+1] : $("section.section").get(1);
+    
+    const c = current.getBoundingClientRect();
+    const n = next.getBoundingClientRect();
+    const h = (window.innerHeight || document.documentElement.clientHeight);
+
+    return (c.top <= h) && (c.top + (n.top - c.top) - menuBarHeight >= 0);
+  }
+
+  function activateIfVisible() {
+    for (b = true, i = 0; i < tocItems.length; i++) {
+      if (b && isVisible(i)) {
+        tocItems[i].classList.add('is-active');
+        b = false;
+      } else
+        tocItems[i].classList.remove('is-active');
+    }
+  }
+
+  var isTicking = null;
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        activateIfVisible();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }, false);
+</script>
+
+
+
+
+</body>
+
+</html>

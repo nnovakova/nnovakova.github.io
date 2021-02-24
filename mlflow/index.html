@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  
+  
+  
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css"
+    rel="stylesheet" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <link href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;site.css' rel="stylesheet" />
+
+  
+  
+
+  <title>
+    
+Nadiia Novakova | Tracking ML experiments with MLFlow
+
+  </title>
+
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/201b8d5e05.js"></script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYPZQFCYHT"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-RYPZQFCYHT");
+  </script>
+  
+</head>
+
+<body class="has-background-white">
+  
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="https:&#x2F;&#x2F;nnovakova.github.io">Nadiia Novakova</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;'>
+            Blog
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;cv'>
+            CV
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags'>
+            Tags
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories'>
+            Categories
+          </a>
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title is-1">
+            Tracking ML experiments with MLFlow
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="fas fa-user"></i>
+    </span>
+    Nadiia Novakova published on
+    <span class="icon">
+      <i class="far fa-calendar-alt"></i>
+    </span>
+    <time datetime='2020-11-12'>November 12, 2020</time>
+  </p>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="far fa-clock"></i>
+    </span>
+    7 min,
+    <span class="icon">
+      <i class="fas fa-pencil-alt"></i>
+    </span>
+    1229 words
+  </p>
+
+            </div>
+            <div class="column">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Categories:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;data-science&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Data Science
+      </a>
+    
+  </p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Tags:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;python&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        python
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;ner&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        ner
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;mlflow&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        mlflow
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;nlp&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        nlp
+      </a>
+    
+  </p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>MLFlow helps to data scientists to track their machine learning experiments. However, it provides more than that.
+Some of the main features:</p>
+<span id="continue-reading"></span>
+<ul>
+<li>Python, Scala, Java SDK to log ML experiments metrics, parameters, ML model files</li>
+<li>Generic packaging format for ML models</li>
+<li>Model Registry to manage ML models</li>
+<li>Web UI</li>
+</ul>
+<p>I will show how one can integrate MLFlow into existing code. I will use my existing Python project, 
+where I used <a href="https://github.com/nnovakova/spacy-med-domain-ner-de/blob/master/spacy-med-domain-ner-de.ipynb">Spacy to train ML model for NLP/NER task</a>.</p>
+<h1 id="installation">Installation</h1>
+<p>We can use pip:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">pip</span><span style="color:#c0c5ce;"> install mlflow
+</span></code></pre>
+<p>You should have Conda or Miniconda tool installed to work with MLFlow. It can be install from <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/">here</a>.</p>
+<p><a href="https://mlflow.org/docs/latest/index.html">Official documentation of MLFlow</a> is quite good. You can use it, if you lost in my tutorial.</p>
+<h1 id="web-ui">Web UI</h1>
+<p>Once MLFLow is installed, you can run its Web UI locally. You can also run it on your central server to be able to work in the team, so that you all will
+be able to see each other experiments. Start UI via the following command:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">mlflow</span><span style="color:#c0c5ce;"> ui
+</span></code></pre>
+<p><code>mlflow</code> is now your CLI tool that was installed via pip earlier. We will be using later for running experiments as well.</p>
+<p>Open web browser at http://127.0.0.1:5000, if <code>mlflow ui</code> was executed successfully, i.e. it should be running in your shell.
+In my case, I have such output in my shell:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">mlflow</span><span style="color:#c0c5ce;"> ui
+
+</span><span style="color:#bf616a;">[2020-11-11</span><span style="color:#c0c5ce;"> 21:35:44 +0100] </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">43202</span><span style="color:#b48ead;">] [</span><span style="color:#c0c5ce;">INFO</span><span style="color:#b48ead;">]</span><span style="color:#c0c5ce;"> Starting gunicorn 20.0.4
+</span><span style="color:#bf616a;">[2020-11-11</span><span style="color:#c0c5ce;"> 21:35:44 +0100] </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">43202</span><span style="color:#b48ead;">] [</span><span style="color:#c0c5ce;">INFO</span><span style="color:#b48ead;">]</span><span style="color:#c0c5ce;"> Listening at: http://127.0.0.1:5000 (43202)
+</span><span style="color:#bf616a;">[2020-11-11</span><span style="color:#c0c5ce;"> 21:35:44 +0100] </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">43202</span><span style="color:#b48ead;">] [</span><span style="color:#c0c5ce;">INFO</span><span style="color:#b48ead;">]</span><span style="color:#c0c5ce;"> Using worker: sync
+</span><span style="color:#bf616a;">[2020-11-11</span><span style="color:#c0c5ce;"> 21:35:44 +0100] </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">43205</span><span style="color:#b48ead;">] [</span><span style="color:#c0c5ce;">INFO</span><span style="color:#b48ead;">]</span><span style="color:#c0c5ce;"> Booting worker with pid: 43205
+</span></code></pre><h1 id="using-mlflow-sdk">Using MLFLow SDK</h1>
+<p>We are going to use MLFlow package which was install by pip as well. In order to integrate MLFlow with any Python code, we just need
+to import its package and use a couple functions to log our experiment metric.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">from </span><span style="color:#c0c5ce;">mlflow </span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">log_metric, log_param, log_artifacts
+</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">mlflow.spacy
+</span></code></pre>
+<p>Now we can use imported functions while training an ML model. Also, we import mlflow-spacy integration to save and load a Spacy model later in the code.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">train_spacy</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">data</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">iterations</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">drop_rate</span><span style="color:#c0c5ce;">):
+    nlp = spacy.</span><span style="color:#bf616a;">blank</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">de</span><span style="color:#c0c5ce;">&#39;)    
+    ner_pipe = &#39;</span><span style="color:#a3be8c;">ner</span><span style="color:#c0c5ce;">&#39;
+    </span><span style="color:#b48ead;">if </span><span style="color:#c0c5ce;">ner_pipe not in nlp.pipe_names:
+        ner = nlp.</span><span style="color:#bf616a;">create_pipe</span><span style="color:#c0c5ce;">(ner_pipe)
+        nlp.</span><span style="color:#bf616a;">add_pipe</span><span style="color:#c0c5ce;">(ner, </span><span style="color:#bf616a;">last</span><span style="color:#c0c5ce;">=</span><span style="color:#d08770;">True</span><span style="color:#c0c5ce;">)
+    </span><span style="color:#b48ead;">else</span><span style="color:#c0c5ce;">:
+        ner = nlp.</span><span style="color:#bf616a;">get_pipe</span><span style="color:#c0c5ce;">(ner_pipe)
+    
+    </span><span style="color:#b48ead;">for </span><span style="color:#bf616a;">_</span><span style="color:#c0c5ce;">, annotations </span><span style="color:#b48ead;">in </span><span style="color:#c0c5ce;">data:
+        </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">ent </span><span style="color:#b48ead;">in </span><span style="color:#c0c5ce;">annotations.</span><span style="color:#bf616a;">get</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">entities</span><span style="color:#c0c5ce;">&#39;):
+            ner.</span><span style="color:#bf616a;">add_label</span><span style="color:#c0c5ce;">(ent[</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">])
+
+    </span><span style="color:#bf616a;">log_param</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">drop_rate</span><span style="color:#c0c5ce;">&quot;, drop_rate)  </span><span style="color:#65737e;"># &lt;-- MLFlow tracking
+    </span><span style="color:#bf616a;">log_param</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">iterations</span><span style="color:#c0c5ce;">&quot;, iterations) </span><span style="color:#65737e;"># &lt;-- MLFlow tracking
+    
+    </span><span style="color:#c0c5ce;">other_pipes = [pipe </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">pipe </span><span style="color:#b48ead;">in </span><span style="color:#c0c5ce;">nlp.pipe_names </span><span style="color:#b48ead;">if </span><span style="color:#c0c5ce;">pipe != ner_pipe]
+    </span><span style="color:#b48ead;">with </span><span style="color:#c0c5ce;">nlp.</span><span style="color:#bf616a;">disable_pipes</span><span style="color:#c0c5ce;">(*other_pipes):  </span><span style="color:#65737e;"># only train NER    
+        </span><span style="color:#c0c5ce;">warnings.</span><span style="color:#bf616a;">filterwarnings</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">once</span><span style="color:#c0c5ce;">&quot;, </span><span style="color:#bf616a;">category</span><span style="color:#c0c5ce;">=UserWarning, </span><span style="color:#bf616a;">module</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">spacy</span><span style="color:#c0c5ce;">&#39;)
+        optimizer = nlp.</span><span style="color:#bf616a;">begin_training</span><span style="color:#c0c5ce;">()
+        </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">itn </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span style="color:#c0c5ce;">(iterations):
+            </span><span style="color:#96b5b4;">print</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">Statring iteration </span><span style="color:#c0c5ce;">&quot; + </span><span style="color:#bf616a;">str</span><span style="color:#c0c5ce;">(itn))
+            random.</span><span style="color:#bf616a;">shuffle</span><span style="color:#c0c5ce;">(data)
+            losses = {}
+            </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">text, annotations </span><span style="color:#b48ead;">in </span><span style="color:#c0c5ce;">data:
+                nlp.</span><span style="color:#bf616a;">update</span><span style="color:#c0c5ce;">(
+                    [text],  </span><span style="color:#65737e;"># batch of texts
+                    </span><span style="color:#c0c5ce;">[annotations],  </span><span style="color:#65737e;"># batch of annotations
+                    </span><span style="color:#bf616a;">drop</span><span style="color:#c0c5ce;">=drop_rate,  </span><span style="color:#65737e;"># dropout - make it harder to memorise data
+                    </span><span style="color:#bf616a;">sgd</span><span style="color:#c0c5ce;">=optimizer,  </span><span style="color:#65737e;"># callable to update weights
+                    </span><span style="color:#bf616a;">losses</span><span style="color:#c0c5ce;">=losses)
+            </span><span style="color:#bf616a;">log_metric</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">ner.losses</span><span style="color:#c0c5ce;">&quot;, </span><span style="color:#bf616a;">value</span><span style="color:#c0c5ce;">=losses[ner_pipe], </span><span style="color:#bf616a;">step</span><span style="color:#c0c5ce;">=itn) </span><span style="color:#65737e;"># &lt;-- MLFlow tracking
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">nlp
+</span></code></pre>
+<p>There are three places where we log our algorithm parameters and one metric &quot;ner.losses&quot;. When we launch above code, it will log 
+those values to local MLFlow file repository. One can also point MLFlow SDK to use remote server that will store all logged parameters, metrics and artefacts.</p>
+<p>Let's call this function and store output model file into MLFlow file repository:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">parser = argparse.</span><span style="color:#bf616a;">ArgumentParser</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">description</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">NER Model training</span><span style="color:#c0c5ce;">&#39;)
+parser.</span><span style="color:#bf616a;">add_argument</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">-d</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">dest</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">drop_rate</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">type</span><span style="color:#c0c5ce;">=float,
+                    </span><span style="color:#bf616a;">help</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">SpaCy drop rate for training [0.0..0.9]</span><span style="color:#c0c5ce;">&#39;)
+parser.</span><span style="color:#bf616a;">add_argument</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">-i</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">dest</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">iterations</span><span style="color:#c0c5ce;">&#39;, </span><span style="color:#bf616a;">type</span><span style="color:#c0c5ce;">=int,
+                    </span><span style="color:#bf616a;">help</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">Number of iterations</span><span style="color:#c0c5ce;">&#39;)
+args = parser.</span><span style="color:#bf616a;">parse_args</span><span style="color:#c0c5ce;">()
+
+training_data = </span><span style="color:#bf616a;">transform_json</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">med-corpus.json</span><span style="color:#c0c5ce;">&#39;)
+prdnlp = </span><span style="color:#bf616a;">train_spacy</span><span style="color:#c0c5ce;">(training_data, args.iterations, args.drop_rate)
+mlflow.spacy.</span><span style="color:#bf616a;">log_model</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">spacy_model</span><span style="color:#c0c5ce;">=prdnlp, </span><span style="color:#bf616a;">artifact_path</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">model</span><span style="color:#c0c5ce;">&quot;)
+</span></code></pre>
+<ol>
+<li>We parse script arguments to pass their values to <code>train_spacy</code> function. </li>
+<li>We read the training data from JSON file and transform it to 
+Spacy format. </li>
+<li>Once training data is available, we call <code>train_spacy</code> to get a model object as a result of the training. </li>
+<li>Last line is saving Spacy model via MLFlow API to MLFlow file repository.</li>
+</ol>
+<h1 id="using-mlflow-cli">Using MLFlow CLI</h1>
+<p>In order to start using MLFlow as CLI, we should add <code>MLProject</code> yaml file to source project 
+directory:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">: </span><span style="color:#bf616a;">NER Medical Entities
+
+conda_env</span><span style="color:#c0c5ce;">: </span><span style="color:#bf616a;">conda.yaml
+
+entry_points</span><span style="color:#c0c5ce;">:
+  </span><span style="color:#bf616a;">main</span><span style="color:#c0c5ce;">:
+    </span><span style="color:#bf616a;">parameters</span><span style="color:#c0c5ce;">:      
+      </span><span style="color:#bf616a;">drop_rate</span><span style="color:#c0c5ce;">: {</span><span style="color:#bf616a;">type</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">float</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">default</span><span style="color:#c0c5ce;">: </span><span style="color:#d08770;">0.2</span><span style="color:#c0c5ce;">}
+      </span><span style="color:#bf616a;">iterations</span><span style="color:#c0c5ce;">: {</span><span style="color:#bf616a;">type</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">int</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">default</span><span style="color:#c0c5ce;">: </span><span style="color:#d08770;">20</span><span style="color:#c0c5ce;">}
+    </span><span style="color:#bf616a;">command</span><span style="color:#c0c5ce;">: &quot;</span><span style="color:#a3be8c;">python train_ner_model.py -d {drop_rate} -i {iterations}</span><span style="color:#c0c5ce;">&quot;
+  </span><span style="color:#bf616a;">test</span><span style="color:#c0c5ce;">:
+    </span><span style="color:#bf616a;">parameters</span><span style="color:#c0c5ce;">:
+      </span><span style="color:#bf616a;">run_id</span><span style="color:#c0c5ce;">: {</span><span style="color:#bf616a;">type</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">string</span><span style="color:#c0c5ce;">}
+    </span><span style="color:#bf616a;">command</span><span style="color:#c0c5ce;">: &quot;</span><span style="color:#a3be8c;">python test_ner_model.py -r {run_id}</span><span style="color:#c0c5ce;">&quot;
+</span></code></pre>
+<p>Above files described MLProject entry points that we can execute via MLFlow CLI. Before doing that,
+we will create an experiment entry in the MLFlow file repository by running:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">mlflow</span><span style="color:#c0c5ce;"> experiments create</span><span style="color:#bf616a;"> -n</span><span style="color:#c0c5ce;"> ner-medicine-spacy
+</span></code></pre>
+<p>It will output something like this:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">...
+Created</span><span style="color:#c0c5ce;"> experiment &#39;</span><span style="color:#a3be8c;">ner-medicine-spacy</span><span style="color:#c0c5ce;">&#39; with id 1
+</span></code></pre><pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">mlflow</span><span style="color:#c0c5ce;"> run</span><span style="color:#bf616a;"> -e</span><span style="color:#c0c5ce;"> main .</span><span style="color:#bf616a;"> -P</span><span style="color:#c0c5ce;"> drop_rate=0.25</span><span style="color:#bf616a;"> -P</span><span style="color:#c0c5ce;"> iterations=30</span><span style="color:#bf616a;"> --experiment-id</span><span style="color:#c0c5ce;"> 1
+</span><span style="color:#bf616a;">...
+...</span><span style="color:#c0c5ce;"> INFO mlflow.projects: === Run (ID &#39;</span><span style="color:#a3be8c;">a689830e6fe245c8a2b025b4a2edee1a</span><span style="color:#c0c5ce;">&#39;) </span><span style="color:#bf616a;">succeeded</span><span style="color:#c0c5ce;"> ===
+</span></code></pre>
+<p><code>run</code> is one of the option of <code>mlflow</code> CLI. It can execute one of the entry point from <code>MLProject</code> file. Above command executes <code>main</code> entry point which is training python script. We pass
+two paramters via CLI that will be passed to the script as &quot;-d {drop_rate} -i {iterations}&quot;. Then,
+the <code>train_ner_model.py</code> script will parse these parameters as scipt arguments to be used 
+for <code>train_spacy</code> function. </p>
+<p>At this point we can already see an entry at MLFlow UI under experiment name <code>ner-medicine-spacy</code>.</p>
+<h1 id="chasing-best-parameters">Chasing best parameters</h1>
+<p>My NER Spacy machine learning model gets better, if you have smaller <a href="https://spacy.io/usage/training#spacy-train-cli">loss function value</a>. So we can go ahead and run below command with different parameters with get smallest <code>loss</code> value.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">mlflow</span><span style="color:#c0c5ce;"> run</span><span style="color:#bf616a;"> -e</span><span style="color:#c0c5ce;"> main . \
+</span><span style="color:#bf616a;"> -P</span><span style="color:#c0c5ce;"> drop_rate=&lt;some value between 0 and 0.</span><span style="color:#d08770;">9</span><span style="color:#c0c5ce;">&gt; \
+</span><span style="color:#bf616a;"> -P</span><span style="color:#c0c5ce;"> iterations=&lt;some value more than </span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">&gt; \
+</span><span style="color:#bf616a;"> --experiment-id</span><span style="color:#c0c5ce;"> 1
+</span></code></pre>
+<p>So I did that and got all runs logged in MLFlow:</p>
+<img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;9dc86d3438295bad00.png" />
+<p>If I click on the last run, I even can see how loss function is
+moving on each iteration of learning process:</p>
+<img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;52839dd77f8383ba00.png" />
+<p>If go to my last run again and scroll down, I can see that my model
+was saved as part of my local project file repository. Every
+run gets unique id, so that I can easily find my Spacy model and use it for
+deployment in production or share it to my team. <code>Register Model</code> button shows up, if I click on the model tree at the left hand side. This feature is designed to register my model from a specific training run to a remote or local MLFlow instance. Most of the time you will be using this feature with remote/shared instance of MLFlow.</p>
+<img src="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;processed_images&#x2F;8d5bc467d3b9e56000.png" />
+<h1 id="summary">Summary</h1>
+<p>MLFlow is useful tool to visualise machine learning experiments locally 
+and share experiment result in the team via remote instance. MLFlow comes also with deployment APIs to expose a machine learning model as a RESTful service for scoring purposes. Unified model packaging format is perhaps one of the important feature, which helps to reproduce a machine learning experiment in another environment and move your machine model to production.</p>
+<h1 id="links">Links</h1>
+<p>Full project source code on GitHub: <a href="https://github.com/nnovakova/mlflow-spacy">https://github.com/nnovakova/mlflow-spacy</a></p>
+
+          </div>
+        </article>
+      </div>
+      
+      <div class="column is-2 is-hidden-mobile">
+        <aside class="menu" style="position: sticky; top: 48px">
+          <p class="heading has-text-weight-bold">Contents</p>
+          <ul class="menu-list">
+            
+            <li>
+              <a id="link-installation" class="toc is-size-7 is-active" href="https://nnovakova.github.io/mlflow/#installation">
+                Installation
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-web-ui" class="toc is-size-7 " href="https://nnovakova.github.io/mlflow/#web-ui">
+                Web UI
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-using-mlflow-sdk" class="toc is-size-7 " href="https://nnovakova.github.io/mlflow/#using-mlflow-sdk">
+                Using MLFLow SDK
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-using-mlflow-cli" class="toc is-size-7 " href="https://nnovakova.github.io/mlflow/#using-mlflow-cli">
+                Using MLFlow CLI
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-chasing-best-parameters" class="toc is-size-7 " href="https://nnovakova.github.io/mlflow/#chasing-best-parameters">
+                Chasing best parameters
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-summary" class="toc is-size-7 " href="https://nnovakova.github.io/mlflow/#summary">
+                Summary
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-links" class="toc is-size-7 " href="https://nnovakova.github.io/mlflow/#links">
+                Links
+              </a>
+              
+            </li>
+            
+          </ul>
+        </aside>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="field">
+        <p class="control has-icons-right">
+          <input class="input" id="search" placeholder="Search this website." type="search" />
+          <span class="icon is-small is-right">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+      <div class="search-results">
+        <div class="search-results__items"></div>
+      </div>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+          
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;opennlp-ner-train-test&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              NER using OpenNLP. Model Training and Validation.
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;opennlp-ner-annotaton&#x2F;">
+              NER using OpenNLP. Data Preparation.<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+            
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="py-4 has-background-light">
+    <p class="has-text-centered">
+      Built with
+      <span class="icon is-small">
+        <i class="fas fa-code fa-xs"></i>
+      </span>
+      code and
+      <span class="icon is-small">
+        <i class="fas fa-heart fa-xs"></i>
+      </span>
+      love <br /> Powered By
+      <span class="icon is-small">
+        <i class="fas fa-power-off fa-xs"></i>
+      </span>
+      Zola
+    </p>
+  </footer>
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;search_index.en.js'></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;js&#x2F;site.js'></script>
+
+  
+
+<script type="text/javascript">
+  const menuBarHeight = $("nav.navbar").height();
+  const tocItems = $('.toc');
+  const navSections = new Array($('.toc').length);
+
+  tocItems.each(function (i) {
+    let id = $(this).attr("id").substring(5);
+    navSections[i] = document.getElementById(id);
+  })
+
+  function isVisible(tocIndex) {
+    const current = navSections[tocIndex];
+    const next = tocIndex < tocItems.length - 1 ? navSections[tocIndex+1] : $("section.section").get(1);
+    
+    const c = current.getBoundingClientRect();
+    const n = next.getBoundingClientRect();
+    const h = (window.innerHeight || document.documentElement.clientHeight);
+
+    return (c.top <= h) && (c.top + (n.top - c.top) - menuBarHeight >= 0);
+  }
+
+  function activateIfVisible() {
+    for (b = true, i = 0; i < tocItems.length; i++) {
+      if (b && isVisible(i)) {
+        tocItems[i].classList.add('is-active');
+        b = false;
+      } else
+        tocItems[i].classList.remove('is-active');
+    }
+  }
+
+  var isTicking = null;
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        activateIfVisible();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }, false);
+</script>
+
+
+
+
+</body>
+
+</html>

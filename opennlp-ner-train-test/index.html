@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  
+  
+  
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css"
+    rel="stylesheet" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <link href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;site.css' rel="stylesheet" />
+
+  
+  
+
+  <title>
+    
+Nadiia Novakova | NER using OpenNLP. Model Training and Validation.
+
+  </title>
+
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/201b8d5e05.js"></script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYPZQFCYHT"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-RYPZQFCYHT");
+  </script>
+  
+</head>
+
+<body class="has-background-white">
+  
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="https:&#x2F;&#x2F;nnovakova.github.io">Nadiia Novakova</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;'>
+            Blog
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;cv'>
+            CV
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags'>
+            Tags
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories'>
+            Categories
+          </a>
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title is-1">
+            NER using OpenNLP. Model Training and Validation.
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="fas fa-user"></i>
+    </span>
+    Nadiia Novakova published on
+    <span class="icon">
+      <i class="far fa-calendar-alt"></i>
+    </span>
+    <time datetime='2020-11-17'>November 17, 2020</time>
+  </p>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="far fa-clock"></i>
+    </span>
+    3 min,
+    <span class="icon">
+      <i class="fas fa-pencil-alt"></i>
+    </span>
+    436 words
+  </p>
+
+            </div>
+            <div class="column">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Categories:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;categories&#x2F;programming&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Programming
+      </a>
+    
+  </p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Tags:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;java&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        java
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;opennlp&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        opennlp
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;learn-model&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        learn model
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;model-customization&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        model customization
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;train-model&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        train model
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;tags&#x2F;validate-model&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        validate model
+      </a>
+    
+  </p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>In <a href="https://nnovakova.github.io/opennlp-ner-annotaton/">the previous article</a> I described how to prepare training data (corpus) for training with OpenNLP for a specific domain and custom entities. </p>
+<span id="continue-reading"></span>
+<p>Now it is time to use annotated corpus for the next stage of NLP pipeline.
+Before, we completed the first step of the pipeline – training data preparation. Now it is time to start real learning process.</p>
+<p>But before we start next step, let's list basic <strong>OpenNLP conditions</strong>:</p>
+<ul>
+<li>Have enough data  (starts from 15 000 sentences in corpus).</li>
+<li>Corpus must to be annotated.</li>
+<li>Corpus must contain single language text.</li>
+<li>Write Java code to use OpenNLP API. </li>
+</ul>
+<p>If these conditions are met, then you can start training.</p>
+<h1 id="3-training-a-model">3. Training a model</h1>
+<p>Below, in all code snippets I am using Java 11 that allows to use <code>var</code> keywords for local variables.</p>
+<h2 id="3-1-read-the-training-data">3.1 Read the training data</h2>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">var in = </span><span style="color:#b48ead;">new </span><span style="color:#ebcb8b;">MarkableFileInputStreamFactory</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">new </span><span style="color:#ebcb8b;">File</span><span style="color:#c0c5ce;">(filePath));
+var sampleStream = </span><span style="color:#b48ead;">new </span><span style="color:#ebcb8b;">NameSampleDataStream</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">new </span><span style="color:#ebcb8b;">PlainTextByLineStream</span><span style="color:#c0c5ce;">(in, </span><span style="color:#ebcb8b;">StandardCharsets</span><span style="color:#c0c5ce;">.</span><span style="color:#d08770;">UTF_8</span><span style="color:#c0c5ce;">));
+</span></code></pre><h2 id="3-2-training-parameters">3.2 Training Parameters</h2>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">var params = </span><span style="color:#b48ead;">new </span><span style="color:#ebcb8b;">TrainingParameters</span><span style="color:#c0c5ce;">();
+params.</span><span style="color:#bf616a;">put</span><span style="color:#c0c5ce;">(</span><span style="color:#ebcb8b;">TrainingParameters</span><span style="color:#c0c5ce;">.</span><span style="color:#d08770;">ITERATIONS_PARAM</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">100</span><span style="color:#c0c5ce;">);</span><span style="color:#65737e;">// number of training iterations
+</span><span style="color:#c0c5ce;">params.</span><span style="color:#bf616a;">put</span><span style="color:#c0c5ce;">(</span><span style="color:#ebcb8b;">TrainingParameters</span><span style="color:#c0c5ce;">.</span><span style="color:#d08770;">CUTOFF_PARAM</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">3</span><span style="color:#c0c5ce;">);</span><span style="color:#65737e;">//minimal number of times a feature must be seen
+</span><span style="color:#c0c5ce;">params.</span><span style="color:#bf616a;">put</span><span style="color:#c0c5ce;">(</span><span style="color:#ebcb8b;">TrainingParameters</span><span style="color:#c0c5ce;">.</span><span style="color:#d08770;">ALGORITHM_PARAM</span><span style="color:#c0c5ce;">, </span><span style="color:#ebcb8b;">ModelType</span><span style="color:#c0c5ce;">.</span><span style="color:#d08770;">MAXENT</span><span style="color:#c0c5ce;">.</span><span style="color:#bf616a;">toString</span><span style="color:#c0c5ce;">());
+</span></code></pre><h2 id="3-3-train-the-model">3.3 Train the model</h2>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">var nameFinderFactory = </span><span style="color:#ebcb8b;">TokenNameFinderFactory</span><span style="color:#c0c5ce;">.</span><span style="color:#bf616a;">create</span><span style="color:#c0c5ce;">(
+    </span><span style="color:#d08770;">null</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">null</span><span style="color:#c0c5ce;">, </span><span style="color:#ebcb8b;">Collections</span><span style="color:#c0c5ce;">.</span><span style="color:#bf616a;">emptyMap</span><span style="color:#c0c5ce;">(), </span><span style="color:#b48ead;">new </span><span style="color:#ebcb8b;">BioCodec</span><span style="color:#c0c5ce;">());
+</span><span style="color:#ebcb8b;">String</span><span style="color:#c0c5ce;"> type = </span><span style="color:#d08770;">null</span><span style="color:#c0c5ce;">; </span><span style="color:#65737e;">// null - to use entity names from the corpus annotations
+</span><span style="color:#c0c5ce;">model = </span><span style="color:#ebcb8b;">NameFinderME</span><span style="color:#c0c5ce;">.</span><span style="color:#bf616a;">train</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">de</span><span style="color:#c0c5ce;">&quot;, type, sampleStream, params, nameFinderFactory);
+</span></code></pre><h2 id="3-4-save-the-model-to-a-file">3.4 Save the model to a file</h2>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">try </span><span style="color:#c0c5ce;">(</span><span style="color:#ebcb8b;">BufferedOutputStream</span><span style="color:#c0c5ce;"> modelOut = </span><span style="color:#b48ead;">new </span><span style="color:#ebcb8b;">BufferedOutputStream</span><span style="color:#c0c5ce;">(</span><span style="color:#b48ead;">new </span><span style="color:#ebcb8b;">FileOutputStream</span><span style="color:#c0c5ce;">(onlpModelPath))) {
+    model.</span><span style="color:#bf616a;">serialize</span><span style="color:#c0c5ce;">(modelOut);
+}
+</span></code></pre><h1 id="4-validate-mode">4. Validate Mode</h1>
+<p>We need to load the model from the binary file to validate it:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#b48ead;">try </span><span style="color:#c0c5ce;">(</span><span style="color:#ebcb8b;">InputStream</span><span style="color:#c0c5ce;"> modelIn = </span><span style="color:#b48ead;">new </span><span style="color:#ebcb8b;">FileInputStream</span><span style="color:#c0c5ce;">(</span><span style="color:#ebcb8b;">Config</span><span style="color:#c0c5ce;">.onlpModelPath)) {
+    </span><span style="color:#b48ead;">var</span><span style="color:#c0c5ce;"> model = </span><span style="color:#b48ead;">new </span><span style="color:#ebcb8b;">TokenNameFinderModel</span><span style="color:#c0c5ce;">(modelIn);
+    </span><span style="color:#b48ead;">var</span><span style="color:#c0c5ce;"> nameFinder = </span><span style="color:#b48ead;">new </span><span style="color:#ebcb8b;">NameFinderME</span><span style="color:#c0c5ce;">(model);
+    </span><span style="color:#b48ead;">var</span><span style="color:#c0c5ce;"> sentence = &quot;</span><span style="color:#a3be8c;">Keine Mittellinienverlagerung.</span><span style="color:#96b5b4;">\n</span><span style="color:#c0c5ce;">&quot; +
+            &quot;</span><span style="color:#a3be8c;">Keine intrakranielle Blutung.</span><span style="color:#96b5b4;">\n</span><span style="color:#c0c5ce;">&quot; +
+            &quot;</span><span style="color:#a3be8c;">Kein klares fokales, kein generalisiertes Hirnödem.</span><span style="color:#96b5b4;">\n</span><span style="color:#c0c5ce;">&quot; +
+            &quot;</span><span style="color:#a3be8c;">Derzeit keine eindeutige frische, keine grobe alte Ischämie.</span><span style="color:#c0c5ce;">&quot;;
+    ;
+    sentence = sentence.</span><span style="color:#bf616a;">replaceAll</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">(?!</span><span style="color:#96b5b4;">\\</span><span style="color:#a3be8c;">s)</span><span style="color:#96b5b4;">\\</span><span style="color:#a3be8c;">W</span><span style="color:#c0c5ce;">&quot;, &quot;</span><span style="color:#a3be8c;"> $0</span><span style="color:#c0c5ce;">&quot;);
+    </span><span style="color:#b48ead;">var</span><span style="color:#c0c5ce;"> words = sentence.</span><span style="color:#bf616a;">split</span><span style="color:#c0c5ce;">(&quot; &quot;);
+
+    </span><span style="color:#65737e;">// Get NE in sentence and positions of found NE
+    </span><span style="color:#b48ead;">var</span><span style="color:#c0c5ce;"> nameSpans = nameFinder.</span><span style="color:#bf616a;">find</span><span style="color:#c0c5ce;">(words);
+    </span><span style="color:#ebcb8b;">System</span><span style="color:#c0c5ce;">.out.</span><span style="color:#bf616a;">println</span><span style="color:#c0c5ce;">(</span><span style="color:#ebcb8b;">Arrays</span><span style="color:#c0c5ce;">.</span><span style="color:#bf616a;">toString</span><span style="color:#c0c5ce;">(nameSpans));
+
+    </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">(</span><span style="color:#ebcb8b;">Span</span><span style="color:#c0c5ce;"> span : nameSpans) {
+        </span><span style="color:#b48ead;">var</span><span style="color:#c0c5ce;"> ent = words[span.</span><span style="color:#bf616a;">getStart</span><span style="color:#c0c5ce;">()];
+        </span><span style="color:#ebcb8b;">System</span><span style="color:#c0c5ce;">.out.</span><span style="color:#bf616a;">println</span><span style="color:#c0c5ce;">(ent);
+    }
+}
+</span></code></pre>
+<p>As a result you'll get a serial number of entities in the text + entity type name and a list of entities:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">[[3..4</span><span style="color:#c0c5ce;">) </span><span style="color:#bf616a;">med-entity, </span><span style="color:#b48ead;">[</span><span style="color:#c0c5ce;">5..6) med-entity, [7..8) med-entity, [15..16) med-entity, [21..23) med-entity</span><span style="color:#b48ead;">]
+</span><span style="color:#bf616a;">Isolierung
+H5N1
+Menschen
+Virus
+Pandemieausl
+</span></code></pre><h1 id="summary">Summary</h1>
+<p>OpenNLP is a robust and free open source alternative for NER task solving. 
+The biggest problem when using OpenNLP is a corpus preparation. It takes a lot of resources and requires accurate annotation. This accuracy directly affects the training quality.</p>
+<p>Project source code using OpenNLP you can found here: <a href="https://github.com/nnovakova/opennlp-ner">https://github.com/nnovakova/opennlp-ner</a></p>
+
+          </div>
+        </article>
+      </div>
+      
+      <div class="column is-2 is-hidden-mobile">
+        <aside class="menu" style="position: sticky; top: 48px">
+          <p class="heading has-text-weight-bold">Contents</p>
+          <ul class="menu-list">
+            
+            <li>
+              <a id="link-3-training-a-model" class="toc is-size-7 is-active" href="https://nnovakova.github.io/opennlp-ner-train-test/#3-training-a-model">
+                3. Training a model
+              </a>
+              
+              <ul>
+                
+                <li>
+                  <a id="link-3-1-read-the-training-data" class="toc is-size-7" href="https://nnovakova.github.io/opennlp-ner-train-test/#3-1-read-the-training-data">
+                    3.1 Read the training data
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-3-2-training-parameters" class="toc is-size-7" href="https://nnovakova.github.io/opennlp-ner-train-test/#3-2-training-parameters">
+                    3.2 Training Parameters
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-3-3-train-the-model" class="toc is-size-7" href="https://nnovakova.github.io/opennlp-ner-train-test/#3-3-train-the-model">
+                    3.3 Train the model
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-3-4-save-the-model-to-a-file" class="toc is-size-7" href="https://nnovakova.github.io/opennlp-ner-train-test/#3-4-save-the-model-to-a-file">
+                    3.4 Save the model to a file
+                  </a>
+                </li>
+                
+              </ul>
+              
+            </li>
+            
+            <li>
+              <a id="link-4-validate-mode" class="toc is-size-7 " href="https://nnovakova.github.io/opennlp-ner-train-test/#4-validate-mode">
+                4. Validate Mode
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-summary" class="toc is-size-7 " href="https://nnovakova.github.io/opennlp-ner-train-test/#summary">
+                Summary
+              </a>
+              
+            </li>
+            
+          </ul>
+        </aside>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="field">
+        <p class="control has-icons-right">
+          <input class="input" id="search" placeholder="Search this website." type="search" />
+          <span class="icon is-small is-right">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+      <div class="search-results">
+        <div class="search-results__items"></div>
+      </div>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+          
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;cars-analysis&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              Car Market Trends - Data Exploration
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;nnovakova.github.io&#x2F;mlflow&#x2F;">
+              Tracking ML experiments with MLFlow<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+            
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="py-4 has-background-light">
+    <p class="has-text-centered">
+      Built with
+      <span class="icon is-small">
+        <i class="fas fa-code fa-xs"></i>
+      </span>
+      code and
+      <span class="icon is-small">
+        <i class="fas fa-heart fa-xs"></i>
+      </span>
+      love <br /> Powered By
+      <span class="icon is-small">
+        <i class="fas fa-power-off fa-xs"></i>
+      </span>
+      Zola
+    </p>
+  </footer>
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;search_index.en.js'></script>
+  <script src='https:&#x2F;&#x2F;nnovakova.github.io&#x2F;js&#x2F;site.js'></script>
+
+  
+
+<script type="text/javascript">
+  const menuBarHeight = $("nav.navbar").height();
+  const tocItems = $('.toc');
+  const navSections = new Array($('.toc').length);
+
+  tocItems.each(function (i) {
+    let id = $(this).attr("id").substring(5);
+    navSections[i] = document.getElementById(id);
+  })
+
+  function isVisible(tocIndex) {
+    const current = navSections[tocIndex];
+    const next = tocIndex < tocItems.length - 1 ? navSections[tocIndex+1] : $("section.section").get(1);
+    
+    const c = current.getBoundingClientRect();
+    const n = next.getBoundingClientRect();
+    const h = (window.innerHeight || document.documentElement.clientHeight);
+
+    return (c.top <= h) && (c.top + (n.top - c.top) - menuBarHeight >= 0);
+  }
+
+  function activateIfVisible() {
+    for (b = true, i = 0; i < tocItems.length; i++) {
+      if (b && isVisible(i)) {
+        tocItems[i].classList.add('is-active');
+        b = false;
+      } else
+        tocItems[i].classList.remove('is-active');
+    }
+  }
+
+  var isTicking = null;
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        activateIfVisible();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }, false);
+</script>
+
+
+
+
+</body>
+
+</html>
